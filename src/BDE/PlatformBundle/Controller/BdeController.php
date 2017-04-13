@@ -10,10 +10,19 @@ class BdeController extends Controller
 {
     public function indexAction(Request $request)
     {
-    	$session = $request->getSession();
-    	$userId = $session->get('user_id');
+    	//$session = $request->getSession();
+    	//$userId = $session->get('user_id');
 
-    	
+    	$user = $this->getUser();
+    	/*
+    	if(null === $user)
+    	{
+    		return new Response("Pas de user");
+    	}
+    	else
+    	{
+    		return new Response("Un user");
+    	}
 
     	if(empty($user_id))
     	{
@@ -22,8 +31,8 @@ class BdeController extends Controller
     	else
     	{
     		//return new Response("Il y'a une session attention !");
-    	}
-        return $this->render('BDEPlatformBundle:Accueil:index.html.twig',array('iduser' => $userId));
+    	}*/
+        return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
     }
 
     public function boutiqueAction()
