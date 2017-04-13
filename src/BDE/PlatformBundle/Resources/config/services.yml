@@ -1,0 +1,4 @@
+services:
+#    bde_platform.example:
+#        class: BDE\PlatformBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
