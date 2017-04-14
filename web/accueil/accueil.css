@@ -1,0 +1,64 @@
+html{
+    width: 100%;
+    height: 100%;
+    font-family: arial,ssans,sans-serif;
+}
+body{
+    font-family: arial,ssans,sans-serif;
+    max-width: 1000px;
+    width: auto;
+    margin: 0 auto;
+}
+
+#event_grad{
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(transparent, transparent,transparent, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(transparent, transparent,transparent, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(transparent, transparent,transparent, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(transparent, transparent,transparent, white); /* Standard syntax (must be last) */
+}
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+.material-icons{
+    font-size: 6em;
+}
+#event ul{
+    padding-left:30px;
+}
+#event ul li{
+    list-style-type: none;
+    margin-top: 35px;
+}
+#event{
+    border:dashed black;
+    width: 100%;
+}
+#event p{
+    font-size: medium;
+}
+
+#event_btn_all{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 1.7em;
+    width: 100%;
+    text-align: center;
+}
+
+#event_list{
+    position: relative;
+}
+.carousel-inner .item {
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.carousel-inner > .item{
+    align-items:center;
+}
