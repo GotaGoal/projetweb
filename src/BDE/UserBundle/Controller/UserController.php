@@ -13,8 +13,9 @@ class UserController extends Controller
 	/**
 	* @Security("has_role('ROLE_USER')")
 	*/
-    public function confirmed(Request $request)
+    public function confirmedAction(Request $request)
     {
+        /*
     	$userManager = $this->get('fos_user.user_manager');
     	$user = $userManager->findUserBy(array('username' => 'Goal'));
 
@@ -53,7 +54,7 @@ class UserController extends Controller
     	*/
 
 
-        return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
+        return new Response("Coucou");
     }
     
 }

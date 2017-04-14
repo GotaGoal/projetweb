@@ -1,0 +1,3 @@
+bde_user_confirm:
+    path:     /register/confirmed
+    defaults: { _controller: BDEUserBundle:User:confirmed }
