@@ -19,11 +19,16 @@ body {
     width: 50%;
     margin-top: 20px;
 }
+#iconedeca{
+margin-right:  0.2%;
+}
 
 .imageL {
     width: 50%;
     min-width: 60px;
+    min-height: 24px;
     max-width: 70px;
+    max-height: 33px;
 }
 
 #titre {}
@@ -31,6 +36,7 @@ body {
 #image {
     width: 10%;
     min-width: 90px;
+
 }
 
 h1 {
@@ -46,37 +52,6 @@ h1 {
 header {
     background-color: #d9d9d9;
 }
-
-/*@media(max-width:1200px) {
-    #nav3.navbar .navbar-brand {
-        display: none;
-    }
-    #nav3.navbar .navbar-nav>.nav-item {
-        display: none;
-    }
-    #nav3.navbar .navbar-nav {
-        display: none;
-    }
-    #nav3.navbar {
-        display: none;
-    }
-    #nav1.navbar .navbar-brand {
-        display: none;
-    }
-    #nav1.navbar .navbar-nav>.nav-item {
-        display: none;
-    }
-    #nav1.navbar .navbar-nav {
-        display: none;
-    }
-    #nav1.navbar {
-        display: none;
-    }
-    .navbar-right {
-        margin-right: 1px;
-    }
-}*/
-
 
 
 @media(max-width:8000px) {
