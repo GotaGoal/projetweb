@@ -25,6 +25,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use BDE\UserBundle\Entity\Authorization;
 
 /**
  * Controller managing the registration.
@@ -41,6 +42,35 @@ class RegistrationController extends Controller
      */
     public function registerAction(Request $request)
     {
+        $test = "benjamin.gardien@viacesi.fr";
+        
+        $em=$this->getDoctrine()->getManager();
+        $auth = $em->getRepository('BDEUserBundle:Authorization')->findBy(array('email'=>$test));
+        print_r($auth);
+        foreach ($auth as $id) {
+
+            $niveau = $id->getNiveau();
+        }
+
+    
+
+/*
+
+        $repository = $this->getDoctrine()->getManager()->getRepository('BDEUserBundle:Authorization');
+
+        $test = "benjamin.gardien@viacesi.fr";
+        $email = $repository->findBy(array('email'=>$test));
+        
+        echo $email[0]['id'];
+        //echo $u;
+        echo $email['id:BDE\UserBundle\Entity\Authorization:private'];
+        //$niveau = $email->getNiveau();
+        //echo $niveau;
+*/
+        if($niveau == "Tuteur")
+        {
+            return new Response("Cet utilisateur est un tuteur");
+        }
         /** @var $formFactory FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
         /** @var $userManager UserManagerInterface */
