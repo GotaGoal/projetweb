@@ -188,85 +188,134 @@ body {
         float:none !important;
     }
 */
-    #contenu
+#contenu
+{
+    max-width: 1100px;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+}
+#Recherche
+{
+    text-align : center;
+}
+#Recherche input
+{
+    width: 600px;
+}
+.evenement
+{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 2%;
+}
+.date
+{
+    margin: 0 0 auto;
+    width: 10%;
+}
+.mois
+{
+    text-align: center;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+.numero
+{
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+.description_evenement
+{
+    width: 90%;
+    margin-left: 3%;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+.titre_asso
+{
+    display: flex;
+    width: 100%;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+
+}
+.Titre
+{
+    width: 50%;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+}
+.Association
+{
+    width: 50%;
+}
+.descri_photo
+{
+    display: flex;
+    width: 100%;
+}
+.description
+{
+    width: 50%;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;       
+}
+.photo_ensemble
+{
+    width: 50%;
+}
+.photo
+{
+    width: 100%;
+}
+.separateur
+{
+    border-style: solid;
+    width: 90%;
+    border-width: 2px 0 0 0;
+    border-color: #000000;
+}
+@media screen and (max-width: 800px)
+{
+    #Recherche input
     {
-    }
-    #Recherche
-    {
-        text-align: center;
-    }
-    .evenement
-    {
-        display: flex;
-        margin: 0 auto;
-        width: 50%;
-        margin-top: 2%;
+        width: 80%;
     }
     .date
     {
         margin: 0 0 auto;
-        width: 10%;
-    }
-    .mois
-    {
-        text-align: center;
-        border-style: solid;
-        border-width: 1px 1px 1px 1px;
-    }
-    .numero
-    {
-        border-style: solid;
-        border-width: 1px 1px 1px 1px;
+        width: 25%;
     }
     .description_evenement
     {
-        width: 90%;
+        width: 75%;
         margin-left: 3%;
         border-style: solid;
         border-width: 1px 1px 1px 1px;
     }
-    .titre_asso
+    .Titre
     {
-        display: flex;
         width: 100%;
         border-style: solid;
         border-width: 0px 0px 1px 0px;
-
-    }
-    .Titre
-    {
-        width: 50%;
-        border-style: solid;
-        border-width: 0px 1px 0px 0px;
     }
     .Association
     {
-        width: 50%;
-    }
-    .descri_photo
-    {
-        display: flex;
-        width: 100%;
+        display: none;
+        width: 0%;
     }
     .description
     {
-        width: 50%;
+        display: none;
+        width: 0%;
         border-style: solid;
         border-width: 0px 1px 0px 0px;       
     }
     .photo_ensemble
     {
-        width: 50%;
-    }
-    .photo
-    {
         width: 100%;
     }
-    .separateur
-    {
-        border-style: solid;
-        width: 70%;
-        border-width: 2px 0 0 0;
-        border-color: #000000;
-    }
+
 }

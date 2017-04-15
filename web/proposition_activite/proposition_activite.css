@@ -188,32 +188,53 @@ body {
         float:none !important;
     }
 */
-    #contenu 
-    {
-        margin-left: 20%;
-    }
-    #contenu form button
-    {
-        margin-top: 1%;
-    }
-    #Proposer
-    {
-        margin-left: 60%;
-    }
-    #Temps
-    {
-        display: flex;
-    }
-    #heure
-    {
-        margin-left: 5%;
-    }
-    #Description
-    {
-        width: 600px;
-        height : 150px;
-    }
+#contenu 
+{
+    background-color: #FFFFFF;
+    max-width: 1100px;
+    margin: auto;
 }
+#contenu form button
+{
+    margin-top: 1%;
+}
+#formulaire 
+{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+.nom_activite
+{
+    margin-bottom: 10px; 
+    display: block;
+}
+.time
+{
+    margin-bottom: 10px; 
+    display: inline;
+}
+.association
+{
+    margin-bottom: 10px; 
+    display: block;
+}
+.Description
+{
+    display: block;
+}
+#formulaire input[type=submit]
+{
+    margin-top: 10px;
+    border : 2px solid red;
+    color : red;
+}
+#Description
+{
+    width: 80%;
+    height : 150px;
+}
+
 
 /*@media (max-width: 870px) {
 
@@ -301,5 +322,11 @@ body {
     }
 }*/
 
-
+@media screen and (max-width: 500px){
+    .time
+    {
+        margin-bottom: 10px; 
+        display: block;
+    }
+}
 
