@@ -1,0 +1,54 @@
+.button-rounded{
+    border-radius: 5px;
+}
+.button-outline{
+    background: transparent none;
+}
+button {
+    display: inline-block;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px 15px;
+    color: black;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-family: arial,ssans,sans-serif;
+}
+.button-outline.btn-bleu{
+    color: blue;
+    border-color: blue;
+    background: transparent none;
+}
+.button-outline.btn-green{
+    color: green;
+    border-color: green;
+    background: transparent none;
+}
+.button-outline.btn-red{
+    color: #C2242A;
+    border-color: #C2242A;
+    background: transparent none;
+}
+.button-outline.btn-disable{
+    color: gray;
+    border-color: gray;
+    background-color: whitesmoke;
+}
+
+.btn-bleu{
+    color: white;
+    background-color: blue;
+}
+.btn-red{
+    color: white;
+    background-color: #C2242A;
+}
+.btn-green{
+    color: white;
+    background-color: green;
+}
+.btn-disable{
+    color: gray;
+    border-color: gray;
+    background-color: whitesmoke;
+}
