@@ -46,31 +46,17 @@ class RegistrationController extends Controller
         
         $em=$this->getDoctrine()->getManager();
         $auth = $em->getRepository('BDEUserBundle:Authorization')->findBy(array('email'=>$test));
-        print_r($auth);
+        
         foreach ($auth as $id) {
 
             $niveau = $id->getNiveau();
         }
 
-    
-
-/*
-
-        $repository = $this->getDoctrine()->getManager()->getRepository('BDEUserBundle:Authorization');
-
-        $test = "benjamin.gardien@viacesi.fr";
-        $email = $repository->findBy(array('email'=>$test));
-        
-        echo $email[0]['id'];
-        //echo $u;
-        echo $email['id:BDE\UserBundle\Entity\Authorization:private'];
-        //$niveau = $email->getNiveau();
-        //echo $niveau;
-*/
-        if($niveau == "Tuteur")
+        if(empty($niveau))
         {
-            return new Response("Cet utilisateur est un tuteur");
+            $niveau = "Guest";
         }
+
         /** @var $formFactory FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
         /** @var $userManager UserManagerInterface */
@@ -80,6 +66,22 @@ class RegistrationController extends Controller
 
         $user = $userManager->createUser();
         $user->setEnabled(true);
+        if($niveau == "Tuteur")
+        {
+            $user->setRoles(array("ROLE_SUPER_ADMIN"));
+        }
+        elseif ($niveau == "Bde") {
+            $user->setRoles(array("ROLE_ADMIN"));
+        }
+        elseif($niveau == "Eleve")
+        {
+            $user->setRoles(array("ROLE_USER"));
+        }
+        else
+        {
+            $user->setRoles(array("ROLE_GUEST"));
+        }
+        
 
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);

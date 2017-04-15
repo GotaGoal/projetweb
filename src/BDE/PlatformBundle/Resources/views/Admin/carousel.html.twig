@@ -1,0 +1,19 @@
+<head>
+{% block stylesheets %}
+
+	<link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+{% endblock %}
+</head>
+{% block body %}
+	<body>
+		<h4>coucou</h4>
+		{% for carousel in tabcarousel %}
+			<img src="{{ asset(carousel.urlphoto) }}">
+		<h1>Bonjour {{ carousel.id }}</h1>
+		{% endfor %}
+		<div class="well">
+  			{{ form(form) }}
+		</div>
+	</body>
+	
+{% endblock body %}
