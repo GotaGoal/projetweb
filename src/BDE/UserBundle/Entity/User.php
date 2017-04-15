@@ -1,4 +1,5 @@
 <?php
+// src/OC/UserBundle/Entity/User.php
 
 namespace BDE\UserBundle\Entity;
 
@@ -6,8 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * User
- *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="BDE\UserBundle\Repository\UserRepository")
  */
@@ -24,14 +23,14 @@ class User extends BaseUser
      *
      * @ORM\Column(name="nom", type="string", length=255)
      */
-    private $nom;
+    protected $nom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
      */
-    private $prenom;
+    protected $prenom;
 
     /**
      * Set nom

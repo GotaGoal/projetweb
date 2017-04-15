@@ -25,6 +25,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use BDE\UserBundle\Entity\Authorization;
 
 /**
  * Controller managing the registration.
@@ -41,6 +42,21 @@ class RegistrationController extends Controller
      */
     public function registerAction(Request $request)
     {
+        $test = "benjamin.gardien@viacesi.fr";
+        
+        $em=$this->getDoctrine()->getManager();
+        $auth = $em->getRepository('BDEUserBundle:Authorization')->findBy(array('email'=>$test));
+        
+        foreach ($auth as $id) {
+
+            $niveau = $id->getNiveau();
+        }
+
+        if(empty($niveau))
+        {
+            $niveau = "Guest";
+        }
+
         /** @var $formFactory FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
         /** @var $userManager UserManagerInterface */
@@ -50,6 +66,22 @@ class RegistrationController extends Controller
 
         $user = $userManager->createUser();
         $user->setEnabled(true);
+        if($niveau == "Tuteur")
+        {
+            $user->setRoles(array("ROLE_SUPER_ADMIN"));
+        }
+        elseif ($niveau == "Bde") {
+            $user->setRoles(array("ROLE_ADMIN"));
+        }
+        elseif($niveau == "Eleve")
+        {
+            $user->setRoles(array("ROLE_USER"));
+        }
+        else
+        {
+            $user->setRoles(array("ROLE_GUEST"));
+        }
+        
 
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);

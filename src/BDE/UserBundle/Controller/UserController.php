@@ -53,8 +53,6 @@ class UserController extends Controller
     	}
     	*/
 
-
-        return new Response("Coucou");
     }
     
 }

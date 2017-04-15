@@ -7,19 +7,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use BDE\PlatformBundle\Entity\Carousel;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class BdeController extends Controller
 {
-	/**
-	* @Security("has_role('ROLE_USER')")
-	*/
+	
     public function indexAction(Request $request)
     {
-    	$userManager = $this->get('fos_user.user_manager');
-    	$user = $userManager->findUserBy(array('username' => 'Goal'));
-
-    	$user->setEmail('cetemail@nexiste.pas');
-    	$userManager->updateUser($user);
+    	//$userManager = $this->get('fos_user.user_manager');
 
     	//$session = $request->getSession();
     	//$userId = $session->get('user_id');
@@ -64,6 +66,22 @@ class BdeController extends Controller
     public function galerieAction()
     {
     	return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
+    }
+
+    public function carouselAction()
+    {
+        $formCarousel = new Carousel();
+
+        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$formCarousel);
+        $formBuilder->add('urlphoto', TextType::class)->add('id', IntegerType::class)->add('save',SubmitType::class);
+        $form = $formBuilder->getForm();
+        $em=$this->getDoctrine()->getManager();
+        $tabcarousel = $em->getRepository('BDEPlatformBundle:Carousel')->findAll();
+        foreach ($tabcarousel as $carousel) {
+            //echo $carousel->getUrlphoto();
+        }
+        return $this->render('BDEPlatformBundle:Admin:carousel.html.twig',array('tabcarousel'=>$tabcarousel,'form'=>$form->createView()));
+
     }
 
     
