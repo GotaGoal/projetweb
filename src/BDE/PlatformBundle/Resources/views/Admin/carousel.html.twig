@@ -8,12 +8,19 @@
 	<body>
 		<h4>coucou</h4>
 		{% for carousel in tabcarousel %}
-			<img src="{{ asset(carousel.urlphoto) }}">
+			<img src="{{ asset(carousel.path) }}">
+			<h3>Modifier cette image</h3>
+			<form action="" method="post">
+    			{{ form_widget(form) }}
+			</form>
 		<h1>Bonjour {{ carousel.id }}</h1>
 		{% endfor %}
-		<div class="well">
-  			{{ form(form) }}
-		</div>
+		<!--<div class="well">
+  			<h1>Upload File</h1>
+				<form action="" method="post" {{ form_start(form) }}>
+    				{{ form_widget(form) }}
+				</form>
+		</div>-->
 	</body>
 	
 {% endblock body %}

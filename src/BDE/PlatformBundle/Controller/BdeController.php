@@ -15,6 +15,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class BdeController extends Controller
 {
@@ -68,18 +70,34 @@ class BdeController extends Controller
     	return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
     }
 
-    public function carouselAction()
+    public function carouselAction(Request $request)
     {
         $formCarousel = new Carousel();
 
-        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$formCarousel);
-        $formBuilder->add('urlphoto', TextType::class)->add('id', IntegerType::class)->add('save',SubmitType::class);
-        $form = $formBuilder->getForm();
         $em=$this->getDoctrine()->getManager();
         $tabcarousel = $em->getRepository('BDEPlatformBundle:Carousel')->findAll();
         foreach ($tabcarousel as $carousel) {
-            //echo $carousel->getUrlphoto();
+            
+            $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$formCarousel);
+        $formBuilder->add('file')->add('id',HiddenType::class,array('data'=>$carousel->getId()))->add('save',SubmitType::class);
+        $form = $formBuilder->getForm();
         }
+
+        
+
+        if($request->isMethod('POST'))
+        {
+            $form->handleRequest($request);
+            if($form->isValid())
+            {
+                $em = $this->getDoctrine()->getManager();
+                $formCarousel->upload();
+                $em->persist($formCarousel);
+                $em->flush();
+                return $this->redirectToRoute('bde_admin_carousel');
+            }
+        }
+        
         return $this->render('BDEPlatformBundle:Admin:carousel.html.twig',array('tabcarousel'=>$tabcarousel,'form'=>$form->createView()));
 
     }

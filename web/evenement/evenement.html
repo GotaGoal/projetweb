@@ -1,13 +1,13 @@
 <!Doctype html>
 
 <HEAD>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <link rel="stylesheet" media="screen" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Boutique.css" />
-    <script class="cssdeck" src="jquery.min.js"></script>
-    <script type="text/javascript" src="Boutique.js"></script>
+    <link rel="stylesheet" href="evenement.css" />
+    <script type="text/javascript" src="proposition_activite.js"></script>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
-	<title>BDE EXIA NANCY</title>
+    <title>BDE EXIA NANCY</title>
 
 </HEAD>
 
@@ -96,70 +96,104 @@
             </div>
         </div>
     </header>
-	<nav>
-		
-	</nav>
-
-    <div id="contenu">
-        <div id="recherche">
-            <ul><a href="">Vêtement</a></ul>
-            <ul><a href="">goodies</a></ul>
-            <ul><a href="">autre</a></ul>
-
-            <form>
-                <input type="range" name="prix" min="0" max="100" value="50" onchange="showAmount(this.value)">
-                <span id="amount">50</span>
-            </form>
-            
-
-        </div>
-        <div id="catalogue">
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image1.jpg">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image2.jpg">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image3.png">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image4.jpg">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image5.jpg">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image6.jpg">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image7.jpg">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image8.png">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-                <div class="col-xs-6 col-md-3" id="image1">
-                    <img src="image/image9.jpg">
-                    <ul>petite description</ul>
-                    <ul>Prix</ul>
-                </div>
-        </div>
+    <nav>
         
+    </nav>
+    <div id="contenu">
+        <form method="post" id="Recherche" action="traitement.php">
+                <input type="text" name="activite_recherche" placeholder="Rechercher votre activité">
+
+        </form>
+        <div class="evenement">
+            <div class="date">
+                <div class="mois">
+                    <h4>Janvier</h4>
+                </div>
+                <div class="numero">
+                    <h1>31</h1>
+                </div>
+            </div>
+            <div class="description_evenement">
+                <div class="titre_asso">
+                    <div class="Titre">
+                        <ul>Titre</ul>
+                    </div>
+                    <div class="Association">
+                        <ul>Asso</ul>
+                    </div>
+                </div>
+                <div class="descri_photo">
+                    <div class="description">
+                        <ul>légère description</ul>
+                    </div>
+                    <div class="photo_ensemble">
+                        <img src="image/image4.jpg" class="photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="separateur">
+
+        <div class="evenement">
+            <div class="date">
+                <div class="mois">
+                    <h4>Janvier</h4>
+                </div>
+                <div class="numero">
+                    <h1>31</h1>
+                </div>
+            </div>
+            <div class="description_evenement">
+                <div class="titre_asso">
+                    <div class="Titre">
+                        <ul>Titre</ul>
+                    </div>
+                    <div class="Association">
+                        <ul>Asso</ul>
+                    </div>
+                </div>
+                <div class="descri_photo">
+                    <div class="description">
+                        <ul>légère description</ul>
+                    </div>
+                    <div class="photo_ensemble">
+                        <img src="image/image6.jpg" class="photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="separateur">
+        
+        <div class="evenement">
+            <div class="date">
+                <div class="mois">
+                    <h4>Janvier</h4>
+                </div>
+                <div class="numero">
+                    <h1>31</h1>
+                </div>
+            </div>
+            <div class="description_evenement">
+                <div class="titre_asso">
+                    <div class="Titre">
+                        <ul>Titre</ul>
+                    </div>
+                    <div class="Association">
+                        <ul>Asso</ul>
+                    </div>
+                </div>
+                <div class="descri_photo">
+                    <div class="description">
+                        <ul>légère description</ul>
+                    </div>
+                    <div class="photo_ensemble">
+                        <img src="image/image5.jpg" class="photo">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+</body>
