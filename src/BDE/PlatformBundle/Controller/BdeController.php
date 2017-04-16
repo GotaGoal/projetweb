@@ -148,7 +148,11 @@ class BdeController extends Controller
         $id = 2;
         $allassociations = $em->getRepository('BDEPlatformBundle:AssociationRole')->find($id);
 
-        return $this->render('BDEPlatformBundle:Association:associations.html.twig');
+        
+            echo $allassociations->getUser()->getNom();
+            return new Response("tets");
+        
+        //return $this->render('BDEPlatformBundle:Association:associations.html.twig');
     }
 
     
