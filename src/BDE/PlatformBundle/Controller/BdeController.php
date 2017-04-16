@@ -102,5 +102,45 @@ class BdeController extends Controller
 
     }
 
+    public function editAction($id, Request $request)
+    {
+
+    $formCarousel = new Carousel();
+    $em = $this->getDoctrine()->getManager();
+    $carousel_slide = $em->getRepository('BDEPlatformBundle:Carousel')->find($id);
+
+    if(null === $carousel_slide)
+    {
+        throw new NotFoundHttpException("Le slider ".$id."n'existe pas.");
+    }
+
+    $formBuilder = $this->get('form.factory')->createBuilder(FormType::class,$formCarousel);
+    $formBuilder->add('file',null,array('label' => 'Veuillez choisir une autre image :', 'required' => true));
+    $form = $formBuilder->getForm();
+    
+    if($request->isMethod('POST'))
+    {
+        $form->handleRequest($request);
+        if($form->isValid())
+        {
+            $carousel_modif = $em->getRepository('BDEPlatformBundle:Carousel')->find($id);
+            $formCarousel->upload();
+            $carousel_modif->setPath($formCarousel->getPath());
+            $em->persist($carousel_modif);
+            $em->flush();
+        }
+    }
+
+
+    return $this->render('BDEPlatformBundle:Admin:editcarousel.html.twig', array(
+      'carousel' => $carousel_slide,'form'=>$form->createView()
+    ));
+    }
+
+    public function associationsAction()
+    {
+        return $this->render('BDEPlatformBundle:Association:associations.html.twig');
+    }
+
     
 }

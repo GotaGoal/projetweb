@@ -140,7 +140,6 @@ class Carousel
 
     // set the path property to the filename where you've saved the file
     //$this->path = $this->getFile()->getClientOriginalName();
-    $a = $_SERVER['DOCUMENT_ROOT'];
     $this->setPath("img/".$this->getFile()->getClientOriginalName());
 
     // clean up the file property as you won't need it anymore
