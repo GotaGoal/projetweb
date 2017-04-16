@@ -5,30 +5,28 @@
     <meta charset="utf-8" />
     <title> Acceuil</title>
     {% block stylesheets %}
-    <link href="{{ asset('style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-
-    <link href="{{ asset('.css') }}" rel="stylesheet">
-  
-    
-        
-    {% endblock %}
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    {{ asset('style.css') }}
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <link rel="stylesheet" href=".css" />
+       
+    {% endblock %}
+     <meta name="viewport" content="width-device-width, initial-scale=1.0">
 </head>
 
 <body >
     <header>
         <div style="background-color: rgba(181, 12, 27, 1);"">
             <div class="row" style="max-width: 1200px; margin:auto;">
-                <div float="left" class="col-xs-3"> <img class="col-xs-1" id="image" src="{{ asset('logo.png') }}" /></div>
+                <div float="left" class="col-xs-3"> <img class="col-xs-1" id="image" src="Logo.png" /></div>
                 <div class="col-xs-3">
                     <h1 id="titre">BDE Nancy Exia</h1></div>
                 <div class="col-xs-3">
-                    <img class="col-xs-2 imageL" src="{{ asset('Facebook.png') }}" />
-                    <img class="col-xs-2 imageL" src="{{ asset('Twitter.png') }}" /></div>
+                    <img class="col-xs-2 imageL" src="Facebook.png" />
+                    <img class="col-xs-2 imageL" src="Twitter.png" /></div>
             </div>
         </div>
         <div align="center">

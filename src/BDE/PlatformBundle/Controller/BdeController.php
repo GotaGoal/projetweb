@@ -147,7 +147,7 @@ class BdeController extends Controller
         $em = $this->getDoctrine()->getManager();
         $id = 2;
         $allassociations = $em->getRepository('BDEPlatformBundle:AssociationRole')->find($id);
-
+        
         
             echo $allassociations->getUser()->getNom();
             return new Response("tets");
