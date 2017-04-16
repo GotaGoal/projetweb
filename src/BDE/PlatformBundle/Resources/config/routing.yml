@@ -5,3 +5,13 @@ bde_platform_homepage:
 bde_admin_carousel:
     path:     /admin/carousel
     defaults: { _controller: BDEPlatformBundle:Bde:carousel }
+
+bde_admin_edit_carousel:
+    path: /admin/carousel/edit/{id}
+    defaults: { _controller: BDEPlatformBundle:Bde:edit }
+    requirements:
+      id: \d+
+
+bde_view_association:
+    path: /associations
+    defaults: { _controller: BDEPlatformBundle:Bde:associations }

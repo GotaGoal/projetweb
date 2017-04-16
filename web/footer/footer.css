@@ -1,8 +1,6 @@
 html,body{
     font-family: arial,ssans,sans-serif;
     font-weight: 400;
-    height: 100%;
-
 }
 #footer_end .lien{
     text-decoration: none;
@@ -15,22 +13,25 @@ html,body{
 .lien_footer li a{
     text-decoration: none;
     color: inherit;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 #footer_end{
     background-color: #9f1f25;
     padding: 25px 25px;
-    font-size: 1.2em;
+    font-size: .9em;
     color: #bfbfbf;
 }
 #footer{
     width: 100%;
-    font-size: 1.2em;
+    font-size: 1em;
     background-color: #C2242A;
     color: whitesmoke;
 }
 #footer_info{
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.list-title{
+    font-size: 1.3em;
 }

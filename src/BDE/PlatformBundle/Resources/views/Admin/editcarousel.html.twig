@@ -1,0 +1,30 @@
+<head>
+{% block stylesheets %}
+
+	<link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet">
+{% endblock %}
+</head>
+{% block body %}
+	<body>
+			<h1>Bonjour {{ carousel.id }}</h1>
+			<img src="{{ asset(carousel.path) }}">
+			{{ form_start(form) }}
+			<form action="{{ path('bde_admin_edit_carousel', {'id' : carousel.id}) }}" method="post">
+				
+        
+    			{{ form_widget(form) }}
+
+
+    			<input type="submit" value="Modifier cette image">
+    			
+			</form>
+			{{ form_end(form) }}
+			
+				
+
+	
+		
+		<h1>Vous ne voulez plus modifier cette image ? Retourner à toutes les images en cliquant <a href="{{ path('bde_admin_carousel') }}">ici</a>.</h1>
+	</body>
+	
+{% endblock body %}

@@ -16,7 +16,7 @@ class LoadCarousel implements FixtureInterface
 		foreach ($listPhoto as $photo) {
 			//on crée l'utilisateur
 			$carousel = new Carousel;
-			$carousel->setUrlphoto($photo);
+			$carousel->setPath($photo);
 			$manager->persist($carousel);	
 		}
 
