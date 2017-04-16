@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use BDE\PlatformBundle\Entity\Carousel;
+use BDE\PlatformBundle\Entity\AssociationRole;
+use BDE\PlatformBundle\Entity\Role;
+use BDE\PlatformBundle\Entity\Association;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -138,8 +141,13 @@ class BdeController extends Controller
     ));
     }
 
-    public function associationsAction()
+    public function associationsAction(Request $request)
     {
+        $associations = new AssociationRole();
+        $em = $this->getDoctrine()->getManager();
+        $id = 2;
+        $allassociations = $em->getRepository('BDEPlatformBundle:AssociationRole')->find($id);
+
         return $this->render('BDEPlatformBundle:Association:associations.html.twig');
     }
 
