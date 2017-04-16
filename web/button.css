@@ -11,6 +11,7 @@ button {
     padding: 10px 15px;
     color: black;
     border: 1px solid transparent;
+    outline: 0;
     cursor: pointer;
     font-family: arial,ssans,sans-serif;
 }
@@ -50,5 +51,8 @@ button {
 .btn-disable{
     color: gray;
     border-color: gray;
+    background-color: whitesmoke;
+}
+.button-outline:hover{
     background-color: whitesmoke;
 }

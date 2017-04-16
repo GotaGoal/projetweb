@@ -204,51 +204,26 @@ footer{
     padding: 0 auto;
 }
 #body{
-    background-color: rgba(255, 255, 255, 1);
     height: 100%;
     padding: 0;
     margin: 0 auto;
 }
-.all,footer{
-   
-    background-color: rgba(181, 12, 27, 1);
-    margin:0 auto;
-    padding: 0;
-   
-
-    
-}
-
-
-html{
-    background-color: #d9d9d9;
-
-}
-
-.all,body,#body{
-
+body,#body{
     position: relative;
-
     font-family: arial,ssans,sans-serif;
     font-weight: 400;
-
-    min-height: 100%;
-    height: 100%;
     margin: 0 auto;
-    -moz-box-sizing: border-box; box-sizing: border-box;
-   
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 
 }
-
-.all,body{
+body{
      background-color: #d9d9d9;
-
 }
 .all{
-      max-width: 1200px;
+      max-width: 1000px;
 
 }
-
 .col-xs-3 {
     float:left;
     width: 33%;
@@ -280,30 +255,19 @@ margin-right:  0.2%;
     max-width: 70px;
     max-height: 33px;
 }
-
-#titre {}
-
 #image {
     width: 30%;
     min-width: 90px;
-
 }
-
 h1 {
-    text-shadow: -1px -1px #000000, 1px 1px #000001, -3px 0 4px #000;
+    /*text-shadow: -1px -1px #000000, 1px 1px #000001, -3px 0 4px #000;*/
     font-family: Arial, Helvetica, sans-serif;
-    color: #000000;
+    color: white;
     font-weight: lighter;
     -moz-box-shadow: 2px 2px 6px #000000;
     text-align: center;
     display: block;
 }
-
-header {
-    background-color: #d9d9d9;
-}
-
-
 @media(max-width:8000px) {
     #nav2.navbar {
         display: block;
@@ -317,8 +281,6 @@ header {
         display: none;
     }
 }
-
-
 @media (max-width: 768px) {
  
     
@@ -381,21 +343,11 @@ header {
         padding-bottom: 10px;
     }
 }
-
-
-html{
-
-    height: 100%;
-}
-
-
 footer{
   position: absolute;
 
     
 }
-
-
 #footer_end .lien{
     text-decoration: none;
     color: inherit;
@@ -426,4 +378,26 @@ footer{
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
+#footer-content{
+    max-width: 1000px;
+    margin: auto;
+}
+#end-content{
+    max-width: 1000px;
+    margin: auto;
+}
+#content-header{
+    max-width: 1000px;
+    margin: auto;
+}
+#header-title, #header-pre-nav{
+    background-color: #C2242A;
+}
+#header-nav{
+    margin-top: -25px;
+    float: bottom;
+}
+#panier{
+    padding: 15px 15px 10px;
+    font-size: 2em !important;
+}
