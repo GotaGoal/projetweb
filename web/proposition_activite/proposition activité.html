@@ -105,14 +105,14 @@
 		<form id="formulaire">
 
 			<label  class="nom_activite" for="nom_activite">L'activité proposée* <span class="glyphicon glyphicon-tower"></span></label>
-			<input  class="nom_activite" type="text" name="nom_activite" placeholder="Nom d'activité"> 
+			<input  class="nom_activite" id = "Activite" type="text" name="nom_activite" placeholder="Nom d'activité" onblur="champs_requis(this.value, this.id)"> 
 
-			<label class="time" for="date">date* <span class="glyphicon glyphicon-calendar"></span></label>
-			<input class="time" type="date" name="date" placeholder="Date">
+			<label class="time" for="date">date* <span class="glyphicon glyphicon-calendar" ></span></label>
+			<input class="time" id="date" type="date" name="date" placeholder="Date" onblur="champs_requis(this.value, this.id)">
 			<label class="time" for="heure">De* <span class="glyphicon glyphicon-time"></span></label>
-			<input class="time" type="time" name="heure" placeholder="heure" min="0" max="23">
+			<input class="time" id="debut" type="time" name="heure" placeholder="heure" min="0" max="23" onblur="champs_requis(this.value, this.id)">
 			<label class="time" for="heure">à* <span class="glyphicon glyphicon-time"></span></label>
-			<input class="time" type="time" name="heure" placeholder="heure" min="0" max="23">		
+			<input class="time" id="fin" type="time" name="heure" placeholder="heure" min="0" max="23" onblur="champs_requis(this.value, this.id)">		
 	
 			<label class="association" for="association">Association concernée*</label>
 			<select class="association" name="association" id="association">
@@ -122,7 +122,7 @@
 			</select>			
 
 			<label class="Description" for="Description">Description*</label>
-			<textarea class="Description" name="Description" id="Description" placeholder="Description"></textarea>			
+			<textarea class="Description" name="Description" id="Description" placeholder="Description" onblur="champs_requis(this.value, this.id)"></textarea>			
 
 			<input type="submit" placeholder="Proposer"></input>
 
