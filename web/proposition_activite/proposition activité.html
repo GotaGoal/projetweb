@@ -5,6 +5,7 @@
 	<link rel="stylesheet" media="screen" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="proposition_activite.css" />
     <script type="text/javascript" src="proposition_activite.js"></script>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
 	<title>BDE EXIA NANCY</title>
 
@@ -29,7 +30,7 @@
         <div id="all4">
             <div class="all" align="center">
 
-                <nav class="navbar navbar-inverse" id="nav1"  role="navigation">
+               <nav class="navbar navbar-inverse" id="nav1"  role="navigation">
                     <div id="container"> 
                     <div class="navbar-header" >
                         <button type="button" class="navbar-toggle" id="nav4" data-toggle="collapse" data-target=".navbar-collapse">
@@ -101,41 +102,29 @@
 	<div id="contenu">
 		<h3> Une proposition d'activité ?</h3>
 
-		
-		<form method="post" action="traitement.php">
-				<label for="nom_activite">L'activité proposée :</label>
-				<input type="text" name="nom_activte" placeholder="Nom d'activité">
+		<form id="formulaire">
 
+			<label  class="nom_activite" for="nom_activite">L'activité proposée :</label>
+			<input  class="nom_activite" type="text" name="nom_activite" placeholder="Nom d'activité">
+
+			<label class="time" for="date">date :</label>
+			<input class="time" type="date" name="date" placeholder="Date">
+			<label class="time" for="heure">De :</label>
+			<input class="time" type="time" name="heure" placeholder="heure" min="0" max="23">
+			<label class="time" for="heure">à :</label>
+			<input class="time" type="time" name="heure" placeholder="heure" min="0" max="23">		
+	
+			<label class="association" for="association">Association concernée</label>
+			<select class="association" name="association" id="association">
+			<option value="aucune" selected>aucune</option>
+			<option value="BDE">BDE</option>
+			<option value="Japon">Japon</option>
+			</select>			
+
+			<label class="Description" for="Description">Description</label>
+			<textarea class="Description" name="Description" id="Description" placeholder="Description"></textarea>			
+
+			<input type="submit" placeholder="Proposer"></input>
 		</form>
-		<div id="Temps">
-			<form method="post" action="traitement.php">
-					<label for="date">date :</label>
-					<input type="date" name="date" placeholder="Date">
-					
-			</form>
-			<form method="post" action="traitement.php" id="heure">
-					<label for="heure">De :</label>
-					<input type="time" name="heure" placeholder="heure" min="0" max="23">
-					<label for="heure">à :</label>
-					<input type="time" name="heure" placeholder="heure" min="0" max="23">
-					
-			</form>
-		</div>
-		<form method="post" action="traitement.php">
-				<label for="association">Association concernée</label>
-				<select name="association" id="association">
-					<option value="aucune" selected>aucune</option>
-					<option value="BDE">BDE</option>
-					<option value="Japon">Japon</option>
-					
-				</select>			
-		</form>
-		<form method="post" action="traitement.php">
-				<label for="Description">Description</label><br/>
-				<textarea name="Description" id="Description" placeholder="Description"></textarea>			
-		</form>
-		<button id="Proposer">Proposer</button>
 	</div>
-
-
 </body>
