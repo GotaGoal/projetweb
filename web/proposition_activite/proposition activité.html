@@ -104,27 +104,29 @@
 
 		<form id="formulaire">
 
-			<label  class="nom_activite" for="nom_activite">L'activité proposée :</label>
-			<input  class="nom_activite" type="text" name="nom_activite" placeholder="Nom d'activité">
+			<label  class="nom_activite" for="nom_activite">L'activité proposée* <span class="glyphicon glyphicon-tower"></span></label>
+			<input  class="nom_activite" type="text" name="nom_activite" placeholder="Nom d'activité"> 
 
-			<label class="time" for="date">date :</label>
+			<label class="time" for="date">date* <span class="glyphicon glyphicon-calendar"></span></label>
 			<input class="time" type="date" name="date" placeholder="Date">
-			<label class="time" for="heure">De :</label>
+			<label class="time" for="heure">De* <span class="glyphicon glyphicon-time"></span></label>
 			<input class="time" type="time" name="heure" placeholder="heure" min="0" max="23">
-			<label class="time" for="heure">à :</label>
+			<label class="time" for="heure">à* <span class="glyphicon glyphicon-time"></span></label>
 			<input class="time" type="time" name="heure" placeholder="heure" min="0" max="23">		
 	
-			<label class="association" for="association">Association concernée</label>
+			<label class="association" for="association">Association concernée*</label>
 			<select class="association" name="association" id="association">
 			<option value="aucune" selected>aucune</option>
 			<option value="BDE">BDE</option>
 			<option value="Japon">Japon</option>
 			</select>			
 
-			<label class="Description" for="Description">Description</label>
+			<label class="Description" for="Description">Description*</label>
 			<textarea class="Description" name="Description" id="Description" placeholder="Description"></textarea>			
 
 			<input type="submit" placeholder="Proposer"></input>
+
+			<label class="obligation">* Champs obligatoire</label>
 		</form>
 	</div>
 </body>

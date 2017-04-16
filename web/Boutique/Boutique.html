@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="Boutique.css" />
     <script class="cssdeck" src="jquery.min.js"></script>
     <script type="text/javascript" src="Boutique.js"></script>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
 	<title>BDE EXIA NANCY</title>
 
@@ -102,9 +103,12 @@
 
     <div id="contenu">
         <div id="recherche">
-            <ul><a href="">Vêtement</a></ul>
-            <ul><a href="">goodies</a></ul>
-            <ul><a href="">autre</a></ul>
+            <ul><a href="" style="text-decoration:none"><span class="proposition">Vêtement</span></a></ul>
+            <hr class="delimitation">
+            <ul><a href="" style="text-decoration:none"><span class="proposition">goodies</span></a></ul>
+            <hr class="delimitation">
+            <ul><a href="" style="text-decoration:none"><span class="proposition">autre</span></a></ul>
+            <hr class="delimitation">
 
             <form>
                 <input type="range" name="prix" min="0" max="100" value="50" onchange="showAmount(this.value)">
