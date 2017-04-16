@@ -12,11 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Association
 {
-    /**
-    * @ORM\ManyToMany(targetEntity="BDE\PlatformBundle\Entity\Role", cascade={"persist"})
-    */
-
-    private $roles;
+  
     
     /**
      * @var int
