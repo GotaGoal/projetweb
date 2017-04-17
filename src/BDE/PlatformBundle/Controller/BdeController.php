@@ -143,16 +143,23 @@ class BdeController extends Controller
 
     public function associationsAction(Request $request)
     {
-        $associations = new AssociationRole();
+        $asso = new Association();
         $em = $this->getDoctrine()->getManager();
-        $id = 2;
-        $allassociations = $em->getRepository('BDEPlatformBundle:AssociationRole')->find($id);
         
+        $listAssociations = $em->getRepository('BDEPlatformBundle:Association')->findAll();
         
-            echo $allassociations->getUser()->getNom();
-            return new Response("tets");
+        foreach ($listAssociations as $asso) {
+            $listid[] = $asso->getId();
+
+        }
+        print_r($listid);
+        //return new Response("lol");
+
         
-        //return $this->render('BDEPlatformBundle:Association:associations.html.twig');
+            //echo $allassociations->getUser()->getNom();
+            //return new Response("tets");
+        
+        return $this->render('BDEPlatformBundle:Association:associations.html.twig',array('listid'=>$listid));
     }
 
     
