@@ -6,77 +6,161 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link href="../css/bootstrap.css" rel="stylesheet">
     <script src="../js/jquery-3.2.1.min.js" rel="text/javascript"></script>
-    <script src="accueil.js" rel="text/javascript"></script>
     <script src="../js/npm.js" rel="text/javascript"></script>
     <link href="../css/bootstrap-theme.css" rel="stylesheet">
     <script src="../js/bootstrap.js" rel="text/javascript"></script>
+    <script src="accueil.js" rel="text/javascript"></script>
     <link href="accueil.css" rel="stylesheet">
+    <link href="../style2.css" rel="stylesheet">
+    <link href="../footer/footer.css" rel="stylesheet">
+    <link href="../button.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-<!--Header de oufzer-->
+<header>
+    <div id="header">
+        <div id="header-title">
+            <div class="row" id="content-header">
+                <div class="col-xs-3 col-centered">
+                    <img id="image" src="../Logo.png" /></div>
+                <div class="col-xs-3 col-centered">
+                    <h1 id="titre">BDE Nancy Exia</h1></div>
+                <div class="col-xs-3 col-centered">
+                    <img class="col-xs-2 imageL" class="center-block" src="../Facebook.png" />
+                    <img class="col-xs-2 imageL" class="center-block" src="../Twitter.png" /></div>
+            </div>
+        </div>
+        <div id="header-pre-nav" style="width: 100%; height: 25px"></div>
+        <div id="header-nav">
+            <div style="max-width: 768px; margin: 0 auto">
+                <nav class="navbar navbar-toggleable-xs navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Accueil</a></li>
+                                <li><a href="#">Ecole</a></li>
+                                <li><a href="#">Associations</a></li>
+                                <li><a href="#">Galerie</a></li>
+                                <li><a href="#">Activités</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-header">Habits</li>
+                                        <li><a href="#">T-Shiry</a></li>
+                                        <li><a href="#">Sweet</a></li>
+                                        <li><a href="#">Jean</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li class="dropdown-header">Accessoires</li>
+                                        <li><a href="#">Mug</a></li>
+                                        <li><a href="#">Stickers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Mon Compte</a></li>
+                                <li><a id="panier" href="#"><span class="material-icons">shopping_cart</span></a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
+                </nav>
+            </div>
+            <!--<div style="max-width: 570px; margin: 0 auto">-->
+            <!--<nav class="navbar navbar-default">-->
+            <!--<div class="container-fluid">-->
+            <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
+            <!--<span class="sr-only">Toggle navigation</span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <!--</div>-->
+            <!--<div id="navbar" class="navbar-collapse collapse">-->
+            <!--<ul class="nav navbar-nav">-->
+            <!--<li class="active"><a href="#">Accueil</a></li>-->
+            <!--<li><a href="#">Ecole</a></li>-->
+            <!--<li><a href="#">Associations</a></li>-->
+            <!--<li><a href="#">Activités</a></li>-->
+            <!--<li><a href="#">Connexion / Inscription</a></li>-->
+            <!--</ul>-->
+            <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+            <!--</div>&lt;!&ndash;/.container-fluid &ndash;&gt;-->
+            <!--</nav>-->
+            <!--</div>-->
+        </div>
+    </div>
+</header>
 <div id="content">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="background-color: black; margin: 5%; border: thin solid black; width: 90%; max-height: 450px; min-height: 450px;">
-
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin: 5%; background-color: darkgray; width: 90%; max-height: 450px;">
         <!-- Carousel indicators -->
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators" style="background: center; background-size: cover">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for carousel items -->
-        <div class="carousel-inner" style="" >
-            <div class="item active">
-                <img class="carousel_img" src="test.png" alt="First Slide" style="max-height: 450px; max-width: 90%">
+        <div class="carousel-inner" onmouseover="display_arrow()" onmouseleave="nodisplay_arrow()" style="margin: auto; height: 100%;">
+
+            <a class="carousel_left_arrow" href="#myCarousel" data-slide="prev" style="text-decoration: none; color:white;">
+                <span class="material-icons">navigate_before</span>
+            </a>
+            <a class="carousel_right_arrow" href="#myCarousel" data-slide="next" style="text-decoration: none; color:white;">
+                <span class="material-icons">navigate_next</span>
+            </a>
+
+            <div class="item active" >
+                <img class="carousel_img" src="test.png" alt="First Slide" style="max-width:100%;max-height: 450px;">
             </div>
             <div class="item">
-                <img class="carousel_img" src="test2.png" alt="Second Slide" style="max-height: 450px; max-width: 90%">
+                <img class="carousel_img" src="test2.png" alt="Second Slide" style="max-width:100%;max-height: 450px;">
             </div>
-            <div class="item">
-                <img class="carousel_img" src="test3.jpg" alt="Third Slide" style="max-height: 450px; max-width: 90%; align-content: center;">
+            <div class="item" >
+                <img class="carousel_img" src="test3.jpg" alt="Third Slide" style="max-width:100%;max-height: 450px;">
             </div>
         </div>
-
-        <!-- Carousel controls -->
-        <!--<a class="carousel-control left" href="#myCarousel" data-slide="prev" id="crl_left">-->
-        <!--<span class="material-icons" id="crl_btn_left">navigate_before</span>-->
-        <!--</a>-->
-        <!--<a class="carousel-control right" href="#myCarousel" data-slide="next" id="crl_right">-->
-        <!--<span class="material-icons" id="crl_btn_right">navigate-next</span>-->
-        <!--</a>-->
     </div>
     <div id="event">
-        <p>Prochainement:</p>
+        <p style="font-weight: 600; font-size: 3em; padding-left: 8%">Prochainement:</p>
+        <hr color="#000000" align="center" width="100%">
+
         <div id="event_list" style="width: 100%; height: 100%">
             <div id="event_grad"></div>
             <ul>
                 <li>
-                    <div class="row">
-                        <div class="col-sm-7">
+                    <div class="row event-item">
+                        <div class="col-sm-7 col-xs-12 description">
                             <p > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec ligula a leo fringilla vestibulum vestibulum sit amet purus. Proin aliquet quis nunc in accumsan. Cras lacinia ut risus ac. </p>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 col-xs-12 img-event">
                             <img src="test.png" width="300px" height="200px" style="border: thin solid black;">
                         </div>
                     </div>
                 </li>
+                <hr color="#000000" align="center" width="100%">
                 <li>
-                    <div class="row">
-                        <div class="col-sm-7">
+                    <div class="row event-item">
+                        <div class="col-sm-7 col-xs-12 description">
                             <p > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec ligula a leo fringilla vestibulum vestibulum sit amet purus. Proin aliquet quis nunc in accumsan. Cras lacinia ut risus ac. </p>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-4 col-xs-12 img-event">
                             <img src="test.png" width="300px" height="200px" style="border: thin solid black;">
                         </div>
                     </div>
                 </li>
+                <hr color="#000000" align="center" width="100%">
                 <li>
-                    <div class="row">
-                        <div class="col-sm-7 col-xs-12">
+                    <div class="row event-item">
+                        <div class="col-sm-7 col-xs-12 description">
                             <p > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec ligula a leo fringilla vestibulum vestibulum sit amet purus. Proin aliquet quis nunc in accumsan. Cras lacinia ut risus ac. </p>
                         </div>
-                        <div class="col-sm-4 col-xs-4 col-xs-4">
+                        <div class="col-sm-4 col-xs-12 img-event">
                             <img src="test.png" width="300px" height="200px" style="border: thin solid black;">
                         </div>
                     </div>
@@ -85,11 +169,55 @@
         </div>
         <div id="event_btn_all">
             <hr color="#000000" align="center" width="75%">
-            <a>Voir toutes les activités</a>
+            <button class="button-rounded button-outline btn-red special"><span>Voir toutes les activités</span></button>
         </div>
     </div>
 
 </div>
-<div><br><br><br><br><br><br><br><br><br><br><br></div>
+<footer id="footer">
+    <div id="footer-content">
+        <div class="row" id="footer_info">
+            <div class="col-sm-2 col-sm-push-1 col-xs-4" style="height: 100%">
+                <h5 class="list-title">Titre</h5>
+                <ul class="lien_footer">
+                    <li><a class="lien">lien0</a></li>
+                    <li><a class="lien">lien1</a></li>
+                    <li><a class="lien">lien2</a></li>
+                    <li><a class="lien">lien3</a></li>
+                    <li><a class="lien">lien4</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 col-sm-push-3 col-xs-4">
+                <h5 class="list-title">Titre</h5>
+                <ul class="lien_footer">
+                    <li><a class="lien">lien0</a></li>
+                    <li><a class="lien">lien1</a></li>
+                    <li><a class="lien">lien2</a></li>
+                    <li><a class="lien">lien3</a></li>
+                    <li><a class="lien">lien4</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 col-sm-push-5 col-xs-4">
+                <h5 class="list-title">Titre</h5>
+                <ul class="lien_footer">
+                    <li><a class="lien">lien0</a></li>
+                    <li><a class="lien">lien1</a></li>
+                    <li><a class="lien">lien2</a></li>
+                    <li><a class="lien">lien3</a></li>
+                    <li><a class="lien">lien4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="footer_end">
+        <div class="row" id="end-content">
+            <div class="col-xs-8 col-sm-6">© 2017 Exia Cesi, All rights reserved.</div>
+            <!--<div class="col-xs-1 col-xs-push-2 col-sm-1 col-sm-push-5" style="text-align: right">-->
+            <!--<a class="lien" href="#!">Links</a>-->
+            <!--</div>-->
+        </div>
+
+    </div>
+</footer>
 </body>
 </html>

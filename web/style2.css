@@ -75,32 +75,9 @@ header {
 }
 
 
-<<<<<<< HEAD
-    @media(max-width:8000px) {
-=======
-<<<<<<< HEAD
-
-
-@media(max-width:8000px) {
->>>>>>> origin/master
-        #nav2 {
-            display: block;
-        }
-        #nav1 {
-<<<<<<< HEAD
-            display: none;
-        }
-        #nav3 {
-=======
->>>>>>> origin/master
-            display: none;
-        }
-
-=======
 @media(max-width:8000px) {
     #nav2.navbar {
         display: block;
->>>>>>> origin/master
     }
     
     #nav1.navbar {
@@ -113,10 +90,6 @@ header {
 }
 
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 @media (max-width: 768px) {
  
     
@@ -179,21 +152,11 @@ header {
         padding-bottom: 10px;
     }
 }
->>>>>>> origin/master
->>>>>>> origin/master
 
 html,body{
     font-family: arial,ssans,sans-serif;
     font-weight: 400;
    
-<<<<<<< HEAD
-    #nav1 { display: block; }
-
-}
-
-
-=======
->>>>>>> origin/master
 
 }
 footer{
