@@ -191,28 +191,109 @@ body {
 #contenu
 {
     max-width: 1100px;
-    margin: auto;
+    margin: 0% auto;
     margin-bottom: 10px;
     background-color: #ffffff;
+    display: flex;
+}
+#recherche
+{
+    display: block;
+    width: 20%;
+    border-style: solid;
+    text-align: center;
+    border-width: 0px 2px 0px 0px;
 }
 #Recherche
 {
-    text-align : center;
+    max-width: 80%;
+    margin: 100px auto 30px auto;
+
 }
-#Recherche input
+.association
 {
-    width: 600px;
+    width: 80%;
+    display: block;
+    text-align: center;
+    margin: 0px 10% 10px 10%;
 }
+.association select
+{
+    max-width: 100%;
+}
+/*#calendrier
+{
+    width: 90%;
+    margin: 50px auto;
+}
+#Mois
+{
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+}
+#button1
+{
+    height: 20px;
+    width: 20%;
+}
+#button1 span
+{
+    font-size: 15px;
+}
+#button2
+{
+    height: 20px;
+    width: 20%;
+}
+#button2 span
+{
+    font-size: 15px;
+}
+#Jour
+{
+    display: flex;
+    width: 100%;
+    border-style: solid;
+    border-width:  0px 1px 1px 1px;
+}
+.jour
+{
+    width: 14.3%;
+}
+#Chiffre
+{
+
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+}*/
+#Proposer
+{
+    margin: 20px auto;
+}
+
+#liste_event
+{
+    display: block;
+    width: 80%;
+    margin: auto;
+}
+#Approuve
+{
+    height: 450px;
+    overflow: auto;
+}
+
 .evenement
 {
     display: flex;
     margin: 0 auto;
-    width: 80%;
-    margin-top: 2%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 90%;
 }
 .date
 {
-    margin: 0 0 auto;
     width: 10%;
 }
 .mois
@@ -229,7 +310,7 @@ body {
 .description_evenement
 {
     width: 90%;
-    margin-left: 3%;
+    margin-left: 2%;
     border-style: solid;
     border-width: 1px 1px 1px 1px;
 }
@@ -270,18 +351,37 @@ body {
 {
     width: 100%;
 }
-.separateur
+.separateur_haut
 {
     border-style: solid;
     width: 90%;
-    border-width: 2px 0 0 0;
+    border-width: 0px 0px 2px 0px;
     border-color: #000000;
+    margin:  5px auto 0px auto;
+    text-align: center;
+}
+.separateur_bas
+{
+    border-style: solid;
+    width: 90%;
+    border-width: 2px 0px 0px 0px;
+    border-color: #000000;
+    margin: auto;
+    text-align: center;
+}
+.mini_description
+{
+    height: 90%;
 }
 @media screen and (max-width: 800px)
 {
-    #Recherche input
+    #recherche
     {
-        width: 80%;
+        width: 30%;
+    }
+    #list_event;
+    {
+        width: 70%;
     }
     .date
     {
@@ -318,4 +418,15 @@ body {
         width: 100%;
     }
 
+}
+.site
+{
+    color: #000000;
+    padding: 1px;
+    transition: 0.3s;
+    bottom: 0px;
+}
+.site:hover
+{
+    color: red;
 }

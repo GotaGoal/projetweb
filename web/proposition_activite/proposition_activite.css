@@ -188,6 +188,7 @@ body {
         float:none !important;
     }
 */
+/*
 #contenu 
 {
     background-color: #FFFFFF;
@@ -359,12 +360,36 @@ body {
 
     }
 }*/
-
+/*
 @media screen and (max-width: 530px){
     .time
     {
         margin-bottom: 10px; 
         display: block;
     }
-}
+}*/
 
+#erreur_nom
+{
+    display: none;
+}
+#erreur_date
+{
+    display: none;
+}
+#erreur_heure_debut
+{
+    display: none;
+}
+#erreur_heure_fin
+{
+    display: none;
+}
+#erreur_asso
+{
+    display: none;
+}
+#erreur_desc
+{
+    display: none;
+}
