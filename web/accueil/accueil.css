@@ -116,7 +116,7 @@ body{
     align-items: center;
     opacity: 0;
     text-decoration: none;
-    z-index: 100;
+    z-index: 5;
     width: 25%;
     height: 100%;
     position: absolute;

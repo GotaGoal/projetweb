@@ -401,3 +401,19 @@ footer{
     padding: 15px 15px 10px;
     font-size: 2em !important;
 }
+#header{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top:0;
+}
+@media screen and (max-width: 658px) {
+    #titre{
+        font-size: 1.8em;
+    }
+}
+@media screen and (max-width: 400px) {
+    #titre{
+        font-size: 1.5em;
+    }
+}
