@@ -1,0 +1,205 @@
+.navbar-inverse {
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.col-xs-3 {
+    float: left;
+    width: 33%;
+}
+
+header .col-xs-1 {
+    float: left;
+    margin: 2%;
+}
+
+.col-xs-2 {
+    float: right;
+    width: 50%;
+    margin-top: 20px;
+}
+
+#iconedeca {
+    margin-right: 0.2%;
+}
+
+.raton {
+    float: left;
+}
+
+.imageL {
+    width: 50%;
+    min-width: 60px;
+    min-height: 24px;
+    max-width: 70px;
+    max-height: 33px;
+}
+
+#image {
+    width: 30%;
+    min-width: 90px;
+}
+
+h1 {
+    text-shadow: -1px -1px #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000000;
+    font-weight: lighter;
+    -moz-box-shadow: 2px 2px 6px #000000;
+    text-align: center;
+    display: block;
+}
+
+header {
+    background-color: #d9d9d9;
+}
+
+
+    @media(max-width:8000px) {
+        #nav2 {
+            display: block;
+        }
+        #nav1 {
+            display: none;
+        }
+        #nav3 {
+            display: none;
+        }
+    }
+    
+
+
+
+@media (max-width: 768px) {
+  #nav2 {display: none;}
+   
+    #nav1 { display: block; }
+    #nav3{display: none;}
+}
+
+
+
+}
+
+html {
+    height: 100vh;
+    background-color: #d9d9d9;
+}
+
+footer {
+    position: absolute;
+     right:0;
+     left:0;
+    background-color: rgba(181, 12, 27, 1);
+    margin: 0 auto;
+    padding: 0;
+    bottom: 0 auto;
+}
+
+.all {
+    background-color: rgba(255, 255, 255, 1);
+    margin: 0 auto;
+    padding: 0;
+    min-height: 80vh;
+    max-width: 1200px;
+}
+
+body {
+    background-color: #d9d9d9;
+    margin: 0 auto;
+    padding: 0;
+    min-height: 100%;
+}
+
+
+
+#footer_end .lien {
+    text-decoration: none;
+}
+
+.lien_footer li {
+    margin-bottom: 2px;
+}
+
+.lien_footer li a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.3em;
+}
+
+#footer_end {
+    background-color: #9f1f25;
+    padding: 10px 25px;
+    font-size: 1.2em;
+    color: #bfbfbf;
+}
+
+
+
+#footer_info {
+    width: 100%;
+    padding-top: 5px;
+}
+
+#event_grad {
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+   
+    background: -webkit-linear-gradient(transparent, transparent, transparent, white);
+     background: -o-linear-gradient(transparent, transparent, transparent, white);
+    
+    background: -moz-linear-gradient(transparent, transparent, transparent, white);
+   
+    background: linear-gradient(transparent, transparent, transparent, white);
+   
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.material-icons {
+    font-size: 6em;
+}
+
+#event ul {
+    padding-left: 30px;
+}
+
+#event ul li {
+    list-style-type: none;
+}
+
+#event {
+    border: dashed black;
+    width: 100%;
+}
+
+#event p {
+    font-size: medium;
+}
+
+#event_btn_all {
+    font-size: 1.7em;
+    width: 100%;
+    text-align: center;
+}
+
+#event_list {}
+
+.carousel-inner .item {
+    overflow: hidden;
+    max-width: 100%;
+}
+
+#content {
+    position: relative;
+    
+}
+
+.carousel-inner > .item {
+    align-items: center;
+}
+

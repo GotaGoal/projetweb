@@ -99,10 +99,95 @@
 	<nav>
 		
 	</nav>
-	<div id="contenu">
-		<h3> Une proposition d'activité ?</h3>
 
-		<form id="formulaire">
+<div class="container">
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+		<fieldset>
+			<div class="form-group">
+  				<label class="col-md-4 control-label">L'activité proposée</label>  
+  				<div class="col-md-4 inputGroupContainer">
+ 					<div class="input-group">
+  						<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  						<input  id="test" name="proposition_activite" placeholder="Activité proposée" class="form-control"  type="text" onblur="champs_requis(this.value, this.id, 'erreur_nom')">
+    				</div>
+    				<div id='erreur_nom'>Veuillez nommer votre activité</div>
+ 				</div>
+			</div>
+
+			<div class="form-group">
+  				<label class="col-md-4 control-label">Date</label>  
+  				<div class="col-md-4 inputGroupContainer">
+ 					<div class="input-group">
+  						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+  						<input id="date" name="date" placeholder="Date" class="form-control"  type="date" onblur="champs_requis(this.value, this.id, 'erreur_date')">
+    				</div>
+    				<div id='erreur_date'>Veuillez ndonner une date</div>
+ 				</div>
+			</div>
+
+			<div class="form-group">
+  				<label class="col-md-4 control-label">De</label>  
+  				<div class="col-md-4 inputGroupContainer">
+ 					<div class="input-group">
+  						<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+  						<input id="heure_debut" name="heure_debut" placeholder="debut" class="form-control"  type="time" onblur="champs_requis(this.value, this.id, 'erreur_heure_debut')">
+    				</div>
+    				<div id='erreur_heure_debut'>Veuillez donner une heure</div>
+ 				</div>
+			</div>
+
+			<div class="form-group">
+  				<label class="col-md-4 control-label">à</label>  
+  				<div class="col-md-4 inputGroupContainer">
+ 					<div class="input-group">
+  						<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+  						<input id="heure_fin" name="heure_fin" placeholder="fin" class="form-control"  type="time" onblur="champs_requis(this.value, this.id, 'erreur_heure_fin')">
+    				</div>
+    				<div id='erreur_heure_fin'>Veuillez donner une heure de fin</div>
+ 				</div>
+			</div>
+
+			<div class="form-group"> 
+  			<label class="col-md-4 control-label">Association concernée</label>
+    			<div class="col-md-4 selectContainer">
+    				<div class="input-group">
+        				<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    					<select id="association" name="association" class="form-control selectpicker" onblur="champs_requis(this.value, this.id, 'erreur_asso')">
+      						<option value="">Sélectionné une association</option>
+      						<option value="aucune">aucune</option>
+							<option value="BDE">BDE</option>
+							<option value="Japon">Japon</option>
+    					</select>
+  					</div>
+  					<div id='erreur_asso'>Veuillez définir quel association est concernée</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+  				<label class="col-md-4 control-label">Description de l'évent</label>
+    			<div class="col-md-4 inputGroupContainer">
+    				<div class="input-group">
+       					<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        				<textarea id="description" class="form-control" name="commentaire" placeholder="Description de l'évent" onblur="champs_requis(this.value, this.id, 'erreur_desc')">
+        				</textarea>
+  					</div>
+  					<div id='erreur_desc'>Veuillez donner une description</div>
+  				</div>
+			</div>
+
+			<div class="form-group">
+  				<label class="col-md-4 control-label"></label>
+  				<div class="col-md-4">
+    				<input type="submit" class="btn btn-warning" >
+  				</div>
+			</div>
+
+		</fieldset>
+	</form>
+	
+</div>
+
+		<!--<form id="formulaire">
 
 			<label  class="nom_activite" for="nom_activite">L'activité proposée* <span class="glyphicon glyphicon-tower"></span></label>
 			<input  class="nom_activite" id = "Activite" type="text" name="nom_activite" placeholder="Nom d'activité" onblur="champs_requis(this.value, this.id)"> 

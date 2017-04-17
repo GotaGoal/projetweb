@@ -48,6 +48,16 @@ class AssociationRole
     {
         return $this->id;
     }
+    
+    /**
+     * Set associations
+     *
+     * @param \BDE\PlatformBundle\Entity\Association $associations
+     *
+     * @return AssociationRole
+     */
+    
+    
 
     /**
      * Set association

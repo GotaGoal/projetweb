@@ -10,4 +10,10 @@ namespace BDE\PlatformBundle\Repository;
  */
 class RoleRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findRole($role)
+	{
+		$qb = $this->createQueryBuilder('a');
+		$qb->where('a.nom = :role')->setParameter('role',$role);
+		return $qb->getQuery()->getResult();
+	}
 }

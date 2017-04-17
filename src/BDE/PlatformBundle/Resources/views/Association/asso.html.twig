@@ -1,0 +1,119 @@
+{% extends "BDEPlatformBundle:Template:layout.html.twig" %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/assoplus.css') }}"/>
+{% endblock stylesheets %}
+{% block tittle %}<title>Association</title>{% endblock tittle %}
+
+{% block all %}
+
+<div class="all">
+ 
+    
+     
+
+ <div id="Allassos">
+
+
+        <div class="CompletAsso" >
+           <nav>
+        
+        <div id="recherche">
+            <ul><a href="{{ path('bde_view_association') }}"> <span class="glyphicon glyphicon-arrow-left"></span></a></ul>
+
+
+       
+     
+     </nav>
+
+                <div class="Ass">
+                     
+                     <div  style=" min-height: 100%; text-align: center;  border-bottom: 0.5px  solid gray; margin-left: 35%; margin-right: 35%; " ><h2>{{ association.nom }}</h2></div>
+                     <div style="display: flex; justify-content: space-between; margin:10px;  vertical-align: middle; ">
+                    
+                     <div  style="display: block; padding: 10px; border-right: 0.5px  solid gray; margin-left: 5%; padding-right: 2%;margin-top: 1%; margin-bottom: 1%;" >
+                    
+                    <div>
+                     <p>{{ association.description }}</p></div>
+                    
+                     </div>
+                      <div  style="display: flex; padding-left: 2%;flex-direction: column; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" ><img   src="{{ asset(''~ association.logo ~'') }}" class="timage"></div>
+                </div>
+              
+                
+                 </div>
+                 
+                 <div class="Ass" style="">
+  {% for presi in president %}  
+                    <div id="President" >
+                            <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" ><img  src="{{ asset(''~ presi.user.avatar ~'') }}" class="timage"></div>
+
+
+   <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" > Président - {{ presi.user.nom }} {{ presi.user.prenom }}</div>
+  {% endfor %}
+
+  {% for vicepresi in vicepresident %}
+
+  <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" ><img  src="{{ asset(''~ vicepresi.user.avatar ~'') }}" class="timage"></div>
+  
+
+  <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" >Vice-Président - {{ vicepresi.user.nom }} {{ vicepresi.user.prenom }}</div>
+  </div>
+
+{% endfor %}
+
+                    
+
+  <div style="display: flex; margin-bottom: 50px;">
+  <div id="Treso" style="width: 50%;">
+{% for treso in tresorier %}
+<div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" ><img  src="{{ asset(''~ treso.user.avatar ~'') }}" class="timage"></div>
+  <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" >Trésorier - {{ treso.user.nom }} {{ treso.user.prenom }}</div>
+{% endfor %}
+
+{% for vicetreso in vicetresorier %}
+  <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" ><img  src="{{ asset(''~ vicetreso.user.avatar ~'') }}" class="timage"></div>
+  <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" >Vice-Trésorier - {{ vicetreso.user.nom }} {{ vicetreso.user.prenom }}</div>
+{% endfor %}
+
+
+                        </div>
+                      <div id="Secre" style="width: 50%;">
+
+{% for secre in secretaire %}
+<div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" ><img  src="{{ asset(''~ secre.user.avatar ~'') }}" class="timage"></div>
+  <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" >Secrétaire - {{ secre.user.nom }} {{ secre.user.prenom }}</div>
+{% endfor %}
+
+{% for vicesecre in vicesecretaire %}
+  <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" ><img  src="{{ asset(''~ vicesecre.user.avatar ~'') }}" class="timage"></div>
+  <div  style="display: flex; padding-left: 2%; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" >Vice-Secrétaire - {{ vicesecre.user.nom }} {{ vicesecre.user.prenom }}</div>
+{% endfor %}
+                      </div>
+                      </div>
+                 </div>
+              
+
+      
+        </div>
+
+
+           
+       </div>
+     
+   </div>
+
+{% endblock all %}

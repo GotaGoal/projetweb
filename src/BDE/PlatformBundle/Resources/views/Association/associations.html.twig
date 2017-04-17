@@ -1,1 +1,64 @@
-<body></body>
+{% extends "BDEPlatformBundle:Template:layout.html.twig" %}
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ asset('css/asso.css') }}" rel="stylesheet">
+{% endblock stylesheets %}
+{% block tittle %}<title>Asso's</title>{% endblock tittle %}
+
+{% block all %}
+	<div class="all">
+    
+     
+
+ <div id="Allassos">
+<nav>
+    <div id="contenu">
+        <div id="recherche">
+        	
+        	{% for association in listAssociations %}       	
+            <ul><a href="{{ path('bde_view_association_detail', {'id' : association.id}) }}">{{ association.nom }}</a></ul>
+        	{% endfor %}
+            
+        </div>
+     
+     </nav>
+        <div class="CompletAsso" >
+
+        		{% for association in listAssociations %}       	
+            
+
+
+
+           <div class="Ass">
+                     
+                     <div  style=" min-height: 100%; text-align: center;  border-bottom: 0.5px  solid gray; margin-left: 35%; margin-right: 35%; " ><h2>{{association.nom}}</h2></div>
+                     <div style="display: flex; justify-content: space-between; margin:10px;  vertical-align: middle; ">
+                    
+                     <div  style="display: block; padding: 10px; border-right: 0.5px  solid gray; margin-left: 5%; padding-right: 2%;margin-top: 1%; margin-bottom: 1%;" >
+                    
+                    <div>
+                     <p>{{ association.description }}</p></div>
+                    <div style="float: right;"> <ul><a href="{{ path('bde_view_association_detail', {'id' : association.id}) }}"><span class="glyphicon glyphicon-plus-sign"></span> </a></ul></div>
+                     </div>
+                      <div  style="display: flex; padding-left: 2%;flex-direction: column; /* direction d'affichage verticale */
+  justify-content: center; margin:0 auto;" ><img src="{{ asset(''~ association.logo ~'') }}" class="timage"></div>
+                </div>
+                <div  style="border-bottom: 1px solid gray; margin-right: 5%;margin-left: 5%;" ></div>
+                 </div>
+
+
+
+        	{% endfor %}
+
+                
+
+      
+        </div>
+
+
+           
+       </div>
+     
+   </div>
+{% endblock all %}
+

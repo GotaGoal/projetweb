@@ -3,8 +3,10 @@
 <HEAD>
     <meta charset="utf-8" />
     <link rel="stylesheet" media="screen" href="bootstrap/css/bootstrap.min.css">
+    <script class="cssdeck" src="jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="evenement.css" />
-    <script type="text/javascript" src="proposition_activite.js"></script>
+    <script type="text/javascript" src="evenement.js"></script>
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
     <title>BDE EXIA NANCY</title>
@@ -100,96 +102,233 @@
         
     </nav>
     <div id="contenu">
-        <form method="post" id="Recherche" action="traitement.php">
-                <input type="text" name="activite_recherche" placeholder="Rechercher votre activité">
+        <div id="recherche">
 
-        </form>
-        <div class="evenement">
-            <div class="date">
-                <div class="mois">
-                    <h4>Janvier</h4>
+            <input id="Recherche" type="text" name="activite_recherche" placeholder="Rechercher votre activité">
+
+            <label class="association" for="association">Association</label>
+            <select class="association" name="association">
+                <option value="">Association</option>
+                <option value="BDE">BDE</option>
+                <option value="Japon">Japon</option>
+            </select>           
+
+            <!--<div id=calendrier>
+
+               </div>
+               <div id="Mois">
+                    <button id="button1" type="button" class="btn btn-default btn-xs pull-left" onclick="change_mois_moins()">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <span id="mois">Avril</span><span> </span><span id="annee">2017</span>
+                    <button id="button2" type="button" class="btn btn-default btn-xs pull-right" onclick="change_mois_plus()">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
                 </div>
-                <div class="numero">
-                    <h1>31</h1>
+                <div id="Jour">
+                    <span class="jour">Lun</span><span class="jour">Mar</span><span class="jour">Mer</span><span class="jour">Jeu</span><span class="jour">Ven</span><span class="jour">Sam</span><span class="jour">Dim</span>
                 </div>
-            </div>
-            <div class="description_evenement">
-                <div class="titre_asso">
-                    <div class="Titre">
-                        <ul>Titre</ul>
-                    </div>
-                    <div class="Association">
-                        <ul>Asso</ul>
-                    </div>
+                <div id="Chiffre">
+
+                    
                 </div>
-                <div class="descri_photo">
-                    <div class="description">
-                        <ul>légère description</ul>
-                    </div>
-                    <div class="photo_ensemble">
-                        <img src="image/image4.jpg" class="photo">
-                    </div>
-                </div>
-            </div>
+            </div>-->
+
+            <form id="Proposer" action="#">
+                <input type="submit" value="Proposer activité" />
+            </form>
         </div>
 
-        <hr class="separateur">
+        <div id="liste_event">
 
-        <div class="evenement">
-            <div class="date">
-                <div class="mois">
-                    <h4>Janvier</h4>
-                </div>
-                <div class="numero">
-                    <h1>31</h1>
-                </div>
-            </div>
-            <div class="description_evenement">
-                <div class="titre_asso">
-                    <div class="Titre">
-                        <ul>Titre</ul>
+            <ul class="nav nav-tabs">
+                <li >
+                    <a data-toggle="tab" href="#Propose">
+                        Proposé
+                    </a>
+                </li>
+                <li class="active">
+                    <a data-toggle="tab" href="#Approuve"> 
+                        Approuvé
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="Approuve" class="tab-pane fade in active">
+                    <div class="evenement">
+                        <div class="date_actif">
+                            <div class="mois">
+                                <h4>Janvier</h4>
+                            </div>
+                            <div class="numero">
+                                <h1>31</h1>
+                            </div>
+                        </div>
+                        <div class="description_evenement">
+                            <div class="titre_asso">
+                                <div class="Titre">
+                                    <ul>Titre</ul>
+                                </div>
+                                <div class="Association">
+                                    <ul>Asso</ul>
+                                </div>
+                            </div>
+                            <div class="descri_photo">
+                                <div class="description">
+                                    <div class="mini_description">
+                                        légère description
+                                    </div>
+                                    <ul>
+                                        <a href="https://exia.cesi.fr/" style="text-decoration:none">
+                                            <span class="site pull-right">
+                                                s'inscrire
+                                            </span>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="photo_ensemble">
+                                    <img src="image/image4.jpg" class="photo">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="Association">
-                        <ul>Asso</ul>
-                    </div>
-                </div>
-                <div class="descri_photo">
-                    <div class="description">
-                        <ul>légère description</ul>
-                    </div>
-                    <div class="photo_ensemble">
-                        <img src="image/image6.jpg" class="photo">
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <hr class="separateur">
-        
-        <div class="evenement">
-            <div class="date">
-                <div class="mois">
-                    <h4>Janvier</h4>
-                </div>
-                <div class="numero">
-                    <h1>31</h1>
-                </div>
-            </div>
-            <div class="description_evenement">
-                <div class="titre_asso">
-                    <div class="Titre">
-                        <ul>Titre</ul>
+                        <ul class="separateur_haut">
+                            <span class="glyphicon glyphicon-arrow-up">
+                            </span>
+                            <span>
+                                 A venir 
+                            </span>
+                            <span class="glyphicon glyphicon-arrow-up">    
+                            </span>
+                        </ul>
+
+                    <div class="evenement">
+                        <div class="date_actif">
+                            <div class="mois">
+                                <h4>Janvier</h4>
+                            </div>
+                            <div class="numero">
+                                <h1>31</h1>
+                            </div>
+                        </div>
+                        <div class="description_evenement">
+                            <div class="titre_asso">
+                                <div class="Titre">
+                                    <ul>Titre</ul>
+                                </div>
+                                <div class="Association">
+                                    <ul>Asso</ul>
+                                </div>
+                            </div>
+                            <div class="descri_photo">
+                                <div class="description">
+                                    <div class="mini_description">
+                                        légère description
+                                    </div>
+                                    <ul>
+                                        <a href="https://exia.cesi.fr/" style="text-decoration:none">
+                                            <span class="site pull-right">
+                                               s'inscrire
+                                            </span>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="photo_ensemble">
+                                    <img src="image/image6.jpg" class="photo">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="Association">
-                        <ul>Asso</ul>
+
+                    <ul class="separateur_bas">
+                        <span class="glyphicon glyphicon-arrow-down">
+                        </span>
+                        <span> 
+                            Déjà passé 
+                        </span>
+                        <span class="glyphicon glyphicon-arrow-down">
+                        </span>
+                    </ul>
+                    
+                    <div class="evenement">
+                        <div class="date_actif">
+                            <div class="mois">
+                                <h4>Janvier</h4>
+                            </div>
+                            <div class="numero">
+                                <h1>31</h1>
+                            </div>
+                        </div>
+                        <div class="description_evenement">
+                            <div class="titre_asso">
+                                <div class="Titre">
+                                    <ul>Titre</ul>
+                                </div>
+                                <div class="Association">
+                                    <ul>Asso</ul>
+                                </div>
+                            </div>
+                            <div class="descri_photo">
+                                <div class="description">
+                                    <div class="mini_description">
+                                        légère description
+                                    </div>
+                                    <ul>
+                                        <a href="https://exia.cesi.fr/" style="text-decoration:none">
+                                            <span class="site pull-right">
+                                               s'inscrire
+                                            </span>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="photo_ensemble">
+                                    <img src="image/image5.jpg" class="photo">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="descri_photo">
-                    <div class="description">
-                        <ul>légère description</ul>
-                    </div>
-                    <div class="photo_ensemble">
-                        <img src="image/image5.jpg" class="photo">
+                <div id="Propose" class="tab-pane fade">
+                    <div class="evenement">
+                        <div class="liste_date">
+                            <div class="date">
+                                <div class="mois">
+                                    <h4>Janvier</h4>
+                                </div>
+                                <div class="numero">
+                                    <h1>31</h1>
+                                </div>
+                            </div>
+                            <div class="date">
+                                <div class="mois">
+                                    <h4>Janvier</h4>
+                                </div>
+                                <div class="numero">
+                                    <h1>42</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description_evenement">
+                            <div class="titre_asso">
+                                <div class="Titre">
+                                    <ul>Titre</ul>
+                                </div>
+                                <div class="Association">
+                                    <ul>Asso</ul>
+                                </div>
+                            </div>
+                            <div class="descri_photo">
+                                <div class="description">
+                                    <div class="mini_description">
+                                        légère description
+                                    </div>
+                                </div>
+                                <div class="photo_ensemble">
+                                    <img src="image/image5.jpg" class="photo">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
