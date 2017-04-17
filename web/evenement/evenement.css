@@ -292,9 +292,14 @@ body {
     padding-bottom: 2%;
     width: 90%;
 }
+.date_actif
+{
+    width: 10%
+}
 .date
 {
-    width: 10%;
+    width: 100%;
+    margin-bottom: 5px;
 }
 .mois
 {
@@ -371,7 +376,7 @@ body {
 }
 .mini_description
 {
-    height: 90%;
+    height: 80%;
 }
 @media screen and (max-width: 800px)
 {
@@ -423,10 +428,12 @@ body {
 {
     color: #000000;
     padding: 1px;
+    border-width: 1px;
+    border-style: solid;
     transition: 0.3s;
-    bottom: 0px;
 }
 .site:hover
 {
     color: red;
+    border-radius: 10px;
 }
