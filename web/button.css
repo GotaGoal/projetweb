@@ -6,14 +6,20 @@
 }
 button {
     display: inline-block;
+    /*box-shadow: 4px 4px 10px grey;*/
     font-size: 1.2em;
     text-align: center;
     padding: 10px 15px;
     color: black;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     outline: 0;
     cursor: pointer;
-    font-family: arial,ssans,sans-serif;
+    font-family: arial, ssans, sans-serif;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
 }
 .button-outline.btn-bleu{
     color: blue;
@@ -53,6 +59,6 @@ button {
     border-color: gray;
     background-color: whitesmoke;
 }
-.button-outline:hover{
-    background-color: whitesmoke;
+button:hover{
+    box-shadow: 4px 4px 20px grey;
 }
