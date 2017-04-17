@@ -15,3 +15,13 @@ bde_admin_edit_carousel:
 bde_view_association:
     path: /associations
     defaults: { _controller: BDEPlatformBundle:Bde:associations }
+
+bde_view_association_detail:
+    path: /associations/view/{id}
+    defaults: { _controller: BDEPlatformBundle:Bde:viewassociation }
+    requirements:
+      id: \d+
+
+bde_test:
+    path: /test
+    defaults: { _controller: BDEPlatformBundle:Bde:test }

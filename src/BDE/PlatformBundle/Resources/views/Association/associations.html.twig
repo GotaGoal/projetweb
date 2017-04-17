@@ -6,7 +6,7 @@
 {% block tittle %}<title>Asso's</title>{% endblock tittle %}
 
 {% block all %}
-	    <div class="all">
+	<div class="all">
     
      
 
@@ -14,51 +14,44 @@
 <nav>
     <div id="contenu">
         <div id="recherche">
-        	{% for list in listid %}
-        		
         	
-            <ul><a href=""></a>{{ list }}</ul>
-            <ul><a href="">goodies</a></ul>
-            <ul><a href="">autre</a></ul>
-            {% endfor %}
+        	{% for association in listAssociations %}       	
+            <ul><a href="{{ path('bde_view_association_detail', {'id' : association.id}) }}">{{ association.nom }}</a></ul>
+        	{% endfor %}
+            
         </div>
      
      </nav>
         <div class="CompletAsso" >
-                <div class="Ass">
+
+        		{% for association in listAssociations %}       	
+            
+
+
+
+           <div class="Ass">
                      
-                     <div  style=" min-height: 100%; text-align: center;  border-bottom: 0.5px  solid gray; margin-left: 35%; margin-right: 35%; " ><h2>Titre</h2></div>
+                     <div  style=" min-height: 100%; text-align: center;  border-bottom: 0.5px  solid gray; margin-left: 35%; margin-right: 35%; " ><h2>{{association.nom}}</h2></div>
                      <div style="display: flex; justify-content: space-between; margin:10px;  vertical-align: middle; ">
                     
                      <div  style="display: block; padding: 10px; border-right: 0.5px  solid gray; margin-left: 5%; padding-right: 2%;margin-top: 1%; margin-bottom: 1%;" >
                     
                     <div>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu ut est dapibus cursus in vel ipsum. Nulla ut est felis. Mauris ut volutpat erat, ac pretium ipsum. Phasellus quis imperdiet erat. Duis efficitur eros ac rutrum egestas. Phasellus tristique venenatis dolor quis consequat. Maecenas porttitor blandit felis eget congue. Donec vitae elit ut turpis sagittis faucibus. Aenean vestibulum pretium nisi sed suscipit. Nullam et lacinia turpis, at viverra mauris. Ut iaculis gravida dolor et sodales. Duis facilisis, velit et fringilla pretium, ipsum velit maximus nibh, quis imperdiet sapien nulla a ligula. Aenean tincidunt ligula neque, vitae lobortis mauris sagittis ac. Mauris iaculis ipsum ac nisi tempor dapibus. Aliquam sed erat vel felis consequat pretium.</p></div>
-                    <div style="float: right;"> <ul><a href="file:///C:/wamp64/www/projetweb/web/Association_Plus.html"><span class="glyphicon glyphicon-plus-sign"></span> </a></ul></div>
+                     <p>{{ association.description }}</p></div>
+                    <div style="float: right;"> <ul><a href="{{ path('bde_view_association_detail', {'id' : association.id}) }}"><span class="glyphicon glyphicon-plus-sign"></span> </a></ul></div>
                      </div>
                       <div  style="display: flex; padding-left: 2%;flex-direction: column; /* direction d'affichage verticale */
-  justify-content: center; margin:0 auto;" ><img src="Unicornt.png" class="timage"></div>
+  justify-content: center; margin:0 auto;" ><img src="{{ asset(''~ association.logo ~'') }}" class="timage"></div>
                 </div>
                 <div  style="border-bottom: 1px solid gray; margin-right: 5%;margin-left: 5%;" ></div>
                  </div>
 
 
-                    <div class="Ass">
-                     
-                     <div  style=" min-height: 100%; text-align: center;  border-bottom: 0.5px  solid gray; margin-left: 35%; margin-right: 35%; " ><h2>Titre</h2></div>
-                     <div style="display: flex; justify-content: space-between; margin:10px;  vertical-align: middle; ">
-                    
-                     <div  style="display: block; padding: 10px; border-right: 0.5px  solid gray; margin-left: 5%; padding-right: 5%;margin-top: 1%; margin-bottom: 1%;" >
-                    
-                    <div>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis arcu ut est dapibus cursus in vel ipsum. Nulla ut est felis. Mauris ut volutpat erat, ac pretium ipsum. Phasellus quis imperdiet erat. Duis efficitur eros ac rutrum egestas. Phasellus tristique venenatis dolor quis consequat. Maecenas porttitor blandit felis eget congue. Donec vitae elit ut turpis sagittis faucibus. Aenean vestibulum pretium nisi sed suscipit. Nullam et lacinia turpis, at viverra mauris. Ut iaculis gravida dolor et sodales. Duis facilisis, velit et fringilla pretium, ipsum velit maximus nibh, quis imperdiet sapien nulla a ligula. Aenean tincidunt ligula neque, vitae lobortis mauris sagittis ac. Mauris iaculis ipsum ac nisi tempor dapibus. Aliquam sed erat vel felis consequat pretium.</p></div>
-                    <div style="float: right;"><ul><a href="file:///C:/wamp64/www/projetweb/web/Association_Plus.html"><span class="glyphicon glyphicon-plus-sign"></span></ul></a></div>
-                     </div>
-                      <div  style="display: flex; padding-left: 2%;flex-direction: column; /* direction d'affichage verticale */
-  justify-content: center; margin:0 auto;" ><img   src="Unicornt.png" class="timage"></div>
-                </div>
-                <div  style="border-bottom: 1px solid gray; margin-right: 5%;margin-left: 5%;" ></div>
-                 </div>
+
+        	{% endfor %}
+
+                
+
       
         </div>
 
@@ -68,3 +61,4 @@
      
    </div>
 {% endblock all %}
+

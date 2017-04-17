@@ -10,4 +10,10 @@ namespace BDE\PlatformBundle\Repository;
  */
 class AssociationRoleRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findRoleAssociation($asso,$role)
+	{
+		$qb = $this->createQueryBuilder('a');
+		$qb->where('a.association = :asso')->andWhere('a.role = :role')->setParameter('asso',$asso)->setParameter('role',$role);
+		return $qb->getQuery()->getResult();
+	}
 }

@@ -10,6 +10,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use BDE\PlatformBundle\Entity\Carousel;
 use BDE\PlatformBundle\Entity\AssociationRole;
 use BDE\PlatformBundle\Entity\Role;
+use BDE\UserBundle\Entity\User;
+use BDE\PlatformBundle\Repository\AssociationRoleRepository;
+use BDE\PlatformBundle\Repository\RoleRepository;
 use BDE\PlatformBundle\Entity\Association;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -143,23 +146,79 @@ class BdeController extends Controller
 
     public function associationsAction(Request $request)
     {
-        $asso = new Association();
+        //$asso = new Association();
         $em = $this->getDoctrine()->getManager();
         
-        $listAssociations = $em->getRepository('BDEPlatformBundle:Association')->findAll();
-        
-        foreach ($listAssociations as $asso) {
-            $listid[] = $asso->getId();
+        $listAssociations = $em->getRepository('BDEPlatformBundle:Association')->findAll();        
+        return $this->render('BDEPlatformBundle:Association:associations.html.twig',array('listAssociations'=>$listAssociations));
+    }
 
+    public function viewassociationAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $association = $em->getRepository('BDEPlatformBundle:Association')->find($id);
+
+        $presi = $em->getRepository('BDEPlatformBundle:Role')->findRole("Président");
+        $vicepre = $em->getRepository('BDEPlatformBundle:Role')->findRole("Vice-président");
+        $treso = $em->getRepository('BDEPlatformBundle:Role')->findRole("Trésorier");
+        $vicetres = $em->getRepository('BDEPlatformBundle:Role')->findRole("Vice-trésorier");
+        $secre = $em->getRepository('BDEPlatformBundle:Role')->findRole("Secrétaire");
+        $vicesecre = $em->getRepository('BDEPlatformBundle:Role')->findRole("Vice-secrétaire");
+        
+        
+        $president = $em->getRepository('BDEPlatformBundle:AssociationRole')->findRoleAssociation($association,$presi);
+        $vicepresident = $em->getRepository('BDEPlatformBundle:AssociationRole')->findRoleAssociation($association,$vicepre);
+        $tresorier = $em->getRepository('BDEPlatformBundle:AssociationRole')->findRoleAssociation($association,$treso);
+        $vicetresorier = $em->getRepository('BDEPlatformBundle:AssociationRole')->findRoleAssociation($association,$vicetres);
+        $secretaire = $em->getRepository('BDEPlatformBundle:AssociationRole')->findRoleAssociation($association,$secre);
+        $vicesecretaire = $em->getRepository('BDEPlatformBundle:AssociationRole')->findRoleAssociation($association,$vicesecre);
+
+        if($vicetresorier == null)
+        {
+            $vicetresorier = $tresorier;
         }
-        print_r($listid);
-        //return new Response("lol");
 
+        if($vicepresident == null)
+        {
+            $vicepresident = $president;
+        }
+
+        if($vicesecretaire == null)
+        {
+            $vicesecretaire = $secretaire;
+        }
+
+        return $this->render('BDEPlatformBundle:Association:asso.html.twig', array('association'=>$association,'president'=>$president, 'vicepresident'=>$vicepresident,'tresorier'=>$tresorier,'vicetresorier'=>$vicetresorier,'secretaire'=>$secretaire,'vicesecretaire'=>$vicesecretaire));
+
+
+    }
+
+    public function testAction(Request $request)
+    {
+        $asso = new Association;
+        $user = new User;
+        $role = new Role;
+        $em = $this->getDoctrine()->getManager();
+        $listidUser = array(1,2);
+        $listidRole = array(7,8);
+        $listidAssociation = array(4,4);
         
-            //echo $allassociations->getUser()->getNom();
-            //return new Response("tets");
-        
-        return $this->render('BDEPlatformBundle:Association:associations.html.twig',array('listid'=>$listid));
+        for ($i=0; $i <sizeof($listidUser) ; $i++) { 
+            $association = new AssociationRole;
+
+            $asso = $em->getRepository('BDEPlatformBundle:Association')->find($listidAssociation[$i]);
+            $association->setAssociation($asso);
+
+            $user = $em->getRepository('BDEUserBundle:User')->find($listidUser[$i]);
+            $association->setUser($user);
+
+            $role = $em->getRepository('BDEPlatformBundle:Role')->find($listidRole[$i]);
+            $association->setRole($role);
+
+            $em->persist($association);
+        }
+        $em->flush();
+        return new Response("coucou");
     }
 
     

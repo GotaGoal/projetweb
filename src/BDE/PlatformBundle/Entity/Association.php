@@ -21,30 +21,30 @@ class Association
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    public $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
      */
-    protected $nom;
+    public $nom;
 
     /**
      * @var string
      *
      * @ORM\Column(name="description", type="text")
      */
-    protected $description;
+    public $description;
 
     /**
      * @var string
      *
      * @ORM\Column(name="logo", type="string", length=255)
      */
-    protected $logo;
+    public $logo;
 
-    protected $roles;
+    public $roles;
 
 
     /**

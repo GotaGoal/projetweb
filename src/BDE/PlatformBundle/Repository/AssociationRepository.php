@@ -10,4 +10,5 @@ namespace BDE\PlatformBundle\Repository;
  */
 class AssociationRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }
