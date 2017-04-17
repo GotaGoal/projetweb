@@ -75,22 +75,9 @@ header {
 }
 
 
-<<<<<<< HEAD
-
-
-@media(max-width:8000px) {
-        #nav2 {
-            display: block;
-        }
-        #nav1 {
-            display: none;
-        }
-
-=======
 @media(max-width:8000px) {
     #nav2.navbar {
         display: block;
->>>>>>> origin/master
     }
     
     #nav1.navbar {
@@ -103,8 +90,6 @@ header {
 }
 
 
-<<<<<<< HEAD
-=======
 @media (max-width: 768px) {
  
     
@@ -167,20 +152,11 @@ header {
         padding-bottom: 10px;
     }
 }
->>>>>>> origin/master
 
 html,body{
     font-family: arial,ssans,sans-serif;
     font-weight: 400;
    
-<<<<<<< HEAD
-    #nav1 { display: block; }
-
-}
-
-
-=======
->>>>>>> origin/master
 
 }
 footer{
