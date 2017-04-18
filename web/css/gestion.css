@@ -14,9 +14,6 @@ body {
         width: 33%;
         align-items: center;
     }
-    
-
-
  
     .col-xs-2 {
          
@@ -190,160 +187,248 @@ body {
 */
 #contenu
 {
-	display: flex;
-	max-width: 1100px;
-	margin:auto;
-	background-color: #ffffff;
+    max-width: 1100px;
+    margin: 0% auto;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    display: flex;
+    padding-bottom: 10px;
 }
-#Recherche
+#gestion
 {
-	max-width: 1100px
-	background-color: #ffffff;
-    text-align : center;
-    margin: auto auto 10px auto;
+    width: 100%;
 }
-#Recherche input
+#Approuve
 {
-    width: 600px;
+    height: 450px;
+    overflow: auto;
 }
-#recherche
+
+.evenement
 {
-	background-color: #ffffff;
-	width: 20%;
-	min-width: 150px;
-	min-height: 100%;
-	border-width: 0px 2px 0px 0px;
-	border-style: solid;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 90%;
 }
-#recherche form
+.date_actif
 {
-	display: block;
+    width: 10%
 }
-#recherche input
+.date
 {
-	width: 80%;
-	margin : auto;
-	margin-bottom: 5px;
+    width: 100%;
+    margin-bottom: 5px;
 }
-.proposition
+.mois
 {
-	color: #000000;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
 }
-.proposition:hover
+.numero
 {
-	color: red;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
 }
-#recherche input[type=range] 
+.description_evenement
 {
-    -webkit-appearance: none;
-    background-color: silver;
-    height:5px;
-    -webkit-border-radius: 1em;
-	}
-#recherche input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    background-color: #660066;
-    width: 15px;
-    height: 15px;
-    -webkit-border-radius: 1em;
-    border-radius: 1em;
+    width: 90%;
+    margin-left: 2%;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
 }
-#amount
+.titre_asso
 {
-	width: 10%;
-	margin-left : 47%;
+    display: flex;
+    width: 100%;
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+
 }
-#catalogue
+.Titre
 {
-	width: 80%;
-	padding: 5px;
-	align-items: center;
+    width: 50%;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
 }
-.image1
+.Association
 {
-	max-width: 100%;
-	min-width: 290px;
-	min-height: 255px;
-	max-height: 255px;
-	margin: auto;
-	border-width: 0px 1px 0px 0px;
-	border-style: solid;
+    width: 50%;
 }
-.image1 a
+.descri_photo
 {
-	color: #000000;
+    display: flex;
+    width: 100%;
 }
-.image1 img
+.description
 {
-	width: 100%
+    width: 50%;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;       
 }
-.delimitation
+.photo_ensemble
+{
+    width: 50%;
+}
+.photo
+{
+    width: 100%;
+}
+.separateur_haut
 {
     border-style: solid;
     width: 90%;
-    border-width: 1px 0 0 0;
+    border-width: 0px 0px 2px 0px;
     border-color: #000000;
+    margin:  5px auto 0px auto;
+    text-align: center;
+}
+.separateur_bas
+{
+    border-style: solid;
+    width: 90%;
+    border-width: 2px 0px 0px 0px;
+    border-color: #000000;
+    margin: auto;
+    text-align: center;
+}
+.mini_description
+{
+    height: 80%;
+}
+.site
+{
+    color: #000000;
+    background-color: #ffffff;
+    padding: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+    transition: 0.3s;
+    bottom: 0px;
+    margin-left: 3px;
+}
+.site:hover
+{
+    color: red;
+    border-color: red;
+    border-radius: 10px;
+}
+.photo_g
+{
+    min-width: 25%;
+    padding: 1%;
+}
+.photo_g img
+{
+    width: 100%;
+    margin-bottom: 5px;
 }
 .article
 {
-	width: 100%;
+    width: 100%;
 }
-.article button
+.image1
 {
-	width: 80%;
-	margin: auto;
-	display: none;
+    max-width: 100%;
+    min-width: 33%;
+    min-height: 255px;
+    max-height: 255px;
+    margin: 1% auto 1% auto;
 }
-.article:hover > button
+.image1 a
 {
-	display: block;
+    color: #000000;
+}
+.image1 img
+{
+    width: 100%
+    max-height : 300px;
 }
 .text
 {
-	height: 40px;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	margin-bottom: 1%
-	color : #000000;
+    height: 20%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 1%
+    color : #000000;
 }
-
-
-@media screen and (max-width: 600px)
+@media screen and (max-width: 800px)
 {
-	#contenu
-	{
-		display: block;
-		max-width: 100%;
-		margin: auto;
-	}
-	#recherche
-	{
-		background-color: #ffffff;
-		width: 100%;
-		min-width: 150px;
-		min-height: 100%;
-	}
-	#Recherche input
-	{
-		max-width: 100%;
-	}
-	.image1
-	{
-		min-width: 100%;
-		min-height: 400px;
-		margin: 1% 0% 1% 0%;
-		border-width: 0px 1px 0px 0px;
-		border-style: solid;
-	}
-	#catalogue
-	{
-		width: 100%;
-		padding: 5px;
-		align-items: center;
-	}
-	body
-	{
-		background-color: #ffffff;
-	}
+    #contenu
+    {
+        display: block;
+    }
+    #Recherche
+    {
+        width: 80%;
+        margin: 10px auto;
+    }
+    #recherche
+    {
+        width: 100%;
+        border-width: 0px;
+    }
+    #Proposer input
+    {
+        max-width: 80%
+    }
+    #list_event;
+    {
+        width: 100%;
+    }
+    .liste_date
+    {
+        width: 25%;
+    }
+    .date_actif
+    {
+        margin: 0 0 auto;
+        width: 25%;
+    }
+    .date
+    {
+        margin: 0 0 auto;
+        width: 100%;
+    }
+    .description_evenement
+    {
+        width: 75%;
+        margin-left: 3%;
+        border-style: solid;
+        border-width: 1px 1px 1px 1px;
+    }
+    .Titre
+    {
+        width: 100%;
+        border-style: solid;
+        border-width: 0px 0px 1px 0px;
+    }
+    .Association
+    {
+        display: none;
+        width: 0%;
+    }
+    .description
+    {
+        width: 100%;
+        border-style: solid;
+        border-width: 0px 0px 0px 0px;       
+    }
+    .photo_ensemble
+    {
+        width: 0%;
+    }
+    .image1
+    {
+        min-width: 100%;
+        min-height: 400px;
+        margin: 1% 0% 1% 0%;
+        border-width: 0px 1px 0px 0px;
+        border-style: solid;
+    }
+
 }

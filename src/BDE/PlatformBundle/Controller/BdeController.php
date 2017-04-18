@@ -72,7 +72,9 @@ class BdeController extends Controller
 
     public function boutiqueAction()
     {
-    	return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $listCategorie = $em->getRepository('BDEPlatformBundle:Categorie')->findAll();
+    	return $this->render('BDEPlatformBundle:Boutique:boutique.html.twig',array('listCategorie'=>$listCategorie));
     }
 
     public function galerieAction()
@@ -196,6 +198,7 @@ class BdeController extends Controller
 
     }
 
+
     public function testAction(Request $request)
     {
         //ajout utilisateur role 
@@ -284,6 +287,7 @@ class BdeController extends Controller
 
         $manager->flush();
         */
+        /*
         $vetement = new Categorie;
         $goodies = new Categorie;
         $autre = new Categorie;
@@ -329,6 +333,8 @@ class BdeController extends Controller
 
 
         $em->flush();
+
+        */
         
     }
 
