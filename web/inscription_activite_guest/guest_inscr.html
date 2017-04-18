@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="guest_inscr.css">
+    <title>Inscription</title>
 </head>
 <body>
-
+<div id="formulaire">
+    <form>
+        <div class="form-group">
+            <div class="input-group input-texte">
+                <span class="input-group-addon"><i class="material-icons">person</i></span>
+                <input id="name" name="name" placeholder="Nom Prénom" class="form-control input"  type="text">
+            </div>
+            <div class="input-group input-texte">
+                <span class="input-group-addon"><i class="material-icons">mail</i></span>
+                <input id="mail" name="email" placeholder="Adresse mail" class="form-control input" type="email">
+            </div>
+            <div class="input-group input-texte">
+                <span class="input-group-addon"><i class="material-icons">person_pin</i></span>
+                <input id="contact" name="contact" placeholder="Contact avec l'école" class="form-control input" type="text">
+            </div>
+            <input class="send" type="submit">
+        </div>
+    </form>
+</div>
 </body>
 </html>

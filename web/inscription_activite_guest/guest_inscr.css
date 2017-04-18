@@ -1,0 +1,15 @@
+.input{
+    height: 100%;
+}
+.input-texte{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+#formulaire{
+    background-color: grey;
+    padding: 4% 2% 1% 2%;
+    width: 60%;
+    height: auto;
+    border-radius: 25px;
+}
