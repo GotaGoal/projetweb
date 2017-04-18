@@ -380,18 +380,41 @@ body {
 }
 @media screen and (max-width: 800px)
 {
+    #contenu
+    {
+        display: block;
+    }
+    #Recherche
+    {
+        width: 80%;
+        margin: 10px auto;
+    }
     #recherche
     {
-        width: 30%;
+        width: 100%;
+        border-width: 0px;
+    }
+    #Proposer input
+    {
+        max-width: 80%
     }
     #list_event;
     {
-        width: 70%;
+        width: 100%;
+    }
+    .liste_date
+    {
+        width: 25%;
+    }
+    .date_actif
+    {
+        margin: 0 0 auto;
+        width: 25%;
     }
     .date
     {
         margin: 0 0 auto;
-        width: 25%;
+        width: 100%;
     }
     .description_evenement
     {
