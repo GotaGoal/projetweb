@@ -192,9 +192,17 @@ footer{
 #header-title, #header-pre-nav{
     background-color: #C2242A;
 }
+.header-guest{
+    max-width: 570px;
+}
+.header-logged{
+    max-width: 768px;
+}
 #header-nav{
     margin-top: -25px;
     float: bottom;
+    margin-left:auto;
+    margin-right: auto;
 }
 #panier{
     padding: 15px 15px 10px;
