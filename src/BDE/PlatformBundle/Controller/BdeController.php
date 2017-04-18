@@ -198,6 +198,38 @@ class BdeController extends Controller
 
     }
 
+    public function compteAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        //$user = $em->getRepository('BDEUserBundle:User')->find($this->getUser());
+
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserBy(array('nom'=>$this->getUser()->getNom()));
+
+        if($request->isMethod('POST'))
+        {
+            //$user_nom = $request->get('user_nom');
+            //$user_prenom = $request->get('user_prenom');
+            echo $user->getNom();
+            $user->setNom($request->get('user_nom'));
+            //echo $user_prenom;
+            //$user->setPrenom($user_prenom);
+            $userManager->updateUser($user);
+            //$em->persist($user);
+            //$em->flush();
+            //$form->handleRequest($request);
+            /*if($form->isValid())
+            {
+                $carousel_modif = $em->getRepository('BDEPlatformBundle:Carousel')->find($id);
+                $formCarousel->upload();
+                $carousel_modif->setPath($formCarousel->getPath());
+                $em->persist($carousel_modif);
+                $em->flush();
+            }*/
+        }
+        return $this->render('BDEPlatformBundle:Compte:compte.html.twig',array('user'=>$user));
+    }
+
 
     public function testAction(Request $request)
     {

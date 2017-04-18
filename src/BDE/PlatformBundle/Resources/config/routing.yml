@@ -29,3 +29,7 @@ bde_test:
 bde_boutique:
     path: /boutique
     defaults: { _controller: BDEPlatformBundle:Bde:boutique }
+
+bde_moncompte:
+    path: /profil
+    defaults: { _controller: BDEPlatformBundle:Bde:compte }
