@@ -1,9 +1,9 @@
 {% extends "BDEPlatformBundle:Template:layout.html.twig" %}
 {% block stylesheets %}
   {{ parent() }}
-  <link rel="stylesheet" href="{{ asset('css/assoplus.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/boutique.css') }}"/>
 {% endblock stylesheets %}
-{% block tittle %}<title>Association</title>{% endblock tittle %}
+{% block tittle %}<title>Boutique</title>{% endblock tittle %}
 
 {% block all %}
 	 <form method="post" id="Recherche" action="traitement.php">
@@ -13,13 +13,10 @@
     <div id="contenu">
         
         <div id="recherche">
-            <ul><a href="" style="text-decoration:none"><span class="proposition">Vêtement</span></a></ul>
+            {% for categorie in listCategorie %}
+            <ul style="margin-top: 20px;"><a href="" style="text-decoration:none;"><span class="proposition" style="padding-top: 20px;">{{ categorie.nom }}</span></a></ul>
             <hr class="delimitation">
-            <ul><a href="" style="text-decoration:none"><span class="proposition">goodies</span></a></ul>
-            <hr class="delimitation">
-            <ul><a href="" style="text-decoration:none"><span class="proposition">autre</span></a></ul>
-            <hr class="delimitation">
-
+        {% endfor %}
             <form>
                 <input type="range" name="prix" min="0" max="100" value="50" onchange="showAmount(this.value)">
                 <span id="amount">50</span>

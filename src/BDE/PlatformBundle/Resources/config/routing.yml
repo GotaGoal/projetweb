@@ -25,3 +25,7 @@ bde_view_association_detail:
 bde_test:
     path: /test
     defaults: { _controller: BDEPlatformBundle:Bde:test }
+
+bde_boutique:
+    path: /boutique
+    defaults: { _controller: BDEPlatformBundle:Bde:boutique }
