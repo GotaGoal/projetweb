@@ -224,3 +224,7 @@ footer{
         font-size: 1.5em;
     }
 }
+#contenu{
+    max-width: 1000px;
+    margin: auto;
+}
