@@ -1,0 +1,126 @@
+{% extends "BDEPlatformBundle:Template:layout.html.twig" %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/assoplus.css') }}"/>
+{% endblock stylesheets %}
+{% block tittle %}<title>Association</title>{% endblock tittle %}
+
+{% block all %}
+	 <form method="post" id="Recherche" action="traitement.php">
+        <input type="text" name="activite_article" placeholder="Rechercher votre article">
+
+    </form>
+    <div id="contenu">
+        
+        <div id="recherche">
+            <ul><a href="" style="text-decoration:none"><span class="proposition">Vêtement</span></a></ul>
+            <hr class="delimitation">
+            <ul><a href="" style="text-decoration:none"><span class="proposition">goodies</span></a></ul>
+            <hr class="delimitation">
+            <ul><a href="" style="text-decoration:none"><span class="proposition">autre</span></a></ul>
+            <hr class="delimitation">
+
+            <form>
+                <input type="range" name="prix" min="0" max="100" value="50" onchange="showAmount(this.value)">
+                <span id="amount">50</span>
+            </form>
+            
+
+        </div>
+        <div id="catalogue">
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                    <img src="image/image1.jpg">
+                    <div class="text">
+                        petite description qui a un minimum de sens pour voir les limites et l'efficaticité du machin qui n'est toujours pas assez long pour voir la différence
+                    </div>
+                    <ul>Prix</ul>
+                    <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <img src="image/image2.jpg">
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul>Prix</ul>
+                        <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <img src="image/image3.png">
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul>Prix</ul>
+                        <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <img src="image/image4.jpg">
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul>Prix</ul>
+                        <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <img src="image/image5.jpg">
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul>Prix</ul>
+                        <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <img src="image/image6.jpg">
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul>Prix</ul>
+                        <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <img src="image/image7.jpg">
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul>Prix</ul>
+                        <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <img src="image/image8.png">
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul>Prix</ul>
+                        <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <img src="image/image9.jpg">
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul>Prix</ul>
+                        <button type="button">Ajouter au panier</button>
+                    </a>
+                </div>
+        </div>
+        
+    </div>
+
+{% endblock all %}
