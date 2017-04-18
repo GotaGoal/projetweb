@@ -30,7 +30,7 @@
         <div id="header-title">
             <div class="row" id="content-header">
                 <div class="col-xs-3 col-centered">
-                    <img id="image" src="img/Logo.png" /></div>
+                    <img id="image" src="{{ asset ('img/Logo.png') }}" /></div>
                 <div class="col-xs-3 col-centered">
                     <h1 id="titre">BDE Nancy Exia</h1></div>
                 <div class="col-xs-3 col-centered">
@@ -40,6 +40,7 @@
         </div>
         <div id="header-pre-nav" style="width: 100%; height: 25px"></div>
 
+        
 
 
         <div id="header-nav" class="header-logged">
@@ -81,6 +82,9 @@
                 </nav>
         </div>
 
+{% for roles in app.user.roles %}
+            {{ roles }}
+        {% endfor %}
         
         <!--<div id="header-nav" class="header-guest">-->
         <!--<nav class="navbar navbar-default">-->
