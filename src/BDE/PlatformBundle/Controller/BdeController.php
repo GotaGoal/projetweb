@@ -13,6 +13,7 @@ use BDE\PlatformBundle\Entity\Role;
 use BDE\UserBundle\Entity\User;
 use BDE\PlatformBundle\Entity\Couleur;
 use BDE\PlatformBundle\Entity\Produit;
+use BDE\PlatformBundle\Entity\Categorie;
 use BDE\PlatformBundle\Repository\AssociationRoleRepository;
 use BDE\PlatformBundle\Repository\RoleRepository;
 use BDE\PlatformBundle\Entity\Association;
@@ -270,7 +271,7 @@ class BdeController extends Controller
 
     */
         //ajouter listCategorie
-        
+        /*
         $listCategorie = array('Vêtements','Goodies','Autre');
         $manager = $this->getDoctrine()->getManager();
         
@@ -282,6 +283,53 @@ class BdeController extends Controller
         }
 
         $manager->flush();
+        */
+        $vetement = new Categorie;
+        $goodies = new Categorie;
+        $autre = new Categorie;
+
+        $em = $this->getDoctrine()->getManager();
+        $vetement = $em->getRepository('BDEPlatformBundle:Categorie')->findBy(array('nom'=>'Vêtements'));
+        $goodies = $em->getRepository('BDEPlatformBundle:Categorie')->findBy(array('nom'=>'Goodies'));
+        $autre = $em->getRepository('BDEPlatformBundle:Categorie')->findBy(array('nom'=>'Autre'));
+        $vet = $em->getRepository('BDEPlatformBundle:Categorie')->findBy(array('nom'=>'Vêtements'));
+
+        $goodie = $em->getRepository('BDEPlatformBundle:Categorie')->findBy(array('nom'=>'Goodies'));
+        
+        $pull = $em->getRepository('BDEPlatformBundle:Produit')->find(1);
+        $porte = $em->getRepository('BDEPlatformBundle:Produit')->find(2);
+        $sweat = $em->getRepository('BDEPlatformBundle:Produit')->find(3);
+        $tasse = $em->getRepository('BDEPlatformBundle:Produit')->find(4);
+        $stylo = $em->getRepository('BDEPlatformBundle:Produit')->find(5);
+
+        foreach ($vetement as $vetement) {
+            $pull->addCategory($vetement);
+            $em->persist($pull);
+        }
+        
+        foreach ($goodies as $goodies) {
+            $porte->addCategory($goodies);
+            $em->persist($porte);
+        }
+
+        foreach ($autre as $autre) {
+            $tasse->addCategory($autre);
+        $em->persist($tasse);
+        }
+
+        foreach ($vet as $vet) {
+           $sweat->addCategory($vet);
+        $em->persist($sweat);
+        }
+        
+        foreach ($goodie as $goodie) {
+            $stylo->addCategory($goodie);
+        $em->persist($stylo);
+        }
+
+
+        $em->flush();
+        
     }
 
     
