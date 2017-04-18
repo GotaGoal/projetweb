@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="guest_inscr.css">
+    <link rel="stylesheet" href="../css/guest_inscr.css">
+    <script rel="text/javascript" src="../js/snackbar.js"></script>
+    <link rel="stylesheet" href="../css/snackbar.css">
     <title>Inscription</title>
 </head>
 <body>
@@ -23,9 +25,10 @@
                 <span class="input-group-addon"><i class="material-icons">person_pin</i></span>
                 <input id="contact" name="contact" placeholder="Contact avec l'école" class="form-control input" type="text">
             </div>
-            <input class="send" type="submit">
+            <input class="send" type="submit" onclick="show_snackbar('Votre inscription à bien été transmise')">
         </div>
     </form>
 </div>
+<div id="snackbar"></div>
 </body>
 </html>
