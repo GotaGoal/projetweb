@@ -144,7 +144,7 @@ h1 {
 }
 footer{
     position: absolute;
-
+    overflow: hidden;
 
 }
 #footer_end .lien{
@@ -154,6 +154,7 @@ footer{
 .lien_footer li{
     margin-bottom: 2px;
     margin-top: 2px;
+    width: 100%;
 }
 .lien_footer li a{
     text-decoration: none;
