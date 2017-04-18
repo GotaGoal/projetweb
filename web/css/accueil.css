@@ -134,3 +134,7 @@ body{
     margin-left:0;
     margin-right:0;
 }
+p{
+    text-align: justify;
+    text-justify: inter-word;
+}
