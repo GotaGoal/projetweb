@@ -11,6 +11,8 @@ use BDE\PlatformBundle\Entity\Carousel;
 use BDE\PlatformBundle\Entity\AssociationRole;
 use BDE\PlatformBundle\Entity\Role;
 use BDE\UserBundle\Entity\User;
+use BDE\PlatformBundle\Entity\Couleur;
+use BDE\PlatformBundle\Entity\Produit;
 use BDE\PlatformBundle\Repository\AssociationRoleRepository;
 use BDE\PlatformBundle\Repository\RoleRepository;
 use BDE\PlatformBundle\Entity\Association;
@@ -195,6 +197,8 @@ class BdeController extends Controller
 
     public function testAction(Request $request)
     {
+        //ajout utilisateur role 
+        /*
         $asso = new Association;
         $user = new User;
         $role = new Role;
@@ -219,6 +223,65 @@ class BdeController extends Controller
         }
         $em->flush();
         return new Response("coucou");
+        */
+
+        //ajout liste de couleur
+
+        /*
+        $listCouleur = array('Bleue','Jaune','Rouge','Gris','Noir');
+        $manager = $this->getDoctrine()->getManager();
+        
+        foreach ($listCouleur as $couleur) {
+            //on crée l'utilisateur
+            $color = new Couleur;
+            $color->setNom($couleur);
+            $manager->persist($color);  
+        }
+
+        $manager->flush();*/
+
+        //ajout produit + couleur 
+        /*
+
+        $em = $this->getDoctrine()->getManager();
+
+        $listCouleur = $em->getRepository('BDEPlatformBundle:Couleur')->findAll();
+
+        $listNomProduit = array('Pull','Porte-Clé','Sweat à capuche','Tasse','Stylo');
+        $listDescriptionProduit = array("Magnique pull conçu par les ingéieurs de l'Exia !","Avec ce porte clé, vous êtes garantis de ne plus jamais perdre vos clés ! GPS intégré !","Sweat à capuche ou comment être à la pointe de la mode !","Tasse incluant une magnifique fonctionnalité, vos cafés ne refroidiront plus !","Avec ce stylo plus aucune bavure !");
+        $listPrixProduit = array(30,3,40,5,2);
+        $listStockProduit = array(50,50,50,50,50);
+
+        for ($i=0; $i <sizeof($listNomProduit) ; $i++) { 
+            $produit = new Produit;
+
+            $produit->setNom($listNomProduit[$i]);
+            $produit->setDescription($listDescriptionProduit[$i]);
+            $produit->setPrix($listPrixProduit[$i]);
+            $produit->setStock($listStockProduit[$i]);
+            $produit->setNom($listNomProduit[$i]);
+            foreach ($listCouleur as $couleur) {
+                $produit->addCouleur($couleur);
+            }
+            $em->persist($produit);
+        }
+        $em->flush();
+
+
+    */
+        //ajouter listCategorie
+        
+        $listCategorie = array('Vêtements','Goodies','Autre');
+        $manager = $this->getDoctrine()->getManager();
+        
+        foreach ($listCategorie as $categorie) {
+            //on crée l'utilisateur
+            $cate = new Categorie;
+            $cate->setNom($categorie);
+            $manager->persist($cate);  
+        }
+
+        $manager->flush();
     }
 
     
