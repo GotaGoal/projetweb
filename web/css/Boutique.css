@@ -190,6 +190,7 @@ body {
 */
 #contenu
 {
+<<<<<<< HEAD
     display: flex;
     max-width: 1100px;
     margin:auto;
@@ -199,6 +200,17 @@ body {
 {
     max-width: 1100px
     background-color: #ffffff;
+=======
+	display: flex;
+	max-width: 1100px;
+	margin:auto;
+	background-color: #ffffff;
+}
+#Recherche
+{
+	max-width: 1100px
+	background-color: #ffffff;
+>>>>>>> origin/master
     text-align : center;
     margin: auto auto 10px auto;
 }
@@ -208,6 +220,7 @@ body {
 }
 #recherche
 {
+<<<<<<< HEAD
     background-color: #ffffff;
     width: 20%;
     min-width: 150px;
@@ -232,6 +245,32 @@ body {
 .proposition:hover
 {
     color: red;
+=======
+	background-color: #ffffff;
+	width: 20%;
+	min-width: 150px;
+	min-height: 100%;
+	border-width: 0px 2px 0px 0px;
+	border-style: solid;
+}
+/*#recherche form
+{
+	display: block;
+}
+#recherche input
+{
+	width: 80%;
+	margin : auto;
+	margin-bottom: 5px;
+}
+.proposition
+{
+	color: #000000;
+}
+.proposition:hover
+{
+	color: red;
+>>>>>>> origin/master
 }
 #recherche input[type=range] 
 {
@@ -239,7 +278,11 @@ body {
     background-color: silver;
     height:5px;
     -webkit-border-radius: 1em;
+<<<<<<< HEAD
     }
+=======
+	}
+>>>>>>> origin/master
 #recherche input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     background-color: #660066;
@@ -250,12 +293,21 @@ body {
 }
 #amount
 {
+<<<<<<< HEAD
     width: 10%;
     margin-left : 47%;
 }*/
 
 #wrapper{
     width: 100%;
+=======
+	width: 10%;
+	margin-left : 47%;
+}*/
+
+#wrapper{
+	width: 100%;
+>>>>>>> origin/master
 }
 
 #sidebar-wrapper {
@@ -333,6 +385,7 @@ body {
 
 #catalogue
 {
+<<<<<<< HEAD
     width: 80%;
     padding: 5px;
     align-items: center;
@@ -342,11 +395,26 @@ body {
     max-width: 100%;
     min-width: 290px;
     margin: auto;
+=======
+	width: 80%;
+	padding: 5px;
+	align-items: center;
+}
+.image1
+{
+	max-width: 100%;
+	min-width: 290px;
+	margin: auto;
+>>>>>>> origin/master
     display: block;
 }
 .image1 a
 {
+<<<<<<< HEAD
     color: #000000;
+=======
+	color: #000000;
+>>>>>>> origin/master
     width: 100%;
     height: 100%;
     padding-bottom: 10%; 
@@ -401,11 +469,16 @@ body {
 }
 .article
 {
+<<<<<<< HEAD
     width: 100%;
+=======
+	width: 100%;
+>>>>>>> origin/master
     min-height: 255px;
 }
 .article button
 {
+<<<<<<< HEAD
     width: 80%;
     margin: auto;
     display: none;
@@ -413,16 +486,34 @@ body {
 .article:hover > button
 {
     display: block;
+=======
+	width: 80%;
+	margin: auto;
+	display: none;
+}
+.article:hover > button
+{
+	display: block;
+>>>>>>> origin/master
 }
 .text
 {
     padding-top: 1%;
+<<<<<<< HEAD
     height: 40px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     margin-bottom: 1%
     color : #000000;
+=======
+	height: 40px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-bottom: 1%
+	color : #000000;
+>>>>>>> origin/master
 }
 #vetement
 {
@@ -431,17 +522,27 @@ body {
 
 @media screen and (max-width: 600px)
 {
+<<<<<<< HEAD
     #contenu
     {
         display: block;
         max-width: 100%;
         margin: auto;
     }
+=======
+	#contenu
+	{
+		display: block;
+		max-width: 100%;
+		margin: auto;
+	}
+>>>>>>> origin/master
     .cadre_image_produit
     {
         width: 100%;
         height: 100%;
     }
+<<<<<<< HEAD
     #recherche
     {
         background-color: #ffffff;
@@ -471,6 +572,37 @@ body {
     {
         background-color: #ffffff;
     }
+=======
+	#recherche
+	{
+		background-color: #ffffff;
+		width: 100%;
+		min-width: 150px;
+		min-height: 100%;
+	}
+	#Recherche input
+	{
+		max-width: 100%;
+	}
+	.image1
+	{
+		min-width: 100%;
+		min-height: 100%;
+		margin: 1% 0% 1% 0%;
+		border-width: 0px 1px 0px 0px;
+		border-style: solid;
+	}
+	#catalogue
+	{
+		width: 100%;
+		padding: 5px;
+		align-items: center;
+	}
+	body
+	{
+		background-color: #ffffff;
+	}
+>>>>>>> origin/master
 }
 .thumbnail{
     text-decoration: none;

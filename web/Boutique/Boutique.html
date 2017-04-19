@@ -1,20 +1,104 @@
-{% extends "layout.html.twig" %}
-{% block stylesheets %}
-  {{ parent() }}
-  <link rel="stylesheet" href="{{ asset('css/Boutique.css') }}"/>
-  <script rel="text/javascript" src="../js/Boutique.js"></script>
+<!Doctype html>
 
-  
-{% endblock stylesheets %}
-{% block tittle %}<title>Boutique</title>{% endblock tittle %}
+<HEAD>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" media="screen" href="../css/bootstrap.min.css">
+    <script class="cssdeck" src="../js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/hf.css" />
+    <script rel="text/javascript" src="../js/HeaderFooter.js"></script>
+    <link rel="stylesheet" href="../css/Boutique.css" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>BDE EXIA NANCY</title>
 
-{% block all %}
-	 <form method="post" id="Recherche" action="traitement.php">
-        <input type="text" name="activite_article" placeholder="Rechercher votre article">
+</HEAD>
 
-    </form>
+<body>
+<header>
+    <div id="header">
+        <div id="header-title">
+            <div class="row" id="content-header">
+                <div class="col-xs-3 col-centered">
+                    <img id="image" src="../img/Logo.png" /></div>
+                <div class="col-xs-3 col-centered">
+                    <h1 id="titre">BDE Nancy Exia</h1></div>
+                <div class="col-xs-3 col-centered">
+                    <img class="col-xs-2 imageL center-block" src="../img/Facebook.png" />
+                    <img class="col-xs-2 imageL center-block" src="../img/Twitter.png" /></div>
+            </div>
+        </div>
+        <div id="header-pre-nav" style="width: 100%; height: 25px"></div>
+        <div id="header-nav" class="header-logged">
+                <nav class="navbar navbar-toggleable-xs navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Accueil</a></li>
+                                <li><a href="#">Ecole</a></li>
+                                <li><a href="#">Associations</a></li>
+                                <li><a href="#">Galerie</a></li>
+                                <li><a href="#">Activités</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-header">Habits</li>
+                                        <li><a href="#">T-Shiry</a></li>
+                                        <li><a href="#">Sweet</a></li>
+                                        <li><a href="#">Jean</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li class="dropdown-header">Accessoires</li>
+                                        <li><a href="#">Mug</a></li>
+                                        <li><a href="#">Stickers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Mon Compte</a></li>
+                                <li><a id="panier" href="#"><span class="material-icons">shopping_cart</span></a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
+                </nav>
+        </div>
+        <!--<div id="header-nav" class="header-guest">-->
+        <!--<nav class="navbar navbar-default">-->
+        <!--<div class="container-fluid">-->
+        <!--<div class="navbar-header">-->
+        <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
+        <!--<span class="sr-only">Toggle navigation</span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--</button>-->
+        <!--</div>-->
+        <!--<div id="navbar" class="navbar-collapse collapse">-->
+        <!--<ul class="nav navbar-nav">-->
+        <!--<li class="active"><a href="#">Accueil</a></li>-->
+        <!--<li><a href="#">Ecole</a></li>-->
+        <!--<li><a href="#">Associations</a></li>-->
+        <!--<li><a href="#">Activités</a></li>-->
+        <!--<li><a href="#">Connexion / Inscription</a></li>-->
+        <!--</ul>-->
+        <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+        <!--</div>&lt;!&ndash;/.container-fluid &ndash;&gt;-->
+        <!--</nav>-->
+        <!--</div>-->
+    </div>
+</header>
+
+	<nav>
+		
+	</nav>
+
     <div id="contenu" style="margin-top: 120px">
         
+
         <div id="recherche">
             <div id="wrapper">
                 <div id="sidebar-wrapper">
@@ -34,7 +118,7 @@
                                     <a href="#" id="pull">Pull</a>
                                 </li>
                                 <li>
-                                    <a href="#" id="Gilet">Gilet</a>
+                                    <a href="#" id="Gilet"> Gillet</a>
                                 </li>
                             </ul>
                             
@@ -162,11 +246,6 @@
         </div>
         
     </div>
-
-{% endblock all %}
-
-
-
-
-
-
+</body>
+<script rel="text/javascript" src="../js/Boutique.js"></script>
+HELP ME
