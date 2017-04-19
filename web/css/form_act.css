@@ -1,0 +1,19 @@
+.type_answer{
+    display: flex;
+}
+.type{
+    margin: 0 10px;
+}
+.type-radio{
+
+}
+.type-radio > input, .type-check > input, .type-number > input{
+    margin: 5px;
+}
+.content{
+    border: 1px solid black;
+}
+#question-template{
+    visibility: collapse;
+    height: 0;
+}

@@ -138,3 +138,22 @@ p{
     text-align: justify;
     text-justify: inter-word;
 }
+#myCarousel, .carousel-inner{
+    height: 450px;
+}
+
+@media screen and (max-width: 730px){
+    #myCarousel{
+        height: 300px;
+    }
+}
+@media screen and (max-width: 500px){
+    #myCarousel{
+        height: 200px;
+    }
+}
+@media screen and (max-width: 350px){
+    #myCarousel{
+        height: 100px;
+    }
+}
