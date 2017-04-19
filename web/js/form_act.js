@@ -8,8 +8,8 @@ function add_content(context, type){
         case 'input':
             create_input(contenu);
             break;
-        case 'radio':
-            create_radio(contenu);
+        case 'selector':
+            create_selector(contenu);
             break;
         case 'check':
             create_check(contenu);
@@ -26,56 +26,133 @@ function add_content(context, type){
     }
 }
 function create_input(context) {
-    context.append($('<div class="type-input"><input class="txt-input" placeholder="Insérer un texte de prévisualisation"></div>'));
+    context.append($('<div class="type-input">' +
+        '<input class="txt-input" placeholder="Indice du champ">' +
+        '<a onclick="del_el(this)" class="el-del">supprimer</a></div>'));
 }
-function create_radio(context) {
-    context.append($('<div class="type-radio">' +
-        '<input type="radio">' +
-        '<input class="txt-input" placeholder="Texte après le radio">' +
-        '<input class="boo-input" type="checkbox">Séléctioné</div>'));
+function create_selector(context) {
+    context.append(
+        $('<div class="selector">' +
+            '<input type="number" class="number-picker" min="1" value="1">' +
+            '<p> Indiquer le nombre de champ voulu</p>' +
+            '<a onclick="add_selector(this)">Ajouter</a>' +
+            '<a onclick="del_el(this)" class="el-del">supprimer</a>'+
+            '<div/>')
+    );
+    // context.append($('<div class="type-selector">' +
+    //     '<input class="txt-input" placeholder="Texte après le radio">' +
+    //     '<input class=radio"boo-input" type="checkbox">Séléctioné' +
+    //     '<a onclick="del_el(this)" class="el-del">supprimer</a></div>'));
 }
 function create_check(context) {
     context.append($('<div class="type-check">' +
-        '<input type="checkbox">' +
+        '<input disabled type="checkbox">' +
         '<input class="txt-input" placeholder="Texte après le checkbox">' +
-        '<input class="boo-input" type="checkbox">Séléctioné</div>'));
+        '<input class="boo-input" type="checkbox">Séléctioné' +
+        '<a onclick="del_el(this)" class="el-del">supprimer</a></div>'));
 }
 function create_text(context) {
-    context.append($('<div class="type-input"><input class="txt-input"placeholder="Votre texte"></div>'));
+    context.append($('<div class="type-input-titre">' +
+        '<input class="txt-input"placeholder="Votre texte">' +
+        '<a onclick="del_el(this)" class="el-del">supprimer</a></div>'));
 }
 function create_number(context) {
-    context.append($('<div class="type-number"><input type="number" value="0" min="0"><input class="txt-input" placeholder="Texte après le Number"></div>'));
+    context.append($('<div class="type-number">' +
+        '<input class="number-picker" disabled type="number" value="0" min="0">' +
+        '<input class="txt-input" placeholder="Texte après le Number">' +
+        '<a onclick="del_el(this)" class="el-del">supprimer</a></div>'));
 }
 function create_space(context) {
-    context.append($('<br/>'));
+    context.append($('<p class="space">--<a onclick="del_el(this)" class="el-del">supprimer</a></p>'));
 }
 function get_input(context){
-    console.log(context.children().val());
+    $('#previs').append($('<input type="input" placeholder="'+$(context).find(".txt-input").val()+'" /><br/>'));
 }
-function get_radio(context) {
-
+function get_selector(context) {
+    context = $(context);
+    let div = $('<div class="complet-selector"></div>');
+    div.append(context.find("select"));
+    div.append($('<p>'+context.find('.txt-input').val()+'</p>'));
+    $('#previs').append(div);
 }
 function get_check(context) {
-
+    context = $(context);
+    let input;
+    if(context.find(".boo-input").is(":checked")){
+        input = $('<input checked type="checkbox">'+context.find(".txt-input").val()+'<br/>');
+    }else {
+        input = $('<input type="checkbox">'+context.find(".txt-input").val()+'<br/>');
+    }
+    $('#previs').append(input);
 }
 function get_text(context) {
-
+    context = $(context);
+    $('#previs').append($('<p class="question-titre">'+context.find(".txt-input").val()+'</p>'));
 }
-function get_number() {
-
+function get_number(context) {
+    context = $(context);
+    $('#previs').append($('<input class="question-number" type="number" value="0" min="0">'+context.find(".txt-input").val()+'<br/>'));
 }
 function get_space() {
-
+    $('#previs').append($('<br/>'))
 }
 function add_question(){
     $('#formulaire').append($('#question-template').children().clone());
 
 }
-
 function generate() {
+    $('#previs').empty();
     let contenu = $('#formulaire').find(".question");
-    console.log(contenu);
     contenu.each(function (ind, el) {
-        console.log(el.id + el.className);
+        $(el).find(".content").children().each(function (index, element) {
+            switch (element.className){
+                case "type-input":
+                    get_input(element);
+                    break;
+                case "selector":
+                    get_selector(element);
+                    break;
+                case "type-check":
+                    get_check(element);
+                    break;
+                case "type-number":
+                    get_number(element);
+                    break;
+                case "space":
+                    get_space(element);
+                    break;
+                case "type-input-titre":
+                    get_text(element);
+                    break;
+            }
+        })
     });
+}
+function del_el(el) {
+    $(el).parent().remove();
+}
+function add_selector(el) {
+    el = $(el).parent();
+    let nb = el.find(".number-picker").val();
+    el.empty();
+    for (let i=0;i<parseInt(nb);i++){
+        el.append($('<input class="input-texte" type="text"><p>Champ '+parseInt(i+1)+'</p>'));
+    }
+    el.append($('<a onclick="create_selector_input(this)"> Ajouter<a/>'));
+
+}
+function create_selector_input(el) {
+    el = $(el).parent();
+    let enr = [];
+    el.find('.input-texte').each(function (index,item) {
+        enr[index] = item.value;
+    });
+    el.empty();
+    let div = "<select class='type-selector'>";
+    for (let i=0; i<enr.length; i++){
+        div=div+"<option value=\""+enr[i]+"\">"+enr[i]+"</option>";
+    }
+    div=div+"</select><input class=\"txt-input\" placeholder=\"Texte après la dropbox\"><a onclick=\"del_el(this)\" class=\"el-del\">supprimer</a>";
+    el.append($(div));
+
 }

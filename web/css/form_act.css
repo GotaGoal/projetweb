@@ -1,13 +1,13 @@
 .type_answer{
     display: flex;
 }
+.content{
+    padding-left: 10px;
+}
 .type{
     margin: 0 10px;
 }
-.type-radio{
-
-}
-.type-radio > input, .type-check > input, .type-number > input{
+.type-selector > input, .type-check > input{
     margin: 5px;
 }
 .content{
@@ -16,4 +16,35 @@
 #question-template{
     visibility: collapse;
     height: 0;
+}
+#generation{
+    border: 1px solid black;
+}
+.el-del{
+    padding-left: 10px;
+}
+#previs{
+    padding: 10px;
+}
+.type-input-titre, .type-input-titre, .type-input, .type-number, .space{
+    margin-left: 18px;
+}
+.number-picker{
+    width: 30px;
+    margin: 5px 5px 5px 0;
+}
+.question-titre{
+    font-size: 1.2em;
+}
+#json{
+    margin-top: 30px;
+}
+.selector{
+    display: flex;
+}
+.selector > *{
+    margin: 10px 10px;
+}
+.complet-selector{
+    display: flex;
 }

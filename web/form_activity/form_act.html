@@ -14,34 +14,22 @@
         <div id="add-question">
             <button onclick="add_question()">Ajouter une question</button>
         </div>
-        <div class="question">
-            <div class="titre"></div>
-            <div class="type_answer">
-                <button class="type" onclick="add_content(this, 'input')">Add Input text</button>
-                <button class="type" onclick="add_content(this, 'radio')">Add Radio button</button>
-                <button class="type" onclick="add_content(this, 'check')">Add Check button</button>
-                <button class="type" onclick="add_content(this, 'text')">Add Text</button>
-                <button class="type" onclick="add_content(this, 'number')">Add number</button>
-                <button class="type" onclick="add_content(this, 'space')">Saut de ligne</button>
-            </div>
-            <div class="content"></div>
-        </div>
     </div>
-    <div>
+    <div id="generation">
         <button onclick="generate()">Prévisualisation</button>
-        <div id="previs">
-
-        </div>
+        <div id="previs"></div>
+        <div id="json"></div>
     </div>
 </div>
 
+<button>soumettre</button>
 
 <div id="question-template">
     <div class="question">
-        <div class="titre"></div>
+        <div class="titre"><input idtype="text"/></div>
         <div class="type_answer">
             <button class="type" onclick="add_content(this, 'input')">Add Input text</button>
-            <button class="type" onclick="add_content(this, 'radio')">Add Radio button</button>
+            <button class="type" onclick="add_content(this, 'selector')">Add selector</button>
             <button class="type" onclick="add_content(this, 'check')">Add Check button</button>
             <button class="type" onclick="add_content(this, 'text')">Add Text</button>
             <button class="type" onclick="add_content(this, 'number')">Add number</button>
@@ -51,6 +39,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>
