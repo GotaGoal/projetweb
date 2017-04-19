@@ -11,17 +11,29 @@
      
 
  <div id="Allassos">
-<nav>
-    <div id="contenu">
-        <div id="recherche">
+    <nav>
+        <div id="contenu">
+            <div id="recherche">
+                 <div id="wrapper">
+                    <div id="sidebar-wrapper">
+                                    
         	
-        	{% for association in listAssociations %}       	
-            <ul><a href="{{ path('bde_view_association_detail', {'id' : association.id}) }}">{{ association.nom }}</a></ul>
-        	{% endfor %}
+                    	{% for association in listAssociations %}
+
+                            <ul class="sidebar-nav">
+                                <a href="{{ path('bde_view_association_detail', {'id' : association.id}) }}">
+                                    {{ association.nom }}
+                                </a>
+                            </ul>
+                    	{% endfor %}
             
-        </div>
-     
+
+                    </div>
+                </div>
+            </div>
+        </div
      </nav>
+     
         <div class="CompletAsso" >
 
         		{% for association in listAssociations %}       	
