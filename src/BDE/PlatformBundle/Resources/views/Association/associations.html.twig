@@ -2,7 +2,17 @@
 {% block stylesheets %}
 	{{ parent() }}
 	<link href="{{ asset('css/asso.css') }}" rel="stylesheet">
+<<<<<<< HEAD
             
+=======
+            <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+      
+        
+        
+        <script class="cssdeck" src="../js/jquery-3.2.1.min.js"></script>
+        
+>>>>>>> origin/master
 {% endblock stylesheets %}
 {% block tittle %}<title>Asso's</title>{% endblock tittle %}
 
@@ -11,30 +21,29 @@
     
      
 
- <div id="Allassos">
-    <nav>
-        
-            <div id="recherche">
-                 <div id="wrapper">
-                    <div id="sidebar-wrapper">
-                                    
-        	
-                    	{% for association in listAssociations %}
+        <div id="Allassos">
+            <nav> 
 
-                            <ul class="sidebar-nav">
-                                <a href="{{ path('bde_view_association_detail', {'id' : association.id}) }}">
-                                    {{ association.nom }}
-                                </a>
-                            </ul>
-                    	{% endfor %}
-            
-
+                <div id="contenu" style="margin-top:150px;">
+                <div id="recherche">
+                    <div id="wrapper">
+                        <div id="sidebar-wrapper">                                   	
+                            	{% for association in listAssociations %}
+                                    <ul class="sidebar-nav">
+                                        <li>
+                                        <a href="{{ path('bde_view_association_detail', {'id' : association.id}) }}">
+                                            {{ association.nom }}
+                                        </a>
+                                        </li>
+                                    </ul>
+                            	{% endfor %}
+                        </div>
                     </div>
-               
+                </div>
             </div>
-        </div
-     </nav>
+            </nav>
      
+    
         <div class="CompletAsso" >
 
         		{% for association in listAssociations %}       	
@@ -89,5 +98,6 @@
        </div>
      
    </div>
+   
 {% endblock all %}
 
