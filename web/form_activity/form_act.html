@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script rel="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+    <script rel="text/javascript" src="../js/form_act.js"></script>
+    <link href="../css/form_act.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div id="formulaire">
+        <div id="add-question">
+            <button onclick="add_question()">Ajouter une question</button>
+        </div>
+        <div class="question">
+            <div class="titre"></div>
+            <div class="type_answer">
+                <button class="type" onclick="add_content(this, 'input')">Add Input text</button>
+                <button class="type" onclick="add_content(this, 'radio')">Add Radio button</button>
+                <button class="type" onclick="add_content(this, 'check')">Add Check button</button>
+                <button class="type" onclick="add_content(this, 'text')">Add Text</button>
+                <button class="type" onclick="add_content(this, 'number')">Add number</button>
+                <button class="type" onclick="add_content(this, 'space')">Saut de ligne</button>
+            </div>
+            <div class="content"></div>
+        </div>
+    </div>
+    <div>
+        <button onclick="generate()">Prévisualisation</button>
+        <div id="previs">
+
+        </div>
+    </div>
+</div>
+
+
+<div id="question-template">
+    <div class="question">
+        <div class="titre"></div>
+        <div class="type_answer">
+            <button class="type" onclick="add_content(this, 'input')">Add Input text</button>
+            <button class="type" onclick="add_content(this, 'radio')">Add Radio button</button>
+            <button class="type" onclick="add_content(this, 'check')">Add Check button</button>
+            <button class="type" onclick="add_content(this, 'text')">Add Text</button>
+            <button class="type" onclick="add_content(this, 'number')">Add number</button>
+            <button class="type" onclick="add_content(this, 'space')">Saut de ligne</button>
+        </div>
+        <div class="content">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
