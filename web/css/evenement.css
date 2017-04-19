@@ -200,14 +200,16 @@ body {
     display: block;
     width: 20%;
     border-style: solid;
-    text-align: center;
     border-width: 0px 2px 0px 0px;
+}
+
+#Recherche:focus, input:focus
+{
+    outline: none;
 }
 #Recherche
 {
-    max-width: 80%;
-    margin: 100px auto 30px auto;
-
+    border-style: none;
 }
 .association
 {
@@ -295,6 +297,10 @@ body {
 {
     width: 10%
 }
+.liste_date
+{
+    width: 10%;
+}
 .date
 {
     width: 100%;
@@ -306,10 +312,20 @@ body {
     border-style: solid;
     border-width: 1px 1px 1px 1px;
 }
+.mois h4
+{
+    font-family: arial;
+    color: rgb(194, 36, 42);
+    font-weight: bold;
+}
 .numero
 {
     border-style: solid;
     border-width: 1px 1px 1px 1px;
+}
+.numero h1
+{
+    color: #000000;
 }
 .description_evenement
 {
@@ -335,9 +351,21 @@ body {
     border-width: 0px 1px 0px 0px;
     border-color: gray;
 }
+.Titre ul
+{
+    font-family: arial;
+    color: rgb(194, 36, 42);
+    font-weight: bold;
+}
 .Association
 {
     width: 50%;
+}
+.Association ul
+{
+    font-family: arial;
+    color: rgb(194, 36, 42);
+    font-weight: bold;
 }
 .descri_photo
 {
@@ -454,16 +482,93 @@ body {
 {
     color: #000000;
     background-color: #ffffff;
-    padding: 5px;
+    padding: 4px;
     border-width: 1px;
     border-style: solid;
     border-color: #000000;
-    margin-left: 3px;
+    margin-left: 2px;
     border-color: gray;
-    margin-right: 2%;
+    margin-right: 2px;
 }
 .site:hover
 {
     color: gray;
     background-color: lightgray;
+}
+
+#wrapper{
+    width: 100%;
+}
+
+#sidebar-wrapper {
+    width: 100%;
+    overflow-y: auto;
+    background: #ffffff;
+}
+/* Sidebar Styles */
+.detail
+{
+    display: block;
+}
+.sidebar-nav {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+    border-width: 0px 0px 1px 0px;
+    border-style: solid;
+    border-color: gray;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+}
+.sidebar-nav li ul {
+    display: none;
+    list-style-type: disc;
+    border: none;
+
+}
+.sidebar-nav li ul li{
+    border: none;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    border-width: 0px 0px 0px 5px;
+    border-style: solid;
+    border-color: gray;
+    color: gray;
+    background-color: lightgray;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #000000;
+    background: none;
+    border : none;
+}
+.sidebar-nav li:hover > ul{
+    display: block;
 }

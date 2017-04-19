@@ -3,8 +3,12 @@
 <HEAD>
 	<meta charset="utf-8" />
     <link rel="stylesheet" media="screen" href="../css/bootstrap.min.css">
+    <script class="cssdeck" src="../js/jquery.3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../css/hf.css" />
+    <script rel="text/javascript" src="../js/HeaderFooter.js"></script>
     <link rel="stylesheet" href="../css/Boutique.css" />
-    <script class="cssdeck" src="../js/jquery.min.js"></script>
+    <script rel="text/javascript" src="../js/Boutique.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
 	<title>BDE EXIA NANCY</title>
@@ -12,90 +16,84 @@
 </HEAD>
 
 <body>
-        <header>
-        <div class="all" align="center">
-            <div class="row" >
-                <div class="col-xs-3"> <img id="image" src="Logo.png" /></div>
-                
-                   <div class="col-xs-3 " > <h1 id="titre">BDE Nancy Exia</h1></div>
-                 <div class="col-xs-3 col-centered" >
-                        <img class="col-xs-2 imageL" class="center-block" src="Facebook.png" />
-                    <img class="col-xs-2 imageL" class="center-block" src="Twitter.png" /></div>
+<header>
+    <div id="header">
+        <div id="header-title">
+            <div class="row" id="content-header">
+                <div class="col-xs-3 col-centered">
+                    <img id="image" src="../img/Logo.png" /></div>
+                <div class="col-xs-3 col-centered">
+                    <h1 id="titre">BDE Nancy Exia</h1></div>
+                <div class="col-xs-3 col-centered">
+                    <img class="col-xs-2 imageL center-block" src="../img/Facebook.png" />
+                    <img class="col-xs-2 imageL center-block" src="../img/Twitter.png" /></div>
             </div>
         </div>
-
-
-
-
-        <div id="all4">
-            <div class="all" align="center">
-
-                <nav class="navbar navbar-inverse" id="nav1"  role="navigation">
-                    <div id="container"> 
-                    <div class="navbar-header" >
-                        <button type="button" class="navbar-toggle" id="nav4" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                
-
-                 
-                     </div> 
+        <div id="header-pre-nav" style="width: 100%; height: 25px"></div>
+        <div id="header-nav" class="header-logged">
+                <nav class="navbar navbar-toggleable-xs navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="#">Accueil</a></li>
+                                <li><a href="#">Ecole</a></li>
+                                <li><a href="#">Associations</a></li>
+                                <li><a href="#">Galerie</a></li>
+                                <li><a href="#">Activités</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-header">Habits</li>
+                                        <li><a href="#">T-Shiry</a></li>
+                                        <li><a href="#">Sweet</a></li>
+                                        <li><a href="#">Jean</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li class="dropdown-header">Accessoires</li>
+                                        <li><a href="#">Mug</a></li>
+                                        <li><a href="#">Stickers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Mon Compte</a></li>
+                                <li><a id="panier" href="#"><span class="material-icons">shopping_cart</span></a></li>
+                            </ul>
+                        </div><!--/.nav-collapse -->
+                    </div><!--/.container-fluid -->
                 </nav>
-
-
-
-
-
-                <nav class="navbar navbar-inverse" id="nav2" role="navigation">
-                    <div id="container"> 
-               
-                     <div class="collapse navbar-collapse row"   data-target=".navbar-collapse">
-                        <ul class="nav navbar-nav col" >
-
-                            <li><a href="#Acceuil">Acceuil</a></li>
-                            <li><a href="#Ecole">Ecole</a></li>
-                            <li><a href="#Association">Association's</a></li>
-                            <li><a href="#Galerie">Galerie</a></li>
-                            <li><a href="#Activités">Activités</a></li>
-                            <li><a href="#Boutique">Boutique</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right col">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                    </div>
-                     </div> 
-                </nav>
-
-
-                    <nav class="navbar navbar-inverse" id="nav3" role="navigation">
-                    <div id="container"> 
-                    
-
-                     <div class="collapse navbar-collapse row "   data-target=".navbar-collapse">
-                        <ul class="nav navbar-nav col" >
-
-                            <li><a href="#Acceuil">Acceuil</a></li>
-                            <li><a href="#Ecole">Ecole</a></li>
-                            <li><a href="#Association">Association</a></li>
-                            <li><a href="#Galerie">Galerie</a></li>
-                            <li><a href="#Activités">Activités</a></li>
-                            <li><a href="#Boutique">Boutique</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right col">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                    </div>
-                     </div> 
-                </nav>
-            </div>
         </div>
-    </header>
+        <!--<div id="header-nav" class="header-guest">-->
+        <!--<nav class="navbar navbar-default">-->
+        <!--<div class="container-fluid">-->
+        <!--<div class="navbar-header">-->
+        <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
+        <!--<span class="sr-only">Toggle navigation</span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--<span class="icon-bar"></span>-->
+        <!--</button>-->
+        <!--</div>-->
+        <!--<div id="navbar" class="navbar-collapse collapse">-->
+        <!--<ul class="nav navbar-nav">-->
+        <!--<li class="active"><a href="#">Accueil</a></li>-->
+        <!--<li><a href="#">Ecole</a></li>-->
+        <!--<li><a href="#">Associations</a></li>-->
+        <!--<li><a href="#">Activités</a></li>-->
+        <!--<li><a href="#">Connexion / Inscription</a></li>-->
+        <!--</ul>-->
+        <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
+        <!--</div>&lt;!&ndash;/.container-fluid &ndash;&gt;-->
+        <!--</nav>-->
+        <!--</div>-->
+    </div>
+</header>
+
 	<nav>
 		
 	</nav>
@@ -103,7 +101,7 @@
         <input type="text" name="activite_article" placeholder="Rechercher votre article">
 
     </form>
-    <div id="contenu">
+    <div id="contenu" style="margin-top: 120px">
         
         <div id="recherche">
             <div id="wrapper">
@@ -111,131 +109,142 @@
                     <ul class="sidebar-nav">
                         <li class="sidebar-brand">
                             <a href="#">
-                                Start Bootstrap
+                                Catégorie
                             </a>
                         </li>
                         <li>
-                            <a href="#">Dashboard</a>
+                            <a href="#" value = "vetement" onclick="tri(value)">Vêtement</a>
                             <ul class="sous_menu">
                                 <li>
-                                    <a href="#">Dashboard1</a>
+                                    <a href="#">T-shirt</a>
+                                </li>
+                                <li>
+                                    <a href="#">Pull</a>
+                                </li>
+                                <li>
+                                    <a href="#">Gilet</a>
                                 </li>
                             </ul>
                             
                         </li>
                         <li>
-                            <a href="#">Shortcuts</a>
+                            <a href="#">goodies</a>
                         </li>
                         <li>
-                            <a href="#">Overview</a>
+                            <a href="#">nourriture</a>
                         </li>
-                        <li>
-                            <a href="#">Events</a>
-                        </li>
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-
                     </ul>
                 </div>
             </div>
         </div>
         <div id="catalogue">
-                <div class="col-xs-6 col-md-3 image1">
+                <div class="col-xs-6 col-md-3 image1 vetement">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                    <img src="../img/image1.jpg">
-                    <div class="text">
-                        petite description qui a un minimum de sens pour voir les limites et l'efficaticité du machin qui n'est toujours pas assez long pour voir la différence
-                    </div>
-                    <ul>Prix</ul>
-                    <button type="button">Ajouter au panier</button>
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image1.jpg">
+                        </div>
+                        <div class="text">
+                            petite description qui a un minimum de sens pour voir les limites et l'efficaticité du machin qui n'est toujours pas assez long pour voir la différence
+                        </div>
+                        <ul> <span class="prix">40€</span><span class="stock1 pull-right">En stock</span></ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1 ">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image2.jpg">
+                        </div>
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul> <span class="prix">40€</span><span class="stock2 pull-right">Rupture</span></ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="../img/image2.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image3.png">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-md-3 image1">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="../img/image3.png">
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="../img/image4.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image4.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="../img/image5.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image5.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="../img/image6.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image6.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="../img/image7.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image7.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="../img/image8.png">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image8.png">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="../img/image9.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image9.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
         </div>
