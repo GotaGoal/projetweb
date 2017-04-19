@@ -83,27 +83,6 @@
 
     {% if test == compteur %}
         <div id="header-nav" class="header-guest">
-        <nav class="navbar navbar-default">
-        <div class="container-fluid">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        </button>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
-        <li><a href="{{ path('bde_ecole') }}">Ecole</a></li>
-        <li><a href="{{ path('bde_view_association') }}">Associations</a></li>
-        <li><a href="{{ path('bde_activite') }}">Activités</a></li>
-        <li><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
-        </ul>
-        </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-        </nav>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -120,7 +99,7 @@
                             <li onclick="active(this)"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
                             <li onclick="active(this)"><a href="{{ path('bde_view_association') }}">Associations</a></li>
                             <li onclick="active(this)"><a href="{{ path('bde_activite') }}">Activités</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_connexion') }}">Connexion / Inscription</a></li>
+                            <li onclick="active(this)"><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->
@@ -169,27 +148,6 @@
 
     {% else %}
         <div id="header-nav" class="header-guest">
-        <nav class="navbar navbar-default">
-        <div class="container-fluid">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        </button>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-        <li class="active"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
-        <li><a href="{{ path('bde_ecole') }}">Ecole</a></li>
-        <li><a href="{{ path('bde_view_association') }}">Associations</a></li>
-        <li><a href="{{ path('bde_activite') }}">Activités</a></li>
-        <li><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
-        </ul>
-        </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-        </nav>
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -202,11 +160,22 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li onclick="active(this)"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_view_association') }}">Associations</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_activite') }}">Activités</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_connexion') }}">Connexion / Inscription</a></li>
+                            <li id="acc"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
+                            <li id="ec"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
+                            <li ><a href="{{ path('bde_view_association') }}">Associations</a></li>
+                            <li ><a href="{{ path('bde_activite') }}">Activités</a></li>
+                            <li ><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
+
+                            {% set pageActuelle = app.request.attributes.get('_route') %}
+                            {% if pageActuelle == "bde_platform_homepage" %}       
+                                <script>
+                                        $("#acc").addClass( "active" );
+                                </script>
+                            {% elseif pageActuelle == "bde_ecole" %}
+                                <script>
+                                        $("#ec").addClass( "active" );
+                                </script>
+                            {% endif %}
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->
