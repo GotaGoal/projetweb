@@ -1,7 +1,10 @@
-{% extends "BDEPlatformBundle:Template:layout.html.twig" %}
+{% extends "layout.html.twig" %}
 {% block stylesheets %}
   {{ parent() }}
-  <link rel="stylesheet" href="{{ asset('css/boutique.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/Boutique.css') }}"/>
+  <script rel="text/javascript" src="../js/Boutique.js"></script>
+
+  
 {% endblock stylesheets %}
 {% block tittle %}<title>Boutique</title>{% endblock tittle %}
 
@@ -10,110 +13,150 @@
         <input type="text" name="activite_article" placeholder="Rechercher votre article">
 
     </form>
-    <div id="contenu">
+    <div id="contenu" style="margin-top: 120px">
         
         <div id="recherche">
-            {% for categorie in listCategorie %}
-            <ul style="margin-top: 20px;"><a href="" style="text-decoration:none;"><span class="proposition" style="padding-top: 20px;">{{ categorie.nom }}</span></a></ul>
-            <hr class="delimitation">
-        {% endfor %}
-            <form>
-                <input type="range" name="prix" min="0" max="100" value="50" onchange="showAmount(this.value)">
-                <span id="amount">50</span>
-            </form>
-            
-
+            <div id="wrapper">
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-brand">
+                            <a href="#" id="all">
+                                Catégorie
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="vetement">Vêtement</a>
+                            <ul class="sous_menu">
+                                <li>
+                                    <a href="#" id="T-shirt">T-shirt</a>
+                                </li>
+                                <li>
+                                    <a href="#" id="pull">Pull</a>
+                                </li>
+                                <li>
+                                    <a href="#" id="Gilet">Gilet</a>
+                                </li>
+                            </ul>
+                            
+                        </li>
+                        <li>
+                            <a href="#" id="goodies">goodies</a>
+                        </li>
+                        <li>
+                            <a href="#" id="nourriture">nourriture</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div id="catalogue">
-                <div class="col-xs-6 col-md-3 image1">
+                <div class="col-xs-6 col-md-3 image1 vetement T-shirt">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                    <img src="image/image1.jpg">
-                    <div class="text">
-                        petite description qui a un minimum de sens pour voir les limites et l'efficaticité du machin qui n'est toujours pas assez long pour voir la différence
-                    </div>
-                    <ul>Prix</ul>
-                    <button type="button">Ajouter au panier</button>
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image1.jpg">
+                        </div>
+                        <div class="text">
+                            petite description qui a un minimum de sens pour voir les limites et l'efficaticité du machin qui n'est toujours pas assez long pour voir la différence
+                        </div>
+                        <ul> <span class="prix">40€</span><span class="stock1 pull-right">En stock</span></ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-3 image1">
+                <div class="col-xs-6 col-md-3 image1 vetement pull">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="image/image2.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image2.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul> <span class="prix">40€</span><span class="stock2 pull-right">Rupture</span></ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
-                <div class="col-xs-6 col-md-3 image1">
+                <div class="col-xs-6 col-md-3 image1 vetement Gilet">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="image/image3.png">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image3.png">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
 
-                <div class="col-xs-6 col-md-3 image1">
+                <div class="col-xs-6 col-md-3 image1 goodies">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="image/image4.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image4.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-3 image1 nourriture">
+                    <a href="#" class="thumbnail article" style="text-decoration:none">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image5.jpg">
+                        </div>
+                        <div class="text">
+                            petite description
+                        </div>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="image/image5.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image6.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="image/image6.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image7.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="image/image7.jpg">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image8.png">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-3 image1">
                     <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="image/image8.png">
+                        <div class="cadre_image_produit">
+                            <img class="img-responsive" src="../img/image9.jpg">
+                        </div>
                         <div class="text">
                             petite description
                         </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-md-3 image1">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <img src="image/image9.jpg">
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul>Prix</ul>
-                        <button type="button">Ajouter au panier</button>
+                        <ul class="prix">Prix</ul>
+                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
                     </a>
                 </div>
         </div>
@@ -121,3 +164,9 @@
     </div>
 
 {% endblock all %}
+
+
+
+
+
+
