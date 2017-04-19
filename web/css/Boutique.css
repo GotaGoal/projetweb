@@ -215,11 +215,7 @@ body {
 	border-width: 0px 2px 0px 0px;
 	border-style: solid;
 }
-<<<<<<< HEAD
-#recherche form
-=======
 /*#recherche form
->>>>>>> origin/master
 {
 	display: block;
 }
@@ -256,9 +252,6 @@ body {
 {
 	width: 10%;
 	margin-left : 47%;
-<<<<<<< HEAD
-}
-=======
 }*/
 
 #wrapper{
@@ -338,7 +331,6 @@ body {
     display: block;
 }
 
->>>>>>> origin/master
 #catalogue
 {
 	width: 80%;
@@ -348,28 +340,13 @@ body {
 .image1
 {
 	max-width: 100%;
-<<<<<<< HEAD
-	min-width: 33%;
-	min-height: 255px;
-	max-height: 255px;
-	margin: 1% auto 1% auto;
-	border-width: 0px 1px 0px 0px;
-	border-style: solid;
-=======
 	min-width: 290px;
 	margin: auto;
     display: block;
->>>>>>> origin/master
 }
 .image1 a
 {
 	color: #000000;
-<<<<<<< HEAD
-}
-.image1 img
-{
-	width: 100%
-=======
     width: 100%;
     height: 100%;
     padding-bottom: 10%; 
@@ -414,7 +391,6 @@ body {
     max-width: 10px;
     margin: auto;
     margin-right: 5px;
->>>>>>> origin/master
 }
 .delimitation
 {
@@ -426,10 +402,7 @@ body {
 .article
 {
 	width: 100%;
-<<<<<<< HEAD
-=======
     min-height: 255px;
->>>>>>> origin/master
 }
 .article button
 {
@@ -443,10 +416,7 @@ body {
 }
 .text
 {
-<<<<<<< HEAD
-=======
     padding-top: 1%;
->>>>>>> origin/master
 	height: 40px;
 	overflow: hidden;
 	white-space: nowrap;
@@ -454,29 +424,16 @@ body {
 	margin-bottom: 1%
 	color : #000000;
 }
-<<<<<<< HEAD
-
-
-@media screen and (max-width: 450px)
-=======
 #vetement
 {
     display: block;
 }
 
 @media screen and (max-width: 600px)
->>>>>>> origin/master
 {
 	#contenu
 	{
 		display: block;
-<<<<<<< HEAD
-		max-width: 1100px;
-	}
-	#recherche
-	{
-		background-color: #ff9966;
-=======
 		max-width: 100%;
 		margin: auto;
 	}
@@ -488,13 +445,10 @@ body {
 	#recherche
 	{
 		background-color: #ffffff;
->>>>>>> origin/master
 		width: 100%;
 		min-width: 150px;
 		min-height: 100%;
 	}
-<<<<<<< HEAD
-=======
 	#Recherche input
 	{
 		max-width: 100%;
@@ -513,14 +467,11 @@ body {
 		padding: 5px;
 		align-items: center;
 	}
->>>>>>> origin/master
 	body
 	{
 		background-color: #ffffff;
 	}
 }
-<<<<<<< HEAD
-=======
 .thumbnail{
     text-decoration: none;
     /*border-width: 0px;*/
@@ -535,4 +486,3 @@ body {
  a.thumbnail:hover {
     border-color: gray;
 }
->>>>>>> origin/master
