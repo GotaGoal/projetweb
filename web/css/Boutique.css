@@ -342,6 +342,7 @@ body {
 	max-width: 100%;
 	min-width: 290px;
 	margin: auto;
+    display: block;
 }
 .image1 a
 {
@@ -423,7 +424,10 @@ body {
 	margin-bottom: 1%
 	color : #000000;
 }
-
+#vetement
+{
+    display: block;
+}
 
 @media screen and (max-width: 600px)
 {
