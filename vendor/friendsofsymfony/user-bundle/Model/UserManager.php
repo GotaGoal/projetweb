@@ -97,7 +97,7 @@ abstract class UserManager implements UserManagerInterface
     /**
      * @return PasswordUpdaterInterface
      */
-    protected function getPasswordUpdater()
+    public function getPasswordUpdater()
     {
         return $this->passwordUpdater;
     }

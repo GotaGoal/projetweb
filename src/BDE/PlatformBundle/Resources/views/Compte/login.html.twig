@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends ':FOSUserBundle:layout.html.twig' %}
 {% block stylesheets %}
   {{ parent() }}
   <link rel="stylesheet" href="{{ asset('css/login.css') }}"/>
@@ -7,8 +7,8 @@
 {% block tittle %}<title>Association</title>{% endblock tittle %}
 
 {% block all %} 
-  <div id="contenu" style="height:1000px;">
 
+    <div class="all">
  
     
         <script language="javascript">
@@ -33,6 +33,8 @@ function connexion() {
 </script>
 
 
+   
+
 <div id="overlay3" style="overflow: scroll;">
     <a class="close" href="{{ path('bde_platform_homepage')}}"><img alt="Fermer" title="Fermer la fenêtre" class="btn_close" src="close_pop.png"></a>
 
@@ -49,7 +51,7 @@ function connexion() {
         <br>
 
         
-           
+        	 
         <div id="inscrire">
         <form>
 
@@ -94,9 +96,9 @@ function connexion() {
          
 
         <div id="connexion">
-          {% block fos_user_content %}
-          {% include "@FOSUser/Security/login_content.html.twig" %}
-        {% endblock fos_user_content %}
+          {% block test %}
+          {% include "@FOSUser/Security/login.html.twig" %}
+        {% endblock test %}
           <!--
           }
         <form action="{{ path('bde_check_connexion')}}" method="post">
@@ -121,5 +123,5 @@ function connexion() {
         
      
    </div>
-</div>
+
 {% endblock all %} 

@@ -33,3 +33,19 @@ bde_boutique:
 bde_moncompte:
     path: /profil
     defaults: { _controller: BDEPlatformBundle:Bde:compte }
+
+bde_ecole:
+    path: /ecole
+    defaults: { _controller: BDEPlatformBundle:Bde:ecole }
+
+bde_activite:
+    path: /activite
+    defaults: { _controller: BDEPlatformBundle:Bde:activite }
+
+bde_connexion:
+    path: /connexion
+    defaults: { _controller: BDEPlatformBundle:Bde:connexion }
+
+bde_check_connexion:
+    path: /check
+    defaults: { _controller: BDEPlatformBundle:Bde:checkconnexion }

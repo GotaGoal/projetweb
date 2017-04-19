@@ -26,6 +26,9 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use FOS\UserBundle\Model\UserInterface;
+use Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder;
+
 
 
 class BdeController extends Controller
@@ -230,7 +233,108 @@ class BdeController extends Controller
         return $this->render('BDEPlatformBundle:Compte:compte.html.twig',array('user'=>$user));
     }
 
+    public function connexionAction()
+    {
+        return $this->render('BDEPlatformBundle:Compte:login.html.twig');
+    }
 
+    public function checkconnexionAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        //$user = $em->getRepository('BDEUserBundle:User')->find($this->getUser());
+
+        $userManager = $this->get('fos_user.user_manager');
+        
+
+
+        if($request->isMethod('POST'))
+        {
+            $user_mail = $request->get('user_email');
+            $user_password = $request->get('user_password');
+            $user = $userManager->findUserByEmail($user_mail);
+            if($user === null)
+            {
+                echo "ceci est normal";
+            }
+            //echo $user->getPassword();
+
+            //$encoder = new BCryptPasswordEncoder(30);
+
+            
+
+            //$hashedPassword = $encoder->encodePassword($user_password, $user->getSalt());
+            //echo $hashedPassword;
+            $hashedPassword = $userManager->getPasswordUpdater()->encodePassword($user_password,$user->getSalt());
+            echo $hashedPassword;
+
+            echo "\n";
+            echo $user->getPassword();
+            if($hashedPassword == $user->getPassword())
+            {
+                echo "la on est bien sa mère";
+            }
+            //$user->setPassword($hashedPassword);
+            //$user->eraseCredentials();
+           
+           //$plainPassword = $user->getPlainPassword();
+
+        /*if (0 === strlen($plainPassword)) {
+            return;
+        }
+
+        
+
+        if ($encoder instanceof BCryptPasswordEncoder) {
+            $user->setSalt(null);
+        } else {
+            $salt = rtrim(str_replace('+', '.', base64_encode(random_bytes(32))), '=');
+            $user->setSalt($salt);
+        }*/
+
+        
+
+            //echo $user_password;
+
+            //echo $user_mail;
+            //$user_nom = $request->get('user_nom');
+            //$user_prenom = $request->get('user_prenom');
+            //echo $user->getNom();
+            //$user->setNom($request->get('user_nom'));
+            //echo $user_prenom;
+            //$user->setPrenom($user_prenom);
+            //$userManager->updateUser($user);
+            //$em->persist($user);
+            //$em->flush();
+            //$form->handleRequest($request);
+            /*if($form->isValid())
+            {
+                $carousel_modif = $em->getRepository('BDEPlatformBundle:Carousel')->find($id);
+                $formCarousel->upload();
+                $carousel_modif->setPath($formCarousel->getPath());
+                $em->persist($carousel_modif);
+                $em->flush();
+            }*/
+        }
+    }
+
+    public function encodagemdp()
+    {
+        if (0 === strlen($plainPassword)) {
+            return;
+        }
+
+        $encoder = $this->encoderFactory->getEncoder($user);
+
+        if ($encoder instanceof BCryptPasswordEncoder) {
+            $user->setSalt(null);
+        } else {
+            $salt = rtrim(str_replace('+', '.', base64_encode(random_bytes(32))), '=');
+            $user->setSalt($salt);
+        }
+        $hashedPassword = $encoder->encodePassword($plainPassword, $user->getSalt());
+        $user->setPassword($hashedPassword);
+        $user->eraseCredentials();
+    }
     public function testAction(Request $request)
     {
         //ajout utilisateur role 

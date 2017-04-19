@@ -24,6 +24,8 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
+
 <body>
 <header>
     <div id="header">
@@ -41,7 +43,28 @@
         <div id="header-pre-nav" style="width: 100%; height: 25px"></div>
 
         
+<!--<div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>-->
 
+        {% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+
+        <div>
 
         
 
@@ -152,12 +175,15 @@
 
     </div>
 </header>
-{% block all %}
-<div id="contenu">
-    <!--Div a remplir-->
-</div>
 
+{% block all %}
+{% block fos_user_content %}
+<div id="contenu">
+   <p>lol</p> <!--Div a remplir-->
+</div>
+{% endblock fos_user_content %}
 {% endblock all %}
+
 
 <footer id="footer">
     <div id="footer-content">
@@ -202,4 +228,4 @@
 </footer>
 </body>
 </html>
-    
+
