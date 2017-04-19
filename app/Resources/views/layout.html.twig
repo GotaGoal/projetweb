@@ -95,11 +95,11 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_view_association') }}">Associations</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_activite') }}">Activités</a></li>
-                            <li onclick="active(this)"><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
+                            <li id="acc"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
+                            <li id="ec"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
+                            <li id="asso"><a href="{{ path('bde_view_association') }}">Associations</a></li>
+                            <li id="acti"><a href="{{ path('bde_activite') }}">Activités</a></li>
+                            <li id="coins"><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->
@@ -119,11 +119,11 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li onclick="active(this)"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
-                            <li onclick="active(this)"><a href="{{ path('bde_view_association') }}">Associations</a></li>
-                            <li onclick="active(this)"><a href="#">Galerie</a></li>
-                            <li><a href="{{ path('bde_activite') }}">Activités</a></li>
+                            <li id="acc"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
+                            <li id="ec"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
+                            <li id="asso"><a href="{{ path('bde_view_association') }}">Associations</a></li>
+                            <li id="acti"><a href="{{ path('bde_activite') }}">Activités</a></li>
+                            <li id="coins"><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -162,9 +162,9 @@
                         <ul class="nav navbar-nav">
                             <li id="acc"><a href="{{ path ('bde_platform_homepage') }}">Accueil</a></li>
                             <li id="ec"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
-                            <li ><a href="{{ path('bde_view_association') }}">Associations</a></li>
-                            <li ><a href="{{ path('bde_activite') }}">Activités</a></li>
-                            <li ><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
+                            <li id="asso"><a href="{{ path('bde_view_association') }}">Associations</a></li>
+                            <li id="acti"><a href="{{ path('bde_activite') }}">Activités</a></li>
+                            <li id="coins"><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
 
                             {% set pageActuelle = app.request.attributes.get('_route') %}
                             {% if pageActuelle == "bde_platform_homepage" %}       
@@ -174,6 +174,18 @@
                             {% elseif pageActuelle == "bde_ecole" %}
                                 <script>
                                         $("#ec").addClass( "active" );
+                                </script>
+                            {% elseif pageActuelle == "bde_view_association" %}
+                                <script>
+                                        $("#asso").addClass( "active" );
+                                </script>
+                            {% elseif pageActuelle == "bde_activite" %}
+                                <script>
+                                        $("#acti").addClass( "active" );
+                                </script>
+                            {% elseif pageActuelle == "fos_user_security_login" %}
+                                <script>
+                                        $("#coins").addClass( "active" );
                                 </script>
                             {% endif %}
                         </ul>
