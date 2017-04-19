@@ -2,19 +2,16 @@
 {% block stylesheets %}
   {{ parent() }}
   <link rel="stylesheet" href="{{ asset('css/Boutique.css') }}"/>
-  <script rel="text/javascript" src="../js/Boutique.js"></script>
+  <script rel="text/javascript" src="{{ asset('/js/Boutique.js') }}"></script>
 
   
 {% endblock stylesheets %}
 {% block tittle %}<title>Boutique</title>{% endblock tittle %}
 
 {% block all %}
-	 <form method="post" id="Recherche" action="traitement.php">
-        <input type="text" name="activite_article" placeholder="Rechercher votre article">
-
-    </form>
-    <div id="contenu" style="margin-top: 120px">
+	 <div id="contenu" style="margin-top: 120px">
         
+
         <div id="recherche">
             <div id="wrapper">
                 <div id="sidebar-wrapper">
@@ -34,7 +31,7 @@
                                     <a href="#" id="pull">Pull</a>
                                 </li>
                                 <li>
-                                    <a href="#" id="Gilet">Gilet</a>
+                                    <a href="#" id="Gilet"> Gillet</a>
                                 </li>
                             </ul>
                             
