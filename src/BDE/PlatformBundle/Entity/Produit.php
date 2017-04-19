@@ -177,6 +177,7 @@ class Produit
     public function __construct()
     {
         $this->couleurs = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

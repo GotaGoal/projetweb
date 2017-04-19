@@ -77,7 +77,21 @@ class BdeController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $listCategorie = $em->getRepository('BDEPlatformBundle:Categorie')->findAll();
-    	return $this->render('BDEPlatformBundle:Boutique:boutique.html.twig',array('listCategorie'=>$listCategorie));
+        $listProduit = $em->getRepository('BDEPlatformBundle:Produit')->findAll();
+        /*$test = array();
+        foreach ($listProduit as $produit) {
+            $test = $produit->getCategories()->getNom();;
+        }
+        var_dump($test);
+        foreach ($test as $key ) {
+            echo $key->getNom();
+        }*/
+
+
+
+        //return new Response("");
+        return $this->render('BDEPlatformBundle:Boutique:test.html.twig',array('listProduit'=>$listProduit));
+    	//return $this->render('BDEPlatformBundle:Boutique:boutique.html.twig',array('listCategorie'=>$listCategorie));
     }
 
     public function galerieAction()

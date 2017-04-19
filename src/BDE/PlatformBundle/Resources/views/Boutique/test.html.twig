@@ -1,0 +1,9 @@
+{% for produit in listProduit %}
+	{% for category in produit.categories %}
+		{{category.nom}}
+	{% endfor %}
+	{% for color in produit.couleurs %}
+		{{color.nom}}
+	{% endfor %}
+
+{% endfor %}

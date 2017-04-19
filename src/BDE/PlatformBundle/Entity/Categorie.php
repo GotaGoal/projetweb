@@ -13,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Categorie
 {
     /**
+    * @ORM\OneToMany(targetEntity="BDE\PlatformBundle\Entity\Categorie", mappedBy="categorie")
+   */
+  private $souscategories;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -61,5 +66,46 @@ class Categorie
     public function getNom()
     {
         return $this->nom;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->souscategories = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add souscategory
+     *
+     * @param \BDE\PlatformBundle\Entity\Categorie $souscategory
+     *
+     * @return Categorie
+     */
+    public function addSouscategory(\BDE\PlatformBundle\Entity\Categorie $souscategory)
+    {
+        $this->souscategories[] = $souscategory;
+
+        return $this;
+    }
+
+    /**
+     * Remove souscategory
+     *
+     * @param \BDE\PlatformBundle\Entity\Categorie $souscategory
+     */
+    public function removeSouscategory(\BDE\PlatformBundle\Entity\Categorie $souscategory)
+    {
+        $this->souscategories->removeElement($souscategory);
+    }
+
+    /**
+     * Get souscategories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSouscategories()
+    {
+        return $this->souscategories;
     }
 }
