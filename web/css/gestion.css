@@ -238,6 +238,7 @@ body {
     margin-left: 2%;
     border-style: solid;
     border-width: 1px 1px 1px 1px;
+    border-color: gray;
 }
 .titre_asso
 {
@@ -245,6 +246,7 @@ body {
     width: 100%;
     border-style: solid;
     border-width: 0px 0px 1px 0px;
+    border-color: gray;
 
 }
 .Titre
@@ -252,6 +254,7 @@ body {
     width: 50%;
     border-style: solid;
     border-width: 0px 1px 0px 0px;
+    border-color: gray;
 }
 .Association
 {
@@ -266,7 +269,8 @@ body {
 {
     width: 50%;
     border-style: solid;
-    border-width: 0px 1px 0px 0px;       
+    border-width: 0px 1px 0px 0px;
+    border-color: gray;       
 }
 .photo_ensemble
 {
@@ -302,19 +306,17 @@ body {
 {
     color: #000000;
     background-color: #ffffff;
-    padding: 3px;
+    padding: 5px;
     border-width: 1px;
     border-style: solid;
     border-color: #000000;
-    transition: 0.3s;
-    bottom: 0px;
     margin-left: 3px;
+    border-color: gray;
 }
 .site:hover
 {
-    color: red;
-    border-color: red;
-    border-radius: 10px;
+    color: gray;
+    background-color: lightgray;
 }
 .photo_g
 {
