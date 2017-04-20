@@ -123,20 +123,8 @@
                             <li id="ec"><a href="{{ path('bde_ecole') }}">Ecole</a></li>
                             <li id="asso"><a href="{{ path('bde_view_association') }}">Associations</a></li>
                             <li id="acti"><a href="{{ path('bde_activite') }}">Activités</a></li>
-                            <li id="coins"><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-header">Habits</li>
-                                    <li><a href="#">T-Shiry</a></li>
-                                    <li><a href="#">Sweet</a></li>
-                                    <li><a href="#">Jean</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header">Accessoires</li>
-                                    <li><a href="#">Mug</a></li>
-                                    <li><a href="#">Stickers</a></li>
-                                </ul>
-                            </li>
+                            <li id="gal"><a href="{{ path('bde_galerie') }}">Galerie</a></li>
+                            <li id="bout"><a href="{{ path('bde_boutique') }}">Boutique</a></li>
                             <li><a href="#">Mon Compte</a></li>
                             <li><a id="panier" href="#"><span class="material-icons">shopping_cart</span></a></li>
                         </ul>
@@ -166,7 +154,15 @@
                             <li id="acti"><a href="{{ path('bde_activite') }}">Activités</a></li>
                             <li id="coins"><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
 
-                            {% set pageActuelle = app.request.attributes.get('_route') %}
+                            
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+            </nav>
+        </div>
+{% endif %}
+{% set pageActuelle = app.request.attributes.get('_route') %}
+                                
                             {% if pageActuelle == "bde_platform_homepage" %}       
                                 <script>
                                         $("#acc").addClass( "active" );
@@ -187,14 +183,15 @@
                                 <script>
                                         $("#coins").addClass( "active" );
                                 </script>
+                            {% elseif pageActuelle == "bde_boutique" %}
+                                <script>
+                                        $("#bout").addClass( "active" );
+                                </script>
+                            {% elseif pageActuelle == "bde_galerie" %}
+                                <script>
+                                        $("#gal").addClass( "active" );
+                                </script>
                             {% endif %}
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div><!--/.container-fluid -->
-            </nav>
-        </div>
-{% endif %}
-
 
         </div>
 </header>

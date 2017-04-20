@@ -9,158 +9,69 @@
 {% block tittle %}<title>Boutique</title>{% endblock tittle %}
 
 {% block all %}
-	 <div id="contenu" style="margin-top: 120px">
-        <div id="recherche">
-            <div id="wrapper">
-                <div id="sidebar-wrapper">
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-brand">
-                            <a href="#" id="all">
-                                Catégorie
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" id="vetement">Vêtement</a>
-                            <ul class="sous_menu">
-                                <li>
-                                    <a href="#" id="T-shirt">T-shirt</a>
-                                </li>
-                                <li>
-                                    <a href="#" id="pull">Pull</a>
-                                </li>
-                                <li>
-                                    <a href="#" id="Gilet"> Gillet</a>
-                                </li>
-                            </ul>
-                            
-                        </li>
-                        <li>
-                            <a href="#" id="goodies">goodies</a>
-                        </li>
-                        <li>
-                            <a href="#" id="nourriture">nourriture</a>
-                        </li>
-                    </ul>
+	 <div id="contenu">
+        <div class="row magasin">
+            <div id="recherche" class="col-xs-12 col-sm-3" style="display: table-cell;">
+                <div id="menu" style="border:none;">
+                    <nav>
+                        <div id="menugauche">
+                            <div id="wrapper">
+                                <div id="sidebar-wrapper">
+                                    <ul class="sidebar-nav">
+                                        <li style="border:none;"><a href="#">Voir tous les articles</a></li>
+                                        {% for categorie in listCategorie %}
+                                        <li style="border:none;"><a href="#">{{ categorie.nom }}</a></li>
+                                    {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
-        </div>
-        <div id="catalogue" >
-           <div style="display:flex; flex-wrap:wrap;">
-                <div class="col-xs-12 col-xs-6 col-md-4 image1 vetement T-shirt">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image1.jpg">
+            <div id="catalogue" class="col-xs-12 col-sm-9" style="display: table-cell; border-left: solid 1px black;">
+                {% for produit in listProduit %}
+                <div class="col-xs-12 col-sm-6 col-md-4" style="padding: 0">
+                        <div class="article">
+                            <div class="article-contenu">
+                                <div class="article-img">
+                                    <img src="{{ asset(''~ produit.image ~'') }}">
+                                </div>
+                                <div class="article-info">
+                                    <h4 align="center">{{ produit.nom }}</h4>
+                                    <div class="article-description">
+                                        <p>{{ produit.description }}</p>
+                                    </div>
+                                    <div class="prix-stock">
+                                        <div class="prix">{{ produit.prix }}</div>
+                                        
+
+                                        {% if produit.stock == 0 %}
+                                            <div class="stock stck-no"></div>
+                                        {% else %}
+                                            <div class="stock stck-yes"></div>
+                                        {% endif %}
+
+
+                                        
+                                    </div>
+
+
+                                    <div class="btn-achat" style="height:35px;">
+                                        {% if produit.stock == 0 %}
+                                        <button style="visibility:hidden; " class="achat"></button>
+                                    {% else %}
+                                        <button class="achat">Ajouter au panier</button>
+                                    {% endif %}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            petite description qui a un minimum de sens pour voir les limites et l'efficaticité du machin qui n'est toujours pas assez long pour voir la différence
-                        </div>
-                        <ul> <span class="prix">40€</span><span class="stock1 pull-right">En stock</span></ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-xs-6 col-md-4 image1 vetement pull">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image2.jpg">
-                        </div>
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul> <span class="prix">40€</span><span class="stock2 pull-right">Rupture</span></ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-xs-6 col-md-4 image1 vetement Gilet">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image3.png">
-                        </div>
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul class="prix">Prix</ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-                </div>
-          
-                <div class="col-xs-12 col-xs-6 col-md-4 image1 goodies">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image4.jpg">
-                        </div>
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul class="prix">Prix</ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-xs-6 col-md-4 image1 nourriture">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image5.jpg">
-                        </div>
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul class="prix">Prix</ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-xs-6 col-md-4 image1">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image6.jpg">
-                        </div>
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul class="prix">Prix</ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-                </div>
-           
-                <div class="col-xs-12 col-xs-6 col-md-4 image1">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image7.jpg">
-                        </div>
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul class="prix">Prix</ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-xs-6 col-md-4 image1">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image8.png">
-                        </div>
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul class="prix">Prix</ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-xs-6 col-md-4 image1">
-                    <a href="#" class="thumbnail article" style="text-decoration:none">
-                        <div class="cadre_image_produit">
-                            <img class="img-responsive" src="../img/image9.jpg">
-                        </div>
-                        <div class="text">
-                            petite description
-                        </div>
-                        <ul class="prix">Prix</ul>
-                        <button type="button" class="achat"><span class="glyphicon glyphicon-shopping-cart panier"></span> Ajouter au panier</button>
-                    </a>
-               
+                    </div>
+                {% endfor %}
             </div>
         </div>
-        
     </div>
-</div>
 
 
 {% endblock all %}
