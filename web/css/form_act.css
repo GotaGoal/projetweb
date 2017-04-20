@@ -1,17 +1,30 @@
 .type_answer{
+    margin: 2% 0;
     display: flex;
+    justify-content: center;
+    width: 100%;
 }
 .content{
     padding-left: 10px;
 }
 .type{
+    border: 1px solid grey;
+    background-color: grey;
+    border-radius: 5px;
+    padding: 5px;
     margin: 0 10px;
+    color: white;
+}
+.type_answer > a{
+    text-decoration: none;
 }
 .type-selector > input, .type-check > input{
     margin: 5px;
 }
 .content{
     border: 1px solid black;
+    border-radius: 10px;
+    padding: 2%;
 }
 #question-template{
     visibility: collapse;
@@ -19,6 +32,8 @@
 }
 #generation{
     border: 1px solid black;
+    border-radius: 10px;
+    padding: 2%;
 }
 .el-del{
     padding-left: 10px;
@@ -36,9 +51,6 @@
 .question-titre{
     font-size: 1.2em;
 }
-#json{
-    margin-top: 30px;
-}
 .selector{
     display: flex;
 }
@@ -47,4 +59,23 @@
 }
 .complet-selector{
     display: flex;
+}
+.titre{
+    display: flex;
+}
+#formdiv{
+    background-color: #f5f5f5;
+}
+#previs > input{
+    margin: 5px 0;
+}
+#previs > .complet-selector{
+    margin: 5px;
+    text-align: center;
+}
+#previs > .complet-selector >p{
+    margin: 5px;
+}
+#previs > p{
+    margin-top: 10px;
 }

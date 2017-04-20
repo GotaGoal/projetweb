@@ -24,6 +24,7 @@ function add_content(context, type){
             create_space(contenu);
             break;
     }
+    return false;
 }
 function create_input(context) {
     context.append($('<div class="type-input">' +
@@ -65,13 +66,14 @@ function create_number(context) {
 function create_space(context) {
     context.append($('<p class="space">--<a onclick="del_el(this)" class="el-del">supprimer</a></p>'));
 }
+
 function get_input(context){
     $('#previs').append($('<input type="input" placeholder="'+$(context).find(".txt-input").val()+'" /><br/>'));
 }
 function get_selector(context) {
     context = $(context);
     let div = $('<div class="complet-selector"></div>');
-    div.append(context.find("select"));
+    div.append(context.find("select").clone());
     div.append($('<p>'+context.find('.txt-input').val()+'</p>'));
     $('#previs').append(div);
 }
@@ -79,9 +81,9 @@ function get_check(context) {
     context = $(context);
     let input;
     if(context.find(".boo-input").is(":checked")){
-        input = $('<input checked type="checkbox">'+context.find(".txt-input").val()+'<br/>');
+        input = $('<input checked type="checkbox"> '+context.find(".txt-input").val()+'<br/>');
     }else {
-        input = $('<input type="checkbox">'+context.find(".txt-input").val()+'<br/>');
+        input = $('<input type="checkbox"> '+context.find(".txt-input").val()+'<br/>');
     }
     $('#previs').append(input);
 }
@@ -91,14 +93,10 @@ function get_text(context) {
 }
 function get_number(context) {
     context = $(context);
-    $('#previs').append($('<input class="question-number" type="number" value="0" min="0">'+context.find(".txt-input").val()+'<br/>'));
+    $('#previs').append($('<input class="question-number" type="number" value="0" min="0"> '+context.find(".txt-input").val()+'<br/>'));
 }
 function get_space() {
     $('#previs').append($('<br/>'))
-}
-function add_question(){
-    $('#formulaire').append($('#question-template').children().clone());
-
 }
 function generate() {
     $('#previs').empty();
@@ -155,4 +153,10 @@ function create_selector_input(el) {
     div=div+"</select><input class=\"txt-input\" placeholder=\"Texte après la dropbox\"><a onclick=\"del_el(this)\" class=\"el-del\">supprimer</a>";
     el.append($(div));
 
+}
+function send() {
+    let div = $('<form method="post" action=""></form>');
+    generate();
+    div.append($("#previs").clone());
+    console.log(div[0]);
 }

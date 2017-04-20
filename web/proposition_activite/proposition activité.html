@@ -4,102 +4,17 @@
 	<meta charset="utf-8" />
 	<link rel="stylesheet" media="screen" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/proposition_activite.css" />
+    <link rel="stylesheet" href="../css/form_act.css">
+    <script rel="text/javascript" src="../js/form_act.js"></script>
     <script type="text/javascript" src="../js/proposition_activite.js"></script>
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <script rel="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
 
 	<title>BDE EXIA NANCY</title>
 
 </HEAD>
 
 <body>
-	    <header>
-        <div class="all" align="center">
-            <div class="row" >
-                <div class="col-xs-3"> <img id="image" src="Logo.png" /></div>
-                
-                   <div class="col-xs-3 " > <h1 id="titre">BDE Nancy Exia</h1></div>
-                 <div class="col-xs-3 col-centered" >
-                 		<img class="col-xs-2 imageL" class="center-block" src="Facebook.png" />
-                    <img class="col-xs-2 imageL" class="center-block" src="Twitter.png" /></div>
-            </div>
-        </div>
-
-
-
-
-        <div id="all4">
-            <div class="all" align="center">
-
-               <nav class="navbar navbar-inverse" id="nav1"  role="navigation">
-                    <div id="container"> 
-                    <div class="navbar-header" >
-                        <button type="button" class="navbar-toggle" id="nav4" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                
-
-                 
-                     </div> 
-                </nav>
-
-
-
-
-
-                <nav class="navbar navbar-inverse" id="nav2" role="navigation">
-                    <div id="container"> 
-               
-                     <div class="collapse navbar-collapse row"   data-target=".navbar-collapse">
-                        <ul class="nav navbar-nav col" >
-
-                            <li><a href="#Acceuil">Acceuil</a></li>
-                            <li><a href="#Ecole">Ecole</a></li>
-                            <li><a href="#Association">Association's</a></li>
-                            <li><a href="#Galerie">Galerie</a></li>
-                            <li><a href="#Activités">Activités</a></li>
-                            <li><a href="#Boutique">Boutique</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right col">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                    </div>
-                     </div> 
-                </nav>
-
-
-                    <nav class="navbar navbar-inverse" id="nav3" role="navigation">
-                    <div id="container"> 
-                    
-
-                     <div class="collapse navbar-collapse row "   data-target=".navbar-collapse">
-                        <ul class="nav navbar-nav col" >
-
-                            <li><a href="#Acceuil">Acceuil</a></li>
-                            <li><a href="#Ecole">Ecole</a></li>
-                            <li><a href="#Association">Association</a></li>
-                            <li><a href="#Galerie">Galerie</a></li>
-                            <li><a href="#Activités">Activités</a></li>
-                            <li><a href="#Boutique">Boutique</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right col">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                        </ul>
-                    </div>
-                     </div> 
-                </nav>
-            </div>
-        </div>
-    </header>
-	<nav>
-		
-	</nav>
-
 <div class="container">
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
 		<fieldset>
@@ -113,7 +28,6 @@
     				<div id='erreur_nom'>Veuillez nommer votre activité</div>
  				</div>
 			</div>
-
 			<div class="form-group">
   				<label class="col-md-4 control-label">Date</label>  
   				<div class="col-md-4 inputGroupContainer">
@@ -124,7 +38,6 @@
     				<div id='erreur_date'>Veuillez ndonner une date</div>
  				</div>
 			</div>
-
 			<div class="form-group">
   				<label class="col-md-4 control-label">De</label>  
   				<div class="col-md-4 inputGroupContainer">
@@ -135,7 +48,6 @@
     				<div id='erreur_heure_debut'>Veuillez donner une heure</div>
  				</div>
 			</div>
-
 			<div class="form-group">
   				<label class="col-md-4 control-label">à</label>  
   				<div class="col-md-4 inputGroupContainer">
@@ -146,7 +58,6 @@
     				<div id='erreur_heure_fin'>Veuillez donner une heure de fin</div>
  				</div>
 			</div>
-
 			<div class="form-group"> 
   			<label class="col-md-4 control-label">Association concernée</label>
     			<div class="col-md-4 selectContainer">
@@ -162,7 +73,6 @@
   					<div id='erreur_asso'>Veuillez définir quel association est concernée</div>
 				</div>
 			</div>
-
 			<div class="form-group">
   				<label class="col-md-4 control-label">Description de l'évent</label>
     			<div class="col-md-4 inputGroupContainer">
@@ -174,44 +84,37 @@
   					<div id='erreur_desc'>Veuillez donner une description</div>
   				</div>
 			</div>
-
-			<div class="form-group">
-  				<label class="col-md-4 control-label"></label>
-  				<div class="col-md-4">
-    				<input type="submit" class="btn btn-warning" >
-  				</div>
+			<div id="formdiv">
+				<div id="formulaire">
+					<div class="question">
+						<p>Formulaire (optionnel) </p>
+						<div class="type_answer">
+							<a class="type" onclick="add_content(this, 'input')">Add Input text</a>
+							<a class="type" onclick="add_content(this, 'selector')">Add selector</a>
+							<a class="type" onclick="add_content(this, 'check')">Add Check button</a>
+							<a class="type" onclick="add_content(this, 'text')">Add Text</a>
+							<a class="type" onclick="add_content(this, 'number')">Add number</a>
+							<a class="type" onclick="add_content(this, 'space')">Saut de ligne</a>
+						</div>
+						<p style="margin-left: 2%">Structure:</p>
+						<div class="content" style="margin: 2%">
+						</div>
+					</div>
+				</div>
+				<div id="generation" style="margin: 2%">
+					<button id="generate" onclick="generate()">Prévisualisation</button>
+					<div id="previs"></div>
+				</div>
 			</div>
-
+			<input type="hidden" name="form">
+			<div class="form-group">
+			<label class="col-md-4 control-label"></label>
+			<div class="col-md-4">
+				<input type="submit" onclick="send()" class="btn btn-warning" >
+			</div>
+		</div>
 		</fieldset>
 	</form>
-	
+
 </div>
-
-		<!--<form id="formulaire">
-
-			<label  class="nom_activite" for="nom_activite">L'activité proposée* <span class="glyphicon glyphicon-tower"></span></label>
-			<input  class="nom_activite" id = "Activite" type="text" name="nom_activite" placeholder="Nom d'activité" onblur="champs_requis(this.value, this.id)"> 
-
-			<label class="time" for="date">date* <span class="glyphicon glyphicon-calendar" ></span></label>
-			<input class="time" id="date" type="date" name="date" placeholder="Date" onblur="champs_requis(this.value, this.id)">
-			<label class="time" for="heure">De* <span class="glyphicon glyphicon-time"></span></label>
-			<input class="time" id="debut" type="time" name="heure" placeholder="heure" min="0" max="23" onblur="champs_requis(this.value, this.id)">
-			<label class="time" for="heure">à* <span class="glyphicon glyphicon-time"></span></label>
-			<input class="time" id="fin" type="time" name="heure" placeholder="heure" min="0" max="23" onblur="champs_requis(this.value, this.id)">		
-	
-			<label class="association" for="association">Association concernée*</label>
-			<select class="association" name="association" id="association">
-			<option value="aucune" selected>aucune</option>
-			<option value="BDE">BDE</option>
-			<option value="Japon">Japon</option>
-			</select>			
-
-			<label class="Description" for="Description">Description*</label>
-			<textarea class="Description" name="Description" id="Description" placeholder="Description" onblur="champs_requis(this.value, this.id)"></textarea>			
-
-			<input type="submit" placeholder="Proposer"></input>
-
-			<label class="obligation">* Champs obligatoire</label>
-		</form>
-	</div>
 </body>

@@ -15,6 +15,7 @@ function total(){
 }
 function delete_item(el) {
     el.parentNode.parentNode.remove();
+    document.getElementById("total").innerHTML = total();
     panier_empty();
 }
 
