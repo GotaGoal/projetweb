@@ -80,8 +80,8 @@ class BdeController extends Controller
         unset($panier[10]);
 
         $panier = array_values($panier);
-        print_r($panier);
-        //return $this->render('BDEPlatformBundle:Panier:panier.html.twig');
+        //print_r($panier);
+        return $this->render('BDEPlatformBundle:Panier:panier.html.twig');
 
     }
 
