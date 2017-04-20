@@ -252,3 +252,10 @@ footer{
 .nb-art-0{
     display: none;
 }
+#navbar{
+    padding-left: 0;
+    padding-right: 0;
+}
+#disconnect{
+    color: #C2242A;
+}
