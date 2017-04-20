@@ -231,3 +231,24 @@ footer{
     background-color: white;
     margin-bottom: 2%;
 }
+#number{
+    position: absolute;
+}
+#nb-art{
+    text-align: center;
+    color: white;
+    font-size: .5em;
+    position: fixed;
+    background-color: #0c7fda;
+    border-radius: 500px;
+    width: 19px;
+    height: 19px;
+    margin-left: 13px;
+    margin-top: 13px;
+}
+#panier-item{
+    display: flex;
+}
+.nb-art-0{
+    display: none;
+}
