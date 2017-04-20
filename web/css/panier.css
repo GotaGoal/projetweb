@@ -46,10 +46,10 @@
     text-align: left;
     margin-top: 20px;
 }
-.number{
+.number-panier{
     margin-top: 20px;
 }
-.number::before{
+.number-panier::before{
     content: 'Unité: ';
 }
 .item-info{
