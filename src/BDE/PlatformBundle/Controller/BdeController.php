@@ -76,8 +76,12 @@ class BdeController extends Controller
     {
         $session = $req->getSession();
         $panier = $session->get('panier');
-        //print_r($panier);
-        return $this->render('BDEPlatformBundle:Panier:panier.html.twig');
+
+        unset($panier[10]);
+
+        $panier = array_values($panier);
+        print_r($panier);
+        //return $this->render('BDEPlatformBundle:Panier:panier.html.twig');
 
     }
 
