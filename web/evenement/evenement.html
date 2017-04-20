@@ -1,227 +1,140 @@
 <!Doctype html>
-
+<html>
 <HEAD>
     <meta charset="utf-8" />
     <link rel="stylesheet" media="screen" href="../css/bootstrap.min.css">
     <script class="cssdeck" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/evenement.css" />
-    <link rel="stylesheet" href="../css/hf.css" />
-    <script rel="text/javascript" src="../js/HeaderFooter.js"></script>
+    <script type="text/javascript" src="../js/materialize.js"></script>
+    <link rel="stylesheet" href="../css/materialize.css" />
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/evenement.css" />
 
-    <title>BDE EXIA NANCY</title>
-
+    <title>Activité</title>
 </HEAD>
-
 <body>
 <div class="row">
-    <div class="col-xs-12 col-sm-3">
-        <div id="recherche">
-            <div id="wrapper">
-                <div id="sidebar-wrapper">
-                    <ul class="sidebar-nav">
-                        <li><input id="act-search" type="text" name="activite_recherche" placeholder="Rechercher votre activité"></li><li>
-                        <a href="#">Association</a>
-                        <ul>
-                            <li><a href="#">association</a></li>
-                            <li ><a href="#">BDE</a></li>
-                            <li ><a href="#">Japon</a></li>
-                        </ul>
-                    </li>
-                        <li><a href="#">Proposer activité</a></li>
-                    </ul>
-                </div>
+    <div class="col s12 m3">
+        <div class="collection">
+            <div class="search-wrapper">
+                <input id="search" placeholder="Rechercher" style="margin-bottom:0;"><i class="material-icons">search</i>
+            </div>
+            <div id="header-asso" class="collection-item">Associations</div>
+            <div id="drop-asso" class="collection" style="margin: 0; border: none;">
+                <a href="#!" class="collection-item">BBC</a>
+                <a href="#!" class="collection-item">Japon</a>
+                <a href="#!" class="collection-item">BDE</a>
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-9">
-        <div id="liste_event">
-            <ul class="nav nav-tabs">
-                <li ><a data-toggle="tab" href="#Propose">Proposé</a></li>
-                <li class="active"><a data-toggle="tab" href="#Approuve">Approuvé</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="Approuve" class="tab-pane fade in active">
-                    <div class="evenement">
-                        <div class="date_actif">
-                            <div class="mois">
-                                <h4>Janvier</h4>
-                            </div>
-                            <div class="numero">
-                                <h1>31</h1>
-                            </div>
-                        </div>
-                        <div class="description_evenement">
-                            <div class="titre_asso">
-                                <div class="Titre">
-                                    <ul>Titre</ul>
-                                </div>
-                                <div class="Association">
-                                    <ul>Asso</ul>
-                                </div>
-                            </div>
-                            <div class="descri_photo">
-                                <div class="description">
-                                    <div class="mini_description">
-                                        légère description
-                                    </div>
-                                    <ul>
-                                        <a style="text-decoration:none"><span class="site pull-right">s'inscrire</span></a>
-                                    </ul>
-                                </div>
-                                <div class="photo_ensemble">
-                                    <img src="../img/image4.jpg" class="photo">
-                                </div>
-                            </div>
-                        </div>
+    <div class="grid col s12 m9">
+        <ul class="tabs">
+            <li class="tab col s3"><a class="" href="#past">Passé</a></li>
+            <li class="tab col s3"><a class="active" href="#today">Aujourd'hui</a></li>
+            <li class="tab col s3"><a class="" href="#futur">Future</a></li>
+            <li class="tab col s3"><a href="#propose">Proposé</a></li>
+        </ul>
+        <div class="row" id="past">
+            <div class="col l4 m6 s12 card-max">
+                <div class="card" style="overflow: hidden;">
+                    <div class="card-image">
+                        <img style="max-width: 100%; height: auto" src="../img/test.png">
                     </div>
-
-                    <ul class="separateur_haut">
-                        <span class="glyphicon glyphicon-arrow-up"></span>
-                        <span>A venir</span>
-                        <span class="glyphicon glyphicon-arrow-up"></span>
-                    </ul>
-
-                    <div class="evenement">
-                        <div class="date_actif">
-                            <div class="mois">
-                                <h4>Janvier</h4>
-                            </div>
-                            <div class="numero">
-                                <h1>31</h1>
-                            </div>
-                        </div>
-                        <div class="description_evenement">
-                            <div class="titre_asso">
-                                <div class="Titre">
-                                    <ul>Titre</ul>
-                                </div>
-                                <div class="Association">
-                                    <ul>Asso</ul>
-                                </div>
-                            </div>
-                            <div class="descri_photo">
-                                <div class="description">
-                                    <div class="mini_description">
-                                        légère description
-                                    </div>
-                                    <ul>
-                                        <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                            <span class="site pull-right">
-                                               s'inscrire
-                                            </span>
-                                        </a>
-                                    </ul>
-                                </div>
-                                <div class="photo_ensemble">
-                                    <img src="../img/image6.jpg" class="photo">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card-content large">
+                        <span class="card-title activator grey-text text-darken-4">Titre de l'activité</span>
+                        <p class="activity-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eaque harum, in itaque labore laboriosam necessitatibus quae quam voluptatem voluptatibus? Accusantium fugit, neque? Ad ducimus error in iusto maxime repellat.</p>
+                        <p class="date">29 Janvier</p>
                     </div>
-
-                    <ul class="separateur_bas">
-                        <span class="glyphicon glyphicon-arrow-down"></span>
-                        <span>Déjà passé</span>
-                        <span class="glyphicon glyphicon-arrow-down"></span>
-                    </ul>
-
-                    <div class="evenement">
-                        <div class="date_actif">
-                            <div class="mois">
-                                <h4>Janvier</h4>
-                            </div>
-                            <div class="numero">
-                                <h1>31</h1>
-                            </div>
-                        </div>
-                        <div class="description_evenement">
-                            <div class="titre_asso">
-                                <div class="Titre">
-                                    <ul>Titre</ul>
-                                </div>
-                                <div class="Association">
-                                    <ul>Asso</ul>
-                                </div>
-                            </div>
-                            <div class="descri_photo">
-                                <div class="description">
-                                    <div class="mini_description">
-                                        légère description
-                                    </div>
-                                    <ul>
-                                        <a href="" style="text-decoration:none"><span class="site pull-right">s'inscrire</span></a>
-                                    </ul>
-                                </div>
-                                <div class="photo_ensemble">
-                                    <img src="../img/image5.jpg" class="photo">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card-action">
+                        <a href="#">S'inscrire</a>
+                        <p class="prix">5</p> <!--no-prix pour ne pas l'afficher-->
                     </div>
                 </div>
-                <div id="Propose" class="tab-pane fade">
-                    <div class="evenement">
-                        <div class="liste_date">
-                            <div class="date">
-                                <div class="mois">
-                                    <h4>Janvier</h4>
-                                </div>
-                                <div class="numero">
-                                    <h1>31</h1>
-                                </div>
-                            </div>
-                            <div class="date">
-                                <div class="mois">
-                                    <h4>Janvier</h4>
-                                </div>
-                                <div class="numero">
-                                    <h1>42</h1>
-                                </div>
-                            </div>
+            </div>
+            <div class="col l4 m6 s12 card-max">
+                <div class="card" style="overflow: hidden;">
+                    <div class="card-image">
+                        <img style="max-width: 100%; height: auto" src="../img/test.png">
+                    </div>
+                    <div class="card-content large">
+                        <span class="card-title activator grey-text text-darken-4">Titre de l'activité</span>
+                        <p class="activity-descr"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus quidem sint voluptate! Aut earum itaque nisi quaerat quas quidem suscipit veniam vero? Culpa dicta distinctio dolorem fugiat impedit porro quaerat!</span><span>Aperiam at, dolorem ducimus ea earum eos est exercitationem fugiat in ipsum iste libero, modi nemo nesciunt optio quia quis quos repellat repudiandae similique totam vel veniam veritatis vitae voluptas!</span><span>Ad animi, corporis dolor inventore nobis sed? A ad at consequatur consequuntur corporis dignissimos dolorem doloribus eaque excepturi, magni non omnis perferendis quibusdam ratione saepe ullam unde vel voluptas voluptates.</span><span>Aperiam architecto est ipsum iusto labore necessitatibus obcaecati odio quam velit. Aliquam consequuntur doloremque, ex hic id itaque labore maiores natus quidem ut? Ab accusantium alias aperiam cupiditate error quidem.</span><p>
+                        <p class="date">29 Janvier</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">S'inscrire</a>
+                        <p class="prix">5</p> <!--no-prix pour ne pas l'afficher-->
+                    </div>
+                </div>
+            </div>
+            <div class="col l4 m6 s12 card-max">
+                <div class="card" style="overflow: hidden;">
+                    <div class="card-image">
+                        <img style="max-width: 100%; height: auto" src="../img/test.png">
+                    </div>
+                    <div class="card-content large">
+                        <span class="card-title activator grey-text text-darken-4">Titre de l'activité</span>
+                        <p class="activity-descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eaque harum, in itaque labore laboriosam necessitatibus quae quam voluptatem voluptatibus? Accusantium fugit, neque? Ad ducimus error in iusto maxime repellat.</p>
+                        <p class="date">29 Janvier</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">S'inscrire</a>
+                        <p class="prix">5</p> <!--no-prix pour ne pas l'afficher-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="today">
+            <div class="col l4 m6 s12">
+                <div class="card large" style="overflow: hidden;">
+                    <div class="card-image">
+                        <img style="max-width: 100%; height: auto" src="../img/test.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Titre de l'activité</span>
+                        <p>Description de l'activité</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">S'inscrire</a>
+                        <p class="prix">5</p> <!--no-prix pour ne pas l'afficher-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="futur">
+            <div class="col l4 m6 s12">
+                <div class="card large" style="overflow: hidden;">
+                    <div class="card-image">
+                        <img style="max-width: 100%; height: auto" src="../img/test.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Titre de l'activité</span>
+                        <p>Description de l'activité</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">S'inscrire</a>
+                        <p class="prix">5</p> <!--no-prix pour ne pas l'afficher-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="propose">
+            <div class="col l4 m6 s12">
+                <div class="card large" style="overflow: hidden;">
+                    <div class="card-image">
+                        <img style="max-width: 100%; height: auto" src="../img/test.png">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Titre de l'activité</span>
+                        <p>Description de l'activité</p>
+                        <div class="choix">
+                            <p class="choix1">32 Janvier</p>
+                            <p class="choix2">33 Janvier</p>
                         </div>
-                        <div class="description_evenement">
-                            <div class="titre_asso">
-                                <div class="Titre">
-                                    <ul>Titre</ul>
-                                </div>
-                                <div class="Association">
-                                    <ul>Asso</ul>
-                                </div>
-                            </div>
-                            <div class="descri_photo">
-                                <div class="description">
-                                    <div class="mini_description">
-                                        légère description
-                                    </div>
-                                    <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                        <button class="site">
-                                            date 1
-                                        </button>
-                                    </a>
-                                    <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                        <button class="site">
-                                            date 2
-                                        </button>
-                                    </a>
-                                    <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                        <button class="site">
-                                            intéresser
-                                        </button>
-                                    </a>
-                                    <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                        <button class="site">
-                                            pas intéresser
-                                        </button>
-                                    </a>
-                                </div>
-                                <div class="photo_ensemble">
-                                    <img src="../img/image5.jpg" class="photo">
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">S'inscrire</a>
+                        <p class="prix">5</p> <!--no-prix pour ne pas l'afficher-->
                     </div>
                 </div>
             </div>
@@ -229,3 +142,4 @@
     </div>
 </div>
 </body>
+</html>

@@ -1,201 +1,3 @@
-.all {
-    background: rgba(181, 12, 27, 1);
-    max-width: 1200px;
-    margin: auto;
-}
- 
-.imageL {
-    width: 50%;
-    min-width: 60px;
-    max-width: 70px;
-}
-#recherche {
-    width: 100%;
-    border-style: solid;
-    border-width: 0px 2px 0px 0px;
-}
-#act-search{
-    width: 100%;
-    margin: 0;
-}
-#Recherche:focus, input:focus
-{
-    outline: none;
-}
-#Recherche
-{
-    border-style: none;
-}
-.association
-{
-    width: 80%;
-    display: block;
-    text-align: center;
-    margin: 0px 10% 10px 10%;
-}
-.association select
-{
-    max-width: 100%;
-}
-#Proposer
-{
-    margin: 20px auto;
-}
-
-#liste_event
-{
-    display: block;
-    width: 80%;
-    margin: auto;
-}
-#Approuve
-{
-    height: 450px;
-    overflow: auto;
-}
-
-.evenement
-{
-    display: flex;
-    margin: 0 auto;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    width: 90%;
-}
-.date_actif
-{
-    width: 10%
-}
-.liste_date
-{
-    width: 10%;
-}
-.date
-{
-    width: 100%;
-    margin-bottom: 5px;
-}
-.mois
-{
-    text-align: center;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-}
-.mois h4
-{
-    font-family: arial;
-    color: rgb(194, 36, 42);
-    font-weight: bold;
-}
-.numero
-{
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-}
-.numero h1
-{
-    color: #000000;
-}
-.description_evenement
-{
-    width: 90%;
-    margin-left: 2%;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: gray;
-}
-.titre_asso
-{
-    display: flex;
-    width: 100%;
-    border-style: solid;
-    border-width: 0px 0px 1px 0px;
-    border-color: gray;
-
-}
-.Titre
-{
-    width: 50%;
-    border-style: solid;
-    border-width: 0px 1px 0px 0px;
-    border-color: gray;
-}
-.Titre ul
-{
-    font-family: arial;
-    color: rgb(194, 36, 42);
-    font-weight: bold;
-}
-.Association
-{
-    width: 50%;
-}
-.Association ul
-{
-    font-family: arial;
-    color: rgb(194, 36, 42);
-    font-weight: bold;
-}
-.descri_photo
-{
-    display: flex;
-    width: 100%;
-}
-.description
-{
-    width: 50%;
-    border-style: solid;
-    border-width: 0px 1px 0px 0px;
-    border-color: gray;       
-}
-.photo_ensemble
-{
-    width: 50%;
-}
-.photo
-{
-    width: 100%;
-}
-.separateur_haut
-{
-    border-style: solid;
-    width: 90%;
-    border-width: 0px 0px 2px 0px;
-    border-color: #000000;
-    margin:  5px auto 0px auto;
-    text-align: center;
-}
-.separateur_bas
-{
-    border-style: solid;
-    width: 90%;
-    border-width: 2px 0px 0px 0px;
-    border-color: #000000;
-    margin: auto;
-    text-align: center;
-}
-.mini_description
-{
-    height: 80%;
-}
-.site
-{
-    color: #000000;
-    background-color: #ffffff;
-    padding: 4px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #000000;
-    margin-left: 2px;
-    border-color: gray;
-    margin-right: 2px;
-}
-.site:hover
-{
-    color: gray;
-    background-color: lightgray;
-}
-
 #wrapper{
     width: 100%;
 }
@@ -205,7 +7,6 @@
     overflow-y: auto;
     background: #ffffff;
 }
-
 /* Sidebar Styles */
 .detail
 {
@@ -273,3 +74,67 @@
 .sidebar-nav li:hover > ul{
     display: block;
 }
+#menugauche
+{
+    left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    border-right: 0.5px  solid gray;
+
+    text-align: left;
+    width: auto;
+    height: 100%;
+    min-height: 100%;
+    margin:auto;
+
+    background-color: #ffffff;
+    min-width: 150px;
+    min-height: 100%;
+
+}
+
+.collection > .collection > a{
+    padding-left: 40px
+}
+#header-asso{
+    color: lightgrey;
+    font-weight: bold;
+}
+#search{
+    padding: 0 25px;
+}
+.search-wrapper > i{
+    margin-top: 10px;
+}
+.search-wrapper{
+    display: flex;
+}
+#tabs-swipe{
+    margin: 5px;
+    box-shadow: 2px 2px 5px lightgrey;
+}
+.prix::before{
+    content: "Prix: ";
+}
+.prix::after{
+    content: '€';
+}
+.prix{
+    float: right;
+    font-size: medium;
+}
+.no-prix{
+    display: none;
+}
+.choix{
+    display: flex;
+    justify-content: space-between;
+}
+.card-max{
+    height: 600px;
+    overflow: scroll;
+}
+

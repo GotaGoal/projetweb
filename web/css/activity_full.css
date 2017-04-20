@@ -63,6 +63,11 @@ body{
     display: flex;
     width: auto;
 }
+#likebar > div >a{
+    text-decoration: none;
+    color: #0c7fda;
+    cursor: pointer;
+}
 #like,#dislike{
     text-align: center;
     float: none;
