@@ -1,64 +1,99 @@
-
-    .all {
-        background: rgba(181, 12, 27, 1);
-        max-width: 1200px;
-        margin: auto;
-    }
-    
-    .col-xs-3 {
-       
-        width: 33%;
-        align-items: center;
-    }
-    
-
-
- 
-    .col-xs-2 {
-         
-        float: right;
-        width: 50%;
-        margin-top: 20px;
-    }
- 
-    .imageL {
-        width: 50%;
-        min-width: 60px;
-        max-width: 70px;
-    }
-    
-    #titre {}
-    
-    #image {
-        width: 10%;
-        min-width: 90px;
-    }
-#Recherche
-{
-    max-width: 1100px;
-    background-color: #ffffff;
-	display: flex;
-	max-width: 1100px;
-	margin:auto;
-    text-align : center;
-    width: 20%;
-    min-width: 150px;
-    min-height: 100%;
-    border-width: 0px 2px 0px 0px;
-    border-style: solid;
+.row{
+    margin: 0;
+    height: 100%;
 }
-#Recherche input
-{
-    width: 600px;
+#recherche{
+    background-color: lightgrey;
+    height: 100%;
+    padding: 0;
+}
+#catalogue{
+
+}
+.article{
+    padding: 5px;
+}
+.article-contenu{
+    border: 1px solid grey;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.article-description{
+    text-overflow: ellipsis;
+    height: 100px;
+    overflow: hidden;
+}
+.article-info{
+    padding: 10px;
+}
+.article-img > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.prix::after{
+    content: '€';
+}
+.btn-achat{
+    width: 100%;
+    text-align: center;
+}
+.achat{
+    width: 60%;
+    height: 35px;
+    text-align: center;
+}
+.achat > .material-icons{
+    height: 100%;
+}
+.prix-stock{
+    font-size: 1.2em;
+    display: flex;
+    margin: 30px 20px 20px;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.stck-yes{
+    color: darkgreen;
+}
+.stck-yes::before{
+    content: 'Disponible';
+}
+.stck-no{
+    color: darkred;
+}
+.stck-no::before{
+    content: 'Rupture';
+}
+.menu-item{
+    padding: 20px 5px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.menu-item:hover{
+    padding: 20px ;
+}
+.menu-item-group > a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+.menu-item-group{
+    position: fixed;
+    top:0;
+}
+#menu{
+    height: 100%;
+    border-right: 1px solid black;
 }
 #wrapper{
     width: 100%;
-	width: 10%;
-	margin-left : 47%;
-}
-
-#wrapper{
-	width: 100%;
 }
 
 #sidebar-wrapper {
@@ -132,181 +167,4 @@
 }
 .sidebar-nav li:hover > ul{
     display: block;
-}
-
-#catalogue
-{
-    width: 80%;
-    padding: 5px;
-    align-items: center;
-}
-.image1
-{
-    max-width: 100%;
-    min-width: 290px;
-    margin: auto;
-	width: 80%;
-	padding: 5px;
-	align-items: center;
-    display: block;
-}
-.image1 a
-{
-    color: #000000;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 10%; 
-}
-.cadre_image_produit
-{
-    height: 140px;
-    width: 250px;
-}
-.prix
-{
-    font-family: arial;
-    color: rgb(194, 36, 42);
-    font-weight: bold;
-}
-.stock1
-{
-    font-family: arial;
-    color: #009933;
-    font-weight: bold;
-}
-.stock2
-{
-    font-family: arial;
-    color: rgb(194, 36, 42);
-    font-weight: bold;
-}
-.achat
-{
-    background-color: #cc0000;
-    color: #ffffff;
-    border-color: #cc0000;
-    border-radius: 5px;
-    box-shadow: none;
-    border-style: solid;
-    position: absolute;
-    bottom: 10%;
-}
-.panier
-{
-    max-height: 10px;
-    max-width: 10px;
-    margin: auto 5px auto auto;
-}
-.delimitation
-{
-    width: 90%;
-    border: 0 solid #000000;
-    border-top-width: 1px;
-}
-.article
-{
-	width: 100%;
-    min-height: 255px;
-}
-.article button
-{
-    width: 80%;
-    margin: auto;
-    display: none;
-}
-.article:hover > button
-{
-    width: 80%;
-	margin: auto;
-	display: none;
-}
-.article:hover > button
-{
-	display: block;
-}
-.text
-{
-    padding-top: 1%;
-    height: 40px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-bottom: 1%;
-    color : #000000;
-}
-#vetement
-{
-    display: block;
-}
-
-@media screen and (max-width: 600px)
-{
-    .cadre_image_produit
-    {
-        width: 100%;
-        height: 100%;
-    }
-    #recherche
-    {
-        background-color: #ffffff;
-        width: 100%;
-        min-width: 150px;
-        min-height: 100%;
-    }
-    #Recherche input
-    {
-        max-width: 100%;
-    }
-    .image1
-    {
-        min-width: 100%;
-        min-height: 100%;
-        margin: 1% 0% 1% 0%;
-        border-width: 0px 1px 0px 0px;
-        border-style: solid;
-    }
-    #catalogue
-    {
-        width: 100%;
-        padding: 5px;
-        align-items: center;
-    }
-	#recherche
-	{
-		background-color: #ffffff;
-		width: 100%;
-		min-width: 150px;
-		min-height: 100%;
-	}
-	#Recherche input
-	{
-		max-width: 100%;
-	}
-	.image1
-	{
-		min-width: 100%;
-		min-height: 100%;
-		margin: 1% 0% 1% 0%;
-		border-width: 0px 1px 0px 0px;
-		border-style: solid;
-	}
-	#catalogue
-	{
-		width: 100%;
-		padding: 5px;
-		align-items: center;
-	}
-}
-.thumbnail{
-    text-decoration: none;
-    /*border-width: 0px;*/
-}
-
-.thumbnail:hover
-{
-    border: 1px solid gray;
-}
-
- a.thumbnail:hover {
-    border-color: gray;
 }
