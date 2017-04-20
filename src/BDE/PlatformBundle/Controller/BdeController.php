@@ -77,12 +77,34 @@ class BdeController extends Controller
         $session = $req->getSession();
         $panier = $session->get('panier');
 
-        unset($panier[10]);
+        //unset($panier[10]);
 
-        $panier = array_values($panier);
+        //$panier = array_values($panier);
+
+        $em = $this->getDoctrine()->getManager();
+        $listProduit = new \Doctrine\Common\Collections\ArrayCollection();
+
+        foreach ($panier as $value) {
+            //echo $value;
+            $listProduit[] = $em->getRepository('BDEPlatformBundle:Produit')->find($value);
+        }
         //print_r($panier);
-        return $this->render('BDEPlatformBundle:Panier:panier.html.twig');
+        return $this->render('BDEPlatformBundle:Panier:panier.html.twig',array('listProduit'=>$listProduit));
 
+    }
+
+    public function remoteitemAction(Request $req)
+    {
+        if($req->isXMLHttpRequest())
+        {
+            $session = $req->getSession();
+            $panier = $session->get('panier');
+            $panier = array_values($panier);
+            $id = $req->get('id');
+            unset($panier[$id]);
+            $session->set('panier',$panier);
+            return new Response("Suppresion de l'article avec succès !");
+        }   
     }
 
     public function addpanierAction(Request $req)

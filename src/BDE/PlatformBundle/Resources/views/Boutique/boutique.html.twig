@@ -39,6 +39,13 @@
         });
     }
 
+    function decrementation($id)
+    {
+        var stock = $("#stock+$id")[O].innerHTML;
+        $("#stock"+$id)[O].innerHTML = stock - 1;
+
+    }
+
     
 
     </script>
@@ -83,7 +90,7 @@
                                         {% if produit.stock == 0 %}
                                             <div class="stock stck-no"></div>
                                         {% else %}
-                                            <div class="stock stck-yes"></div>
+                                            <div class="stock stck-yes"><h8 id="stock{{ produit.id }}">({{produit.stock}})</h8></div>
                                         {% endif %}
 
 
@@ -96,7 +103,7 @@
                                         <button style="visibility:hidden; " class="achat"></button>
                                     {% else %}
                                       
-                                        <button type"button" class="achat" onclick="ajaxCall({{ produit.id }})">Ajouter au panier</button>
+                                        <button type"button" class="achat" onclick="ajaxCall({{ produit.id }}); decrementation({{ produit.id }});">Ajouter au panier</button>
                          
                                     {% endif %}
                                     </div>

@@ -11,6 +11,32 @@
 
 
 {% block all %}
+<script>
+{% set nbr_art = app.session.get('panier')|length %}
+    $("#nb-art")[0].innerHTML = {{ nbr_art }};
+    var nb_panier = {{ nbr_art }};
+function ajaxCall(fk_id)
+    {
+
+        $.ajax({
+            url: "{{ path('bde_remote_panier') }}",
+            method: "post",
+            data: {id: fk_id},
+            success: function(data)
+            {
+                
+                nb_panier = nb_panier - 1;
+                $("#nb-art")[0].innerHTML = nb_panier;
+                
+                    
+                
+                //alert(data);
+            }
+        });
+    }
+
+</script>
+
 <div id="contenu">
 	<div id="panier-page">
         <div id="info">
@@ -23,29 +49,38 @@
             <hr width="100%">
         </div>
         <p id="empty" style="text-align: center;">Votre panier est actuellement vide </p>
+        
+
+
         <div id="itemzone">
+            {% set compteur = 0 %}
+            {% for key,value in listProduit %}
             <div class="item">
                 <div class="row">
                     <div class="icon-item col-xs-12 col-sm-6 col-md-3">
-                        <img src="../img/test.png">
+                        <img src="{{ asset(''~ value.image ~'') }}">
                     </div>
-                    <div class="titre col-xs-12 col-sm-6 col-md-5">Objet rare de grande valeur</div>
-                    <div class="number-panier col-xs-6 col-md-1">42</div>
+                    <div class="titre col-xs-12 col-sm-6 col-md-5">{{ value.nom }}</div>
+                    <div class="number-panier col-xs-6 col-md-1">1</div>
                     <div class="item-info col-xs-6 col-md-2">
-                        <div class="taille">XXL</div>
-                        <div class="couleur green">
+                        <div class="taille">{{ key }}</div>
+                        <div class="couleur">
                             <div class="case">
                             </div>
                         </div>
                     </div>
-                    <div class="prix col-xs-12 col-md-1">500</div>
-                    <button class="panier-remove material-icons" onclick="delete_item(this)">remove_shopping_cart</button>
+                    <div class="prix col-xs-12 col-md-1">{{ value.prix }}</div>
+                   
+                    <button class="panier-remove material-icons" onclick="delete_item(this); ajaxCall({{ key }}) ">remove_shopping_cart</button>
                 </div>
                 <hr width="80%">
             </div>
+            {% set compteur = compteur + 1 %}
+            {% endfor %}
         </div>
+    
         <div id="buy">
-            <div class="row" style="height: 100%">
+            <div class="row">
                 <p id="total" class="col-xs-6"></p>
                 <button id="acheter" class="button-outline button-rounded btn-green col-xs-6 col-sm-push-4 col-xs-push-0">Acheter</button>
             </div>

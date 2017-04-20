@@ -62,3 +62,7 @@ bde_view_panier:
     path: /view/panier
     defaults: { _controller: BDEPlatformBundle:Bde:viewpanier }
 
+bde_remote_panier:
+    path: /boutique/remote/panier
+    defaults: { _controller: BDEPlatformBundle:Bde:remoteitem }
+
