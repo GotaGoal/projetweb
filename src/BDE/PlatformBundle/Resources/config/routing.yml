@@ -30,6 +30,10 @@ bde_boutique:
     path: /boutique
     defaults: { _controller: BDEPlatformBundle:Bde:boutique }
 
+bde_boutique_categorie:
+    path: /boutique/{cat}
+    defaults: { _controller: BDEPlatformBundle:Bde:boutiquecat }
+
 bde_moncompte:
     path: /profil
     defaults: { _controller: BDEPlatformBundle:Bde:compte }
@@ -46,7 +50,11 @@ bde_galerie:
     path: /galerie
     defaults: { _controller: BDEPlatformBundle:Bde:galerie }
 
-
 bde_check_connexion:
     path: /check
     defaults: { _controller: BDEPlatformBundle:Bde:checkconnexion }
+
+bde_add_panier:
+    path: /boutique/add/addpanier
+    defaults: { _controller: BDEPlatformBundle:Bde:addpanier }
+

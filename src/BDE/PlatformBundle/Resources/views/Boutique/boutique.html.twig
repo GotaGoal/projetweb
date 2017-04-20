@@ -2,25 +2,48 @@
 {% block stylesheets %}
   {{ parent() }}
   <link rel="stylesheet" href="{{ asset('css/Boutique.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/snackbar.css') }}"/>
   <script rel="text/javascript" src="{{ asset('js/Boutique.js') }}"></script>
+  <script rel="text/javascript" src="{{ asset('js/snackbar.js') }}"></script>
 
   
 {% endblock stylesheets %}
 {% block tittle %}<title>Boutique</title>{% endblock tittle %}
 
+
 {% block all %}
+    <script>
+    function ajaxCall(fk_id)
+    {
+
+        $.ajax({
+            url: "{{ path('bde_add_panier') }}",
+            method: "post",
+            data: {id: fk_id},
+            success: function(data)
+            {
+                show_snackbar(data);
+                //alert(data);
+            }
+        });
+    }
+
+
+
+    </script>
+    <div id="snackbar"></div>
 	 <div id="contenu">
         <div class="row magasin">
             <div id="recherche" class="col-xs-12 col-sm-3" style="display: table-cell;">
-                <div id="menu" style="border:none;">
+                <div id="menu" style="border:none; background-color:white;">
                     <nav>
                         <div id="menugauche">
                             <div id="wrapper">
                                 <div id="sidebar-wrapper">
                                     <ul class="sidebar-nav">
-                                        <li style="border:none;"><a href="#">Voir tous les articles</a></li>
+                                        <li style="border:none;"><a href="{{ path('bde_boutique') }}">Voir tous les articles</a></li>
                                         {% for categorie in listCategorie %}
-                                        <li style="border:none;"><a href="#">{{ categorie.nom }}</a></li>
+                                        <li style="border:none;"><a href="{{ path('bde_boutique_categorie', {'cat' : categorie.nom}) }}">{{ categorie.nom }}</a></li>
                                     {% endfor %}
                                     </ul>
                                 </div>
@@ -61,7 +84,9 @@
                                         {% if produit.stock == 0 %}
                                         <button style="visibility:hidden; " class="achat"></button>
                                     {% else %}
-                                        <button class="achat">Ajouter au panier</button>
+                                      
+                                        <button type"button" class="achat" onclick="ajaxCall({{ produit.id }})">Ajouter au panier</button>
+                         
                                     {% endif %}
                                     </div>
                                 </div>

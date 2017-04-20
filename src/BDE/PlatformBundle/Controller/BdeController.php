@@ -16,6 +16,7 @@ use BDE\PlatformBundle\Entity\Produit;
 use BDE\PlatformBundle\Entity\Categorie;
 use BDE\PlatformBundle\Repository\AssociationRoleRepository;
 use BDE\PlatformBundle\Repository\RoleRepository;
+use BDE\PlatformBundle\Repository\ProduitRepository;
 use BDE\PlatformBundle\Entity\Association;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -28,8 +29,6 @@ use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use FOS\UserBundle\Model\UserInterface;
 use Symfony\Component\Security\Core\Encoder\BCryptPasswordEncoder;
-
-
 
 class BdeController extends Controller
 {
@@ -73,25 +72,43 @@ class BdeController extends Controller
         return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
     }
 
+    public function addpanierAction(Request $req)
+    {
+        //return new Response("Ceci est incroyable");
+        if($req->isXMLHttpRequest())
+        {
+            $session = $req->getSession();
+            $id = $req->get('id');
+            $session->set('id_pan',$id);
+            return new Response("Ajout au panier avec succès !");
+        }
+
+    }
+
     public function boutiqueAction()
     {
         $em = $this->getDoctrine()->getManager();
         $listCategorie = $em->getRepository('BDEPlatformBundle:Categorie')->findAll();
         $listProduit = $em->getRepository('BDEPlatformBundle:Produit')->findAll();
-        /*$test = array();
-        foreach ($listProduit as $produit) {
-            $test = $produit->getCategories()->getNom();;
-        }
-        var_dump($test);
-        foreach ($test as $key ) {
-            echo $key->getNom();
-        }*/
 
-
-
-        //return new Response("");
-        //return $this->render('BDEPlatformBundle:Boutique:test.html.twig',array('listProduit'=>$listProduit));
     	return $this->render('BDEPlatformBundle:Boutique:boutique.html.twig',array('listProduit'=>$listProduit,'listCategorie'=>$listCategorie));
+    }
+
+    public function boutiquecatAction($cat)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $listCategorie = $em->getRepository('BDEPlatformBundle:Categorie')->findAll();
+        $categ = $em->getRepository('BDEPlatformBundle:Categorie')->findBy(array('nom'=>$cat));
+
+        foreach ($categ as $key ) {
+            $cat =  $key->getNom();
+        }
+
+        $listProduit = $em->getRepository('BDEPlatformBundle:Produit')->findProduit($cat);
+
+        
+        //$listProduit = $em->getRepository('BDEPlatformBundle:Produit')->findBy(array('categories'=>$cat));
+        return $this->render('BDEPlatformBundle:Boutique:boutique.html.twig',array('listProduit'=>$listProduit,'listCategorie'=>$listCategorie));
     }
 
     public function galerieAction()

@@ -10,4 +10,11 @@ namespace BDE\PlatformBundle\Repository;
  */
 class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
+
+	public function findProduit($categ)
+	{
+		$qb = $this->createQueryBuilder('a')->leftJoin('a.categories', 'categ');
+		$qb->where('categ.nom = :categorie')->setParameter('categorie',$categ);
+		return $qb->getQuery()->getResult();
+	}
 }
