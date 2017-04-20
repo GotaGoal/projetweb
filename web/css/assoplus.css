@@ -335,3 +335,34 @@ position: relative;
 
   
 }
+
+.description{
+    display: block; 
+    padding: 10px; 
+    border-right: 1px  solid gray;
+     margin-left: 5%; padding-right: 2%;
+     margin-top: 1%; 
+     margin-bottom: 1%; 
+     width: 80%
+}
+@media (max-width: 805px){
+.description{
+    border-right: none;
+    width: 100%;
+}
+
+}
+.Assodescription{
+   display: flex; 
+   justify-content: space-between; 
+   margin:10px;  
+   vertical-align: middle; 
+   flex-wrap: wrap-reverse;
+}
+.titreAss{
+    min-height: 100%; 
+    text-align: center;  
+    border-bottom: 0.5px  solid gray; 
+    margin-left: 35%; 
+    margin-right: 35%; 
+}
