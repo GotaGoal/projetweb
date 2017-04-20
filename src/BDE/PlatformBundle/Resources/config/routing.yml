@@ -58,3 +58,7 @@ bde_add_panier:
     path: /boutique/add/addpanier
     defaults: { _controller: BDEPlatformBundle:Bde:addpanier }
 
+bde_view_panier:
+    path: /view/panier
+    defaults: { _controller: BDEPlatformBundle:Bde:viewpanier }
+

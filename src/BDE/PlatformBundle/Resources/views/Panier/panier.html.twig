@@ -1,0 +1,55 @@
+{% extends "layout.html.twig" %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/panier.css') }}">
+  <script rel="text/javascript" src="{{ asset('js/panier.js') }}"></script>
+  <link rel="stylesheet" href="{{ asset('css/fonts.css') }}"/>
+  <link rel="stylesheet" href="{{ asset('css/button.css') }}"/>
+
+{% endblock stylesheets %}
+{% block tittle %}<title>Panier</title>{% endblock tittle %}
+
+
+{% block all %}
+<div id="contenu">
+	<div id="panier">
+    <div id="info">
+        <div id="panier-info">
+            <div class="row">
+                <p class="col-xs-9 col-sm-11 col-md-11">Votre panier</p>
+                <span class="material-icons col-xs-1">shopping_cart</span>
+            </div>
+        </div>
+        <hr width="100%">
+    </div>
+    <p id="empty" style="text-align: center;">Votre panier est actuellement vide </p>
+    <div id="itemzone">
+        <div class="item">
+            <div class="row">
+                <div class="icon-item col-xs-12 col-sm-6 col-md-3">
+                    <img src="../img/test.png">
+                </div>
+                <div class="titre col-xs-12 col-sm-6 col-md-5">Objet rare de grande valeur</div>
+                <div class="number col-xs-6 col-md-1">42</div>
+                <div class="item-info col-xs-6 col-md-2">
+                    <div class="taille">XXL</div>
+                    <div class="couleur green">
+                        <div class="case">
+                        </div>
+                    </div>
+                </div>
+                <div class="prix col-xs-12 col-md-1">500</div>
+                <button class="panier-remove material-icons" onclick="delete_item(this)">remove_shopping_cart</button>
+            </div>
+            <hr width="80%">
+        </div>
+    </div>
+    <div id="buy">
+        <hr width="100%">
+        <p id="total"></p>
+        <button class="button-outline button-rounded btn-green">Acheter</button>
+    </div>
+</div>
+</div>
+
+{% endblock all %}

@@ -72,6 +72,15 @@ class BdeController extends Controller
         return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
     }
 
+    public function viewpanierAction(Request $req)
+    {
+        $session = $req->getSession();
+        $panier = $session->get('panier');
+        //print_r($panier);
+        return $this->render('BDEPlatformBundle:Panier:panier.html.twig');
+
+    }
+
     public function addpanierAction(Request $req)
     {
         //return new Response("Ceci est incroyable");
@@ -79,7 +88,25 @@ class BdeController extends Controller
         {
             $session = $req->getSession();
             $id = $req->get('id');
-            $session->set('id_pan',$id);
+            
+
+            if(!isset($panier))
+            {
+                $panier = array();
+            }
+
+            $panier = $session->get('panier');
+
+            if(empty($panier))
+            {
+                $panier[0] = $id;
+            }
+            else
+            {
+                array_push($panier, $id);
+            }
+            
+            $session->set('panier',$panier);
             return new Response("Ajout au panier avec succès !");
         }
 

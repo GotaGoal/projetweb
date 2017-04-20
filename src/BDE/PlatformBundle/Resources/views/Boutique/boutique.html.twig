@@ -13,6 +13,11 @@
 
 {% block all %}
     <script>
+
+    {% set nbr_art = app.session.get('panier')|length %}
+    $("#nb-art")[0].innerHTML = {{ nbr_art }};
+    var nb_panier = {{ nbr_art }};
+
     function ajaxCall(fk_id)
     {
 
@@ -22,13 +27,19 @@
             data: {id: fk_id},
             success: function(data)
             {
+                
                 show_snackbar(data);
+                nb_panier = nb_panier + 1;
+                $("#nb-art")[0].innerHTML = nb_panier;
+                
+                    
+                
                 //alert(data);
             }
         });
     }
 
-
+    
 
     </script>
     <div id="snackbar"></div>
