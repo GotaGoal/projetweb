@@ -6,6 +6,7 @@
     <script class="cssdeck" src="../js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/gestion.css" />
+    <script type="text/javascript" src="../js/gestion.js"></script>
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
 
     <title>BDE EXIA NANCY</title>
@@ -161,7 +162,7 @@
                                                 <button onclick="" class="site">
                                                         modifié
                                                 </button>
-                                                <button onclick="" class="site">
+                                                <button onclick="affiche_inscrit()" class="site">
                                                         Liste des inscrits
                                                 </button>
                                             </div>
@@ -210,7 +211,7 @@
                                                 <button onclick="" class="site">
                                                         modifié
                                                 </button>
-                                                <button onclick="" class="site">
+                                                <button onclick="affiche_inscrit()" class="site">
                                                         Liste des inscrits
                                                 </button>
                                             </div>
@@ -259,7 +260,7 @@
                                                 <button onclick="" class="site">
                                                         modifié
                                                 </button>
-                                                <button onclick="" class="site">
+                                                <button onclick="affiche_inscrit()" class="site">
                                                         Liste des inscrits
                                                 </button>
                                             </div>
@@ -338,18 +339,38 @@
                         </li>
                     </ul>
                     <div class="tab-content">
+                        <button onclick="telechargement()" class="site">
+                            Telecharger
+                        </button>
                         <div id="Visible" class="tab-pane fade">
                             <div class="col-xs-6 col-md-3 photo_g">
-                                <img src="../img/image5.jpg">
-                                <button onclick="" class="site">
-                                    Supprimer
-                                </button>
+                                <img src="../img/image5.jpg" class="">
+                                <div class="button">
+                                    <button onclick="" class="site">
+                                        Supprimer
+                                    </button>
+                                    <button id="button" class="site" onclick="selection(this.id)">
+                                        Selection
+                                    </button>
+                                    <button id="button1" class="site1" onclick="unselection(this.id)">
+                                        Unselection
+                                    </button>
+                                </div>
+                                
                             </div>
                             <div class="col-xs-6 col-md-3 photo_g">
                                 <img src="../img/image9.jpg">
-                                <button onclick="" class="site">
-                                    Supprimer
-                                </button>
+                                <div class="button">
+                                    <button onclick="" class="site">
+                                        Supprimer
+                                    </button>
+                                    <button id="button2" class="site" onclick="selection(this.id)">
+                                        Selection
+                                    </button>
+                                    <button id="button3" class="site1" onclick="unselection(this.id)">
+                                        Unselection
+                                    </button>
+                                </div>
                             </div>
                             <div class="col-xs-6 col-md-3 photo_g">
                                 <img src="../img/image7.jpg">
@@ -430,6 +451,8 @@
                                 </div>
                                 <ul>Prix</ul>
                                 <button class="site">Bloquer</button>
+                                <button class="site">Modifier</button>
+                                <button class="site">Supprimer</button>
                                 </a>
                             </div>
                             <div class="col-xs-6 col-md-3 image1">
@@ -440,6 +463,8 @@
                                     </div>
                                     <ul>Prix</ul>
                                     <button class="site">Bloquer</button>
+                                    <button class="site">Modifier</button>
+                                    <button class="site">Supprimer</button>
                                 </a>
                             </div>
                             <div class="col-xs-6 col-md-3 image1">
@@ -450,25 +475,27 @@
                         </div>
                         <div id="attente" class="tab-pane fade in active">
                             <div class="col-xs-6 col-md-3 image1">
-                                <a href="#" class="thumbnail article" style="text-decoration:none">
+                                <a class="thumbnail article" style="text-decoration:none">
                                 <img src="../img/image1.jpg">
-                                <div class="text">
+                                <div class="text" id="description0">
                                     petite description qui a un minimum de sens pour voir les limites et l'efficaticité du machin qui n'est toujours pas assez long pour voir la différence
                                 </div>
                                 <ul>Prix</ul>
                                 <button class="site">Débloquer</button>
                                 <button class="site">Modifier</button>
+                                <button class="site">Supprimer</button>
                                 </a>
                             </div>
                             <div class="col-xs-6 col-md-3 image1">
                                 <a href="#" class="thumbnail article" style="text-decoration:none">
                                     <img src="../img/image2.jpg">
-                                    <div class="text">
+                                    <div class="text" id="description1">
                                         petite description
                                     </div>
                                     <ul>Prix</ul>
                                     <button class="site">Débloquer</button> 
-                                    <button class="site">Modifier</button>
+                                    <button onclick="change_text('description1')" class="site">Modifier</button>
+                                    <button class="site">Supprimer</button>
                                 </a>
                             </div>
                         </div>
