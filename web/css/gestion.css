@@ -312,6 +312,7 @@ body {
     border-color: #000000;
     margin-left: 3px;
     border-color: gray;
+    margin-top: 1%;
 }
 .site:hover
 {
@@ -433,4 +434,21 @@ body {
         border-style: solid;
     }
 
+}
+.site1
+{
+	color: #ffffff;
+    background-color: red;
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+    margin-left: 3px;
+    border-color: gray;
+    display: none;
+
+}
+.button
+{
+	display: flex;
 }
