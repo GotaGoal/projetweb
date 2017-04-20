@@ -1,4 +1,4 @@
-#panier{
+#panier-page{
     background-color: white;
     width: 90%;
     margin: 2% 3%;
@@ -93,22 +93,24 @@
 #buy{
     bottom: 0;
     box-shadow: 0 2px 20px grey;
+    display: flex;
+    justify-content: space-between;
 }
 #buy > button{
-    float: right;
+    /*float: right;*/
     margin-right: 5%;
 }
 #buy>p>span{
-    font-size: 2.5em;
+    font-size: 2em;
 }
 #buy>button{
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin-bottom: 50px;
 }
 #total{
     font-size: 2em;
     margin-left: 3%;
-    float: left;
+    /*float: left;*/
 }
 #total::before{
     content: "Total: ";
