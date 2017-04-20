@@ -16,129 +16,31 @@
 </HEAD>
 
 <body>
-        <header>
-    <div id="header">
-        <div id="header-title">
-            <div class="row" id="content-header">
-                <div class="col-xs-3 col-centered">
-                    <img id="image" src="../img/Logo.png" /></div>
-                <div class="col-xs-3 col-centered">
-                    <h1 id="titre">BDE Nancy Exia</h1></div>
-                <div class="col-xs-3 col-centered">
-                    <img class="col-xs-2 imageL center-block" src="../img/Facebook.png" />
-                    <img class="col-xs-2 imageL center-block" src="../img/Twitter.png" /></div>
-            </div>
-        </div>
-        <div id="header-pre-nav" style="width: 100%; height: 25px"></div>
-        <div id="header-nav" class="header-logged">
-                <nav class="navbar navbar-toggleable-xs navbar-default">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div id="navbar" class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Accueil</a></li>
-                                <li><a href="#">Ecole</a></li>
-                                <li><a href="#">Associations</a></li>
-                                <li><a href="#">Galerie</a></li>
-                                <li><a href="#">Activités</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Boutique <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="dropdown-header">Habits</li>
-                                        <li><a href="#">T-Shiry</a></li>
-                                        <li><a href="#">Sweet</a></li>
-                                        <li><a href="#">Jean</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li class="dropdown-header">Accessoires</li>
-                                        <li><a href="#">Mug</a></li>
-                                        <li><a href="#">Stickers</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Mon Compte</a></li>
-                                <li><a id="panier" href="#"><span class="material-icons">shopping_cart</span></a></li>
-                            </ul>
-                        </div><!--/.nav-collapse -->
-                    </div><!--/.container-fluid -->
-                </nav>
-        </div>
-        <!--<div id="header-nav" class="header-guest">-->
-        <!--<nav class="navbar navbar-default">-->
-        <!--<div class="container-fluid">-->
-        <!--<div class="navbar-header">-->
-        <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">-->
-        <!--<span class="sr-only">Toggle navigation</span>-->
-        <!--<span class="icon-bar"></span>-->
-        <!--<span class="icon-bar"></span>-->
-        <!--<span class="icon-bar"></span>-->
-        <!--</button>-->
-        <!--</div>-->
-        <!--<div id="navbar" class="navbar-collapse collapse">-->
-        <!--<ul class="nav navbar-nav">-->
-        <!--<li class="active"><a href="#">Accueil</a></li>-->
-        <!--<li><a href="#">Ecole</a></li>-->
-        <!--<li><a href="#">Associations</a></li>-->
-        <!--<li><a href="#">Activités</a></li>-->
-        <!--<li><a href="#">Connexion / Inscription</a></li>-->
-        <!--</ul>-->
-        <!--</div>&lt;!&ndash;/.nav-collapse &ndash;&gt;-->
-        <!--</div>&lt;!&ndash;/.container-fluid &ndash;&gt;-->
-        <!--</nav>-->
-        <!--</div>-->
-    </div>
-</header>
-    <nav>
-        
-    </nav>
-    <div id="contenu">
+<div class="row">
+    <div class="col-xs-12 col-sm-3">
         <div id="recherche">
             <div id="wrapper">
-                    <div id="sidebar-wrapper">
-                        <ul class="sidebar-nav">
-                            <li>
-                                <input id="Recherche" type="text" name="activite_recherche" placeholder="Rechercher votre activité">                             
-                            </li>
-                            <li>
-                                <a href="#">Association</a>
-                                <ul>
-                                    <li>
-                                        <a href="#">association</a>
-                                    </li>
-                                    <li >
-                                        <a href="#">BDE</a>
-                                    </li>
-                                    <li >
-                                        <a href="#">Japon</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Proposer activité</a>
-                            </li>
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <li><input id="act-search" type="text" name="activite_recherche" placeholder="Rechercher votre activité"></li><li>
+                        <a href="#">Association</a>
+                        <ul>
+                            <li><a href="#">association</a></li>
+                            <li ><a href="#">BDE</a></li>
+                            <li ><a href="#">Japon</a></li>
                         </ul>
-                    </div>
+                    </li>
+                        <li><a href="#">Proposer activité</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-
+    </div>
+    <div class="col-xs-12 col-sm-9">
         <div id="liste_event">
-
             <ul class="nav nav-tabs">
-                <li >
-                    <a data-toggle="tab" href="#Propose">
-                        Proposé
-                    </a>
-                </li>
-                <li class="active">
-                    <a data-toggle="tab" href="#Approuve"> 
-                        Approuvé
-                    </a>
-                </li>
+                <li ><a data-toggle="tab" href="#Propose">Proposé</a></li>
+                <li class="active"><a data-toggle="tab" href="#Approuve">Approuvé</a></li>
             </ul>
             <div class="tab-content">
                 <div id="Approuve" class="tab-pane fade in active">
@@ -166,11 +68,7 @@
                                         légère description
                                     </div>
                                     <ul>
-                                        <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                            <span class="site pull-right">
-                                                s'inscrire
-                                            </span>
-                                        </a>
+                                        <a style="text-decoration:none"><span class="site pull-right">s'inscrire</span></a>
                                     </ul>
                                 </div>
                                 <div class="photo_ensemble">
@@ -180,15 +78,11 @@
                         </div>
                     </div>
 
-                        <ul class="separateur_haut">
-                            <span class="glyphicon glyphicon-arrow-up">
-                            </span>
-                            <span>
-                                 A venir 
-                            </span>
-                            <span class="glyphicon glyphicon-arrow-up">    
-                            </span>
-                        </ul>
+                    <ul class="separateur_haut">
+                        <span class="glyphicon glyphicon-arrow-up"></span>
+                        <span>A venir</span>
+                        <span class="glyphicon glyphicon-arrow-up"></span>
+                    </ul>
 
                     <div class="evenement">
                         <div class="date_actif">
@@ -229,15 +123,11 @@
                     </div>
 
                     <ul class="separateur_bas">
-                        <span class="glyphicon glyphicon-arrow-down">
-                        </span>
-                        <span> 
-                            Déjà passé 
-                        </span>
-                        <span class="glyphicon glyphicon-arrow-down">
-                        </span>
+                        <span class="glyphicon glyphicon-arrow-down"></span>
+                        <span>Déjà passé</span>
+                        <span class="glyphicon glyphicon-arrow-down"></span>
                     </ul>
-                    
+
                     <div class="evenement">
                         <div class="date_actif">
                             <div class="mois">
@@ -262,11 +152,7 @@
                                         légère description
                                     </div>
                                     <ul>
-                                        <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                            <span class="site pull-right">
-                                               s'inscrire
-                                            </span>
-                                        </a>
+                                        <a href="" style="text-decoration:none"><span class="site pull-right">s'inscrire</span></a>
                                     </ul>
                                 </div>
                                 <div class="photo_ensemble">
@@ -311,25 +197,25 @@
                                         légère description
                                     </div>
                                     <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                            <button class="site">
-                                               date 1
-                                            </button>
-                                        </a>
-                                            <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                            <button class="site">
-                                               date 2
-                                            </button>
-                                        </a>
-                                        <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                            <button class="site">
-                                               intéresser
-                                            </button>
-                                        </a>
-                                        <a href="https://exia.cesi.fr/" style="text-decoration:none">
-                                            <button class="site">
-                                               pas intéresser
-                                            </button>
-                                        </a>
+                                        <button class="site">
+                                            date 1
+                                        </button>
+                                    </a>
+                                    <a href="https://exia.cesi.fr/" style="text-decoration:none">
+                                        <button class="site">
+                                            date 2
+                                        </button>
+                                    </a>
+                                    <a href="https://exia.cesi.fr/" style="text-decoration:none">
+                                        <button class="site">
+                                            intéresser
+                                        </button>
+                                    </a>
+                                    <a href="https://exia.cesi.fr/" style="text-decoration:none">
+                                        <button class="site">
+                                            pas intéresser
+                                        </button>
+                                    </a>
                                 </div>
                                 <div class="photo_ensemble">
                                     <img src="../img/image5.jpg" class="photo">
@@ -341,5 +227,5 @@
             </div>
         </div>
     </div>
-
+</div>
 </body>

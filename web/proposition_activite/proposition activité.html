@@ -16,7 +16,7 @@
 
 <body>
 <div class="container">
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action="lol" method="post"  id="contact_form" onsubmit="send()">
 		<fieldset>
 			<div class="form-group">
   				<label class="col-md-4 control-label">L'activité proposée</label>  
@@ -102,15 +102,16 @@
 					</div>
 				</div>
 				<div id="generation" style="margin: 2%">
-					<button id="generate" onclick="generate()">Prévisualisation</button>
+					<a id="generate" onclick="generate()">Prévisualisation</a>
 					<div id="previs"></div>
 				</div>
 			</div>
-			<input type="hidden" name="form">
+
 			<div class="form-group">
 			<label class="col-md-4 control-label"></label>
 			<div class="col-md-4">
-				<input type="submit" onclick="send()" class="btn btn-warning" >
+				<input id="hidden" type="hidden" name="form">
+				<input type="submit" class="btn btn-warning" >
 			</div>
 		</div>
 		</fieldset>

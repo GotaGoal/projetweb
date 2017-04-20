@@ -1,208 +1,23 @@
-body {
-        width: auto;
-        background-color: #d9d9d9;
-    }
-    
-    .all {
-        background: rgba(181, 12, 27, 1);
-        max-width: 1200px;
-        margin: auto;
-    }
-    
-    .col-xs-3 {
-       
-        width: 33%;
-        align-items: center;
-    }
-    
-
-
- 
-    .col-xs-2 {
-         
-        float: right;
-        width: 50%;
-        margin-top: 20px;
-    }
- 
-    .imageL {
-        width: 50%;
-        min-width: 60px;
-        max-width: 70px;
-    }
-    
-  
-    #image {
-        width: 10%;
-        min-width: 90px;
-    }
-    
-    h1 {
-        text-shadow: -1px -1px #000000, 1px 1px #000001, -3px 0 4px #000;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #000000;
-        font-weight: lighter;
-        -moz-box-shadow: 2px 2px 6px #000000;
-        text-align: center;
-        display: block;
-    }
-    
-    header {
-        background-color: #d9d9d9;
-    }
-    /*
-@media(max-width:1200px) {
-   
-
-    #nav3.navbar .navbar-brand {
-   
-        display: none;
-    }
-    #nav3.navbar .navbar-nav>.nav-item {
- 
-        display: none;
-    }
-    #nav3.navbar .navbar-nav {
-   
-        display: none;
-    }
-    #nav3.navbar {
-   
-        display: none;
-    }
-  /* #nav1.navbar .navbar-brand {
-   
-        display: none;
-    }
-    #nav1.navbar .navbar-nav>.nav-item {
- 
-        display: none;
-    }
-    #nav1.navbar .navbar-nav {
-   
-        display: none;
-    }*/
-    /* #nav1.navbar {
-   
-        display: none;
-    }
-    
-}*/
-.navbar-right{
-    margin-right: 1px;
+.all {
+    background: rgba(181, 12, 27, 1);
+    max-width: 1200px;
+    margin: auto;
 }
-    
-    @media(max-width:8000px) {
-        #nav2.navbar {
-            display: block;
-        }
-        #nav1.navbar {
-            display: none;
-        }
-        #nav3.navbar {
-            display: none;
-        }
-    }
-    
  
-    
-    @media (max-width: 768px) {
-        #nav1.navbar {
-            display: block;
-        }
-        #nav2.navbar {
-            display: none;
-        }
-        #nav3.navbar {
-            display: none;
-        }
-        #nav1.navbar .navbar-header {
-            float: none;
-        }
-        #nav1.navbar .navbar-left,
-        .navbar-right {
-            float: none !important;
-        }
-        #nav1.navbar .navbar-toggle {
-        display: block;
-           float:left;
-    }
-        #nav1.navbar .navbar-collapse {
-            border-top: 1px solid transparent;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        }
-        #nav1.navbar .navbar-fixed-top {
-            top: 0;
-            border-width: 0 0 1px;
-        }
-        #nav1.navbar .navbar-collapse.collapse {
-            display: none!important;
-        }
-        #nav1.navbar .navbar-nav {
-            float: none!important;
-            margin-top: 7.5px;
-        }
-        #nav1.navbar .navbar-nav>li {
-            float: none;
-        }
-        #nav1.navbar .navbar-nav>li>a {
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-    }
-    /*
-
-    #nav2.navbar .navbar-nav>.nav-item {
- 
-        display: none;
-    }
-    #nav2.navbar .navbar-nav {
-   
-        display: none;
-    }
-      
-
-    #nav3.navbar .navbar-brand {
-   
-        display: none;
-    }
-    #nav3.navbar .navbar-nav>.nav-item {
- 
-        display: none;
-    }
-    #nav3.navbar .navbar-nav {
-   
-        display: none;
-    }
-
-    #nav1.navbar .navbar-brand {
-        float:none;
-        display: block;
-    }
-    #nav1.navbar .navbar-nav>.nav-item {
-        float: none;
-        margin-left: .1rem;
-    }
-    #nav1.navbar .navbar-nav {
-        float:none !important;
-    }
-*/
-#contenu
-{
-    max-width: 1100px;
-    margin: 0% auto;
-    margin-bottom: 10px;
-    background-color: #ffffff;
-    display: flex;
+.imageL {
+    width: 50%;
+    min-width: 60px;
+    max-width: 70px;
 }
-#recherche
-{
-    display: block;
-    width: 20%;
+#recherche {
+    width: 100%;
     border-style: solid;
     border-width: 0px 2px 0px 0px;
 }
-
+#act-search{
+    width: 100%;
+    margin: 0;
+}
 #Recherche:focus, input:focus
 {
     outline: none;
@@ -222,52 +37,6 @@ body {
 {
     max-width: 100%;
 }
-/*#calendrier
-{
-    width: 90%;
-    margin: 50px auto;
-}
-#Mois
-{
-    width: 100%;
-    border-style: solid;
-    border-width: 1px;
-}
-#button1
-{
-    height: 20px;
-    width: 20%;
-}
-#button1 span
-{
-    font-size: 15px;
-}
-#button2
-{
-    height: 20px;
-    width: 20%;
-}
-#button2 span
-{
-    font-size: 15px;
-}
-#Jour
-{
-    display: flex;
-    width: 100%;
-    border-style: solid;
-    border-width:  0px 1px 1px 1px;
-}
-.jour
-{
-    width: 14.3%;
-}
-#Chiffre
-{
-
-    border-width: 0px 1px 1px 1px;
-    border-style: solid;
-}*/
 #Proposer
 {
     margin: 20px auto;
@@ -409,75 +178,6 @@ body {
 {
     height: 80%;
 }
-@media screen and (max-width: 800px)
-{
-    #contenu
-    {
-        display: block;
-    }
-    #Recherche
-    {
-        width: 80%;
-        margin: 10px auto;
-    }
-    #recherche
-    {
-        width: 100%;
-        border-width: 0px;
-    }
-    #Proposer input
-    {
-        max-width: 80%
-    }
-    #list_event;
-    {
-        width: 100%;
-    }
-    .liste_date
-    {
-        width: 25%;
-    }
-    .date_actif
-    {
-        margin: 0 0 auto;
-        width: 25%;
-    }
-    .date
-    {
-        margin: 0 0 auto;
-        width: 100%;
-    }
-    .description_evenement
-    {
-        width: 75%;
-        margin-left: 3%;
-        border-style: solid;
-        border-width: 1px 1px 1px 1px;
-    }
-    .Titre
-    {
-        width: 100%;
-        border-style: solid;
-        border-width: 0px 0px 1px 0px;
-    }
-    .Association
-    {
-        display: none;
-        width: 0%;
-    }
-    .description
-    {
-        display: none;
-        width: 0%;
-        border-style: solid;
-        border-width: 0px 1px 0px 0px;       
-    }
-    .photo_ensemble
-    {
-        width: 100%;
-    }
-
-}
 .site
 {
     color: #000000;
@@ -505,6 +205,7 @@ body {
     overflow-y: auto;
     background: #ffffff;
 }
+
 /* Sidebar Styles */
 .detail
 {

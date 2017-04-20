@@ -125,6 +125,8 @@ function generate() {
             }
         })
     });
+    $('#hidden').empty();
+    $('#hidden').attr("value", $("#previs").clone().html());
 }
 function del_el(el) {
     $(el).parent().remove();
@@ -155,8 +157,5 @@ function create_selector_input(el) {
 
 }
 function send() {
-    let div = $('<form method="post" action=""></form>');
     generate();
-    div.append($("#previs").clone());
-    console.log(div[0]);
 }

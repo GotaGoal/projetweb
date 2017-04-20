@@ -7,6 +7,19 @@
 .content{
     padding-left: 10px;
 }
+#generate{
+    border: 1px solid grey;
+    background-color: grey;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+#formdiv{
+    text-decoration: none;
+}
 .type{
     border: 1px solid grey;
     background-color: grey;
@@ -14,9 +27,12 @@
     padding: 5px;
     margin: 0 10px;
     color: white;
+    text-decoration: none;
 }
 .type_answer > a{
     text-decoration: none;
+    color: white;
+    cursor: pointer;
 }
 .type-selector > input, .type-check > input{
     margin: 5px;
