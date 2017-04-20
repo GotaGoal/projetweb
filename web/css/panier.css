@@ -3,7 +3,7 @@
     width: 100%;
     margin: 2% 0;
     border-radius: 25px;
-    height: 90%;
+    height: 90% ;
     z-index: 1;
 }
 #panier-info {
@@ -93,12 +93,9 @@
 #buy{
     bottom: 0;
     box-shadow: 0 2px 20px grey;
-    display: flex;
-    justify-content: space-between;
 }
 #buy > button{
-    /*float: right;*/
-    margin-right: 5%;
+
 }
 #buy>p>span{
     font-size: 2em;
