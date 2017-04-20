@@ -102,12 +102,9 @@
 }
 #buy>button{
     font-size: 1.2em;
-    margin-bottom: 50px;
 }
 #total{
     font-size: 2em;
-    margin-left: 3%;
-    /*float: left;*/
 }
 #total::before{
     content: "Total: ";
