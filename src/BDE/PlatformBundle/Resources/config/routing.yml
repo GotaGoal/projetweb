@@ -42,6 +42,9 @@ bde_activite:
     path: /activite
     defaults: { _controller: BDEPlatformBundle:Bde:activite }
 
+bde_galerie:
+    path: /galerie
+    defaults: { _controller: BDEPlatformBundle:Bde:galerie }
 
 
 bde_check_connexion:

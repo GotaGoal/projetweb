@@ -90,8 +90,8 @@ class BdeController extends Controller
 
 
         //return new Response("");
-        return $this->render('BDEPlatformBundle:Boutique:test.html.twig',array('listProduit'=>$listProduit));
-    	//return $this->render('BDEPlatformBundle:Boutique:boutique.html.twig',array('listCategorie'=>$listCategorie));
+        //return $this->render('BDEPlatformBundle:Boutique:test.html.twig',array('listProduit'=>$listProduit));
+    	return $this->render('BDEPlatformBundle:Boutique:boutique.html.twig',array('listProduit'=>$listProduit,'listCategorie'=>$listCategorie));
     }
 
     public function galerieAction()
