@@ -136,4 +136,9 @@
 .card-max{
     height: 600px;
 }
+.activity-descr{
+    height: 160px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
 
