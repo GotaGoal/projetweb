@@ -67,23 +67,24 @@ function create_space(context) {
     context.append($('<p class="space">--<a onclick="del_el(this)" class="el-del">supprimer</a></p>'));
 }
 
-function get_input(context){
-    $('#previs').append($('<input type="input" placeholder="'+$(context).find(".txt-input").val()+'" /><br/>'));
+function get_input(context, nb){
+    $('#previs').append($('<input type="input" name="input_'+nb+'" placeholder="'+$(context).find(".txt-input").val()+'" /><br/>'));
 }
-function get_selector(context) {
+function get_selector(context, nb) {
     context = $(context);
     let div = $('<div class="complet-selector"></div>');
     div.append(context.find("select").clone());
+    div.find("select").attr("name","selector_"+nb);
     div.append($('<p>'+context.find('.txt-input').val()+'</p>'));
     $('#previs').append(div);
 }
-function get_check(context) {
+function get_check(context, nb) {
     context = $(context);
     let input;
     if(context.find(".boo-input").is(":checked")){
-        input = $('<input checked type="checkbox"> '+context.find(".txt-input").val()+'<br/>');
+        input = $('<input name="check_'+nb+'" checked type="checkbox"> '+context.find(".txt-input").val()+'<br/>');
     }else {
-        input = $('<input type="checkbox"> '+context.find(".txt-input").val()+'<br/>');
+        input = $('<input name="check_'+nb+'" type="checkbox"> '+context.find(".txt-input").val()+'<br/>');
     }
     $('#previs').append(input);
 }
@@ -91,30 +92,31 @@ function get_text(context) {
     context = $(context);
     $('#previs').append($('<p class="question-titre">'+context.find(".txt-input").val()+'</p>'));
 }
-function get_number(context) {
+function get_number(context, nb) {
     context = $(context);
-    $('#previs').append($('<input class="question-number" type="number" value="0" min="0"> '+context.find(".txt-input").val()+'<br/>'));
+    $('#previs').append($('<input name="number_'+nb+'" class="question-number" type="number" value="0" min="0"> '+context.find(".txt-input").val()+'<br/>'));
 }
 function get_space() {
     $('#previs').append($('<br/>'))
 }
 function generate() {
     $('#previs').empty();
+    let nombre = 0;
     let contenu = $('#formulaire').find(".question");
     contenu.each(function (ind, el) {
         $(el).find(".content").children().each(function (index, element) {
             switch (element.className){
                 case "type-input":
-                    get_input(element);
+                    get_input(element, nombre);
                     break;
                 case "selector":
-                    get_selector(element);
+                    get_selector(element, nombre);
                     break;
                 case "type-check":
-                    get_check(element);
+                    get_check(element, nombre);
                     break;
                 case "type-number":
-                    get_number(element);
+                    get_number(element, nombre);
                     break;
                 case "space":
                     get_space(element);
@@ -123,6 +125,7 @@ function generate() {
                     get_text(element);
                     break;
             }
+            nombre = parseInt(nombre)+1;
         })
     });
     $('#hidden').empty();
