@@ -33,8 +33,13 @@
   				<div class="col-md-4 inputGroupContainer">
  					<div class="input-group">
   						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-  						<input id="date" name="date" placeholder="Date" class="form-control"  type="date" onblur="champs_requis(this.value, this.id, 'erreur_date')">
+  						<input id="date" name="date2" placeholder="Date" class="form-control"  type="date" onblur="champs_requis(this.value, this.id, 'erreur_date')">
     				</div>
+					<label class="col-md-4 control-label">Ou</label>
+					<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+						<input id="date2" name="date" placeholder="Date" class="form-control"  type="date" onblur="champs_requis(this.value, this.id, 'erreur_date')">
+					</div>
     				<div id='erreur_date'>Veuillez ndonner une date</div>
  				</div>
 			</div>
@@ -89,12 +94,12 @@
 					<div class="question">
 						<p>Formulaire (optionnel) </p>
 						<div class="type_answer">
-							<a class="type" onclick="add_content(this, 'input')">Add Input text</a>
-							<a class="type" onclick="add_content(this, 'selector')">Add selector</a>
-							<a class="type" onclick="add_content(this, 'check')">Add Check button</a>
-							<a class="type" onclick="add_content(this, 'text')">Add Text</a>
-							<a class="type" onclick="add_content(this, 'number')">Add number</a>
-							<a class="type" onclick="add_content(this, 'space')">Saut de ligne</a>
+							<a class="type" onclick="add_content(this, 'input')">Ajouter un champ de saisie</a>
+							<a class="type" onclick="add_content(this, 'selector')">Ajouter un menu déroulant</a>
+							<a class="type" onclick="add_content(this, 'check')">Ajouter un boutton cochable</a>
+							<a class="type" onclick="add_content(this, 'text')">Ajouter du texte</a>
+							<a class="type" onclick="add_content(this, 'number')">Ajouter un selecteur de nombre</a>
+							<a class="type" onclick="add_content(this, 'space')">Ajouter un saut de ligne</a>
 						</div>
 						<p style="margin-left: 2%">Structure:</p>
 						<div class="content" style="margin: 2%">
