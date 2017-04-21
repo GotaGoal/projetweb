@@ -25,7 +25,6 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
-use BDE\UserBundle\Entity\Authorization;
 
 /**
  * Controller managing the registration.
@@ -42,8 +41,6 @@ class RegistrationController extends Controller
      */
     public function registerAction(Request $request)
     {
-
-        
         /** @var $formFactory FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
         /** @var $userManager UserManagerInterface */
@@ -53,7 +50,6 @@ class RegistrationController extends Controller
 
         $user = $userManager->createUser();
         $user->setEnabled(true);
-        
 
         $event = new GetResponseUserEvent($user, $request);
         $dispatcher->dispatch(FOSUserEvents::REGISTRATION_INITIALIZE, $event);
@@ -64,49 +60,12 @@ class RegistrationController extends Controller
 
         $form = $formFactory->createForm();
         $form->setData($user);
+        $user->setAvatar("img/image1.png");
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
-                $test = $request->get('fos_user_registration_form[email]');
-                //$test = $test;
-                echo $test;
-        
-        $em=$this->getDoctrine()->getManager();
-        $auth = $em->getRepository('BDEUserBundle:Authorization')->findBy(array('email'=>$test));
-        
-        foreach ($auth as $id) {
-
-            $niveau = $id->getNiveau();
-
-        }
-
-        if(empty($niveau))
-        {
-            $niveau = "Guest";
-        }
-
-        echo $niveau; 
-        return new Response("mdr");
-        if($niveau == "Tuteur")
-        {
-            $user->setRoles(array("ROLE_SUPER_ADMIN"));
-        }
-        elseif ($niveau == "Bde") {
-            $user->setRoles(array("ROLE_ADMIN"));
-        }
-        elseif($niveau == "Eleve")
-        {
-            $user->setRoles(array("ROLE_USER"));
-        }
-        else
-        {
-            $user->setRoles(array("ROLE_GUEST"));
-        }
-        $user->setAvatar("img/image1.png");
-
-
                 $event = new FormEvent($form, $request);
                 $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 
@@ -136,7 +95,7 @@ class RegistrationController extends Controller
     }
 
     /**
-     * Tell the user to check their email provider.
+     * Tell the user to check his email provider.
      */
     public function checkEmailAction()
     {

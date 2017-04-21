@@ -1,8 +1,93 @@
-{% trans_default_domain 'FOSUserBundle' %}
+{% extends 'layout.html.twig' %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link rel="stylesheet" href="{{ asset('css/login.css') }}"/>
 
-{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-    {{ form_widget(form) }}
-    <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
-    </div>
-{{ form_end(form) }}
+{% endblock stylesheets %}
+{% block tittle %}<title>Association</title>{% endblock tittle %}
+
+{% block all %} 
+  <div id="contenu" style="height:1000px;">
+
+ 
+    
+        <script language="javascript">
+function connexion() {
+        document.location.href="{{ path('fos_user_security_login') }}"
+        document.getElementById("inscrir").style.display='block';
+        document.getElementById("connexion").style.display='none';
+
+       
+        
+    }
+    function inscrire() {
+        document.location.href="{{ path('fos_user_registration_register') }}"
+        document.getElementById("inscrir").style.display='none';
+        document.getElementById("connexion").style.display='block';
+
+        
+    }
+    $(document).ready(function() {
+ 
+  $("#overlay3").show();
+  $('#connexion').css('display', 'block') ;
+});
+</script>
+
+
+<div id="overlay3" style="overflow: scroll;">
+    <a class="close" href="{{ path('bde_platform_homepage')}}"><img alt="Fermer" title="Fermer la fenêtre" class="btn_close" src="close_pop.png"></a>
+
+<div class="form">
+
+      <div  style="display: block ; justify-content: space-between; color:red;" class="row">
+        <div class="col-sm-6">
+          <a href="{{ path('fos_user_registration_register') }}">
+        <button style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" {# Onclick="connexion();" #} id="azerty">Inscription  </button>
+      </a>
+      </div>
+      <div class="col-sm-6">
+        <a href="{{ path('fos_user_security_login') }}">
+         <button style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" {# Onclick="inscrire();" #} id="ytreza"> Connexion</button>
+       </a>
+       </div>
+        </div>
+        <br>
+
+        
+           
+        <div id="inscrir">
+        {% block fos_user_content %}
+{% include "@FOSUser/Registration/register_content.html.twig" %}
+{% endblock fos_user_content %}
+        </div>
+         
+
+        <div id="connexion">
+          
+          <!--
+          }
+        <form action="{{ path('bde_check_connexion')}}" method="post">
+        <fieldset>
+          <legend><span style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" class="number">1</span>Connexion</legend>
+       
+          
+          <label for="mail">Email:*</label>
+          <input type="email" id="mail" name="user_email">
+          
+          <label for="password">Mot de passe:*</label>
+          <input type="password" id="password" name="user_password">
+        
+        </fieldset>
+        <button style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" type="submit">Se connecter</button>
+        </form> --> 
+        </div>
+        </div> 
+      </div>
+    
+      </div>
+        
+     
+   </div>
+</div>
+{% endblock all %} 

@@ -99,7 +99,6 @@ class BdeController extends Controller
         {
             $session = $req->getSession();
             $panier = $session->get('panier');
-            $panier = array_values($panier);
             $id = $req->get('id');
             unset($panier[$id]);
             $session->set('panier',$panier);

@@ -17,6 +17,7 @@
     {% set nbr_art = app.session.get('panier')|length %}
     $("#nb-art")[0].innerHTML = {{ nbr_art }};
     var nb_panier = {{ nbr_art }};
+    
 
     function ajaxCall(fk_id)
     {
@@ -39,10 +40,13 @@
         });
     }
 
-    function decrementation($id)
+    function decrementation(id)
     {
-        var stock = $("#stock+$id")[O].innerHTML;
-        $("#stock"+$id)[O].innerHTML = stock - 1;
+        var test = '#stock'+id;
+        var stock = $('#stock'+id).text();
+        stock = stock.replace(/["'()]/g,"");
+        stock = stock - 1;
+        $("#stock"+id+"")[0].innerHTML = "("+stock+")";
 
     }
 

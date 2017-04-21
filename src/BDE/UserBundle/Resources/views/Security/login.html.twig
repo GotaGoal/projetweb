@@ -13,6 +13,7 @@
     
         <script language="javascript">
 function connexion() {
+        document.location.href="{{ path('fos_user_security_login') }}"
         document.getElementById("inscrire").style.display='block';
         document.getElementById("connexion").style.display='none';
 
@@ -20,6 +21,7 @@ function connexion() {
         
     }
     function inscrire() {
+        document.location.href="{{ path('fos_user_registration_register') }}"
         document.getElementById("inscrire").style.display='none';
         document.getElementById("connexion").style.display='block';
 
@@ -40,10 +42,14 @@ function connexion() {
 
       <div  style="display: block ; justify-content: space-between; color:red;" class="row">
         <div class="col-sm-6">
-        <button style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" Onclick="connexion();" id="azerty">Inscription  </button>
+          <a href="{{ path('fos_user_registration_register') }}">
+        <button style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" {# Onclick="connexion();" #} id="azerty">Inscription  </button>
+      </a>
       </div>
       <div class="col-sm-6">
-         <button style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" Onclick="inscrire();" id="ytreza"> Connexion</button>
+        <a href="{{ path('fos_user_security_login') }}">
+         <button style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" {# Onclick="inscrire();" #} id="ytreza"> Connexion</button>
+       </a>
        </div>
         </div>
         <br>
@@ -51,45 +57,7 @@ function connexion() {
         
            
         <div id="inscrire">
-        <form>
-
-        <fieldset >
-          <legend><span style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" class="number" >1</span>Information principale</legend>
-          <label for="name">Nom:*</label>
-          <input type="text" id="name" name="user_name">
-          
-          <label for="mail">Email:*</label>
-          <input type="email" id="mail" name="user_email">
-          
-          <label for="password">Mot de passe:*</label>
-          <input type="password" id="password" name="user_password">
-          <label for="password">Confirmation:*</label>
-          <input type="password" id="password" name="user_password">
-          <label for="password">Votre avatar:*</label>
-          <input type="file" id="password" name="user_password">  
-        </fieldset>
-        </form>
         
-        <fieldset>
-          <legend><span style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" class="number">2</span>Complément</legend>
-          <label>Membre d'une association ?*</label>
-          <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13" class="light">Non</label><br>
-          <input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13" class="light">Oui</label>
-        </fieldset>
-        <fieldset>
-        <label for="job">Role dans votre Association:</label>
-        <select id="job" name="user_job">
-          <optgroup label="Role">
-            <option value="frontend_developer">Président</option>
-            <option value="php_developor">Vice-Président</option>
-            <option value="python_developer">Trésorier</option>
-            <option value="rails_developer"> Vice-Trésorier</option>
-            <option value="web_designer">Secrétaire</option>
-            <option value="WordPress_developer">Vice-Secrétaire</option>
-          </optgroup>
-        </select>        
-        </fieldset>
-        <button style=" background-color:rgba(181, 12, 27, 1); border-color: rgba(181, 12, 27, 1);" type="submit">S'inscrire</button>
         </div>
          
 

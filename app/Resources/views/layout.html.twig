@@ -59,7 +59,11 @@
             {% for type, messages in app.session.flashbag.all() %}
                 {% for message in messages %}
                     <div class="flash-{{ type }}">
+                        {% if message == "L'utilisateur a été créé avec succès." %}
+                        {% else %}
                         {{ message }}
+                    {% endif %}
+                        
                     </div>
                 {% endfor %}
             {% endfor %}
@@ -132,7 +136,7 @@
                                         <p id="nb-art" class=""></p>
                                     </div>
                                 </a></li>
-                            <li><a id="disconnect" href="#!" class="material-icons">power_settings_new</a></li>
+                            <li><a id="disconnect" href="{{ path('fos_user_security_logout') }}" class="material-icons">power_settings_new</a></li>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div><!--/.container-fluid -->
@@ -211,6 +215,7 @@
    
 </div>
 {% endblock fos_user_content %}
+
 {% endblock all %}
 
 
