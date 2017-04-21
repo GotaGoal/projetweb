@@ -1,0 +1,22 @@
+#contenu
+{
+    max-width: 1100px;
+    margin: 0% auto;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    display: block;
+    padding-bottom: 10px;
+}
+
+#gros_titre
+{
+	padding-top: 3%;
+	font-size: 30px;
+	text-decoration: underline;
+	font-weight: bold;
+}
+#mentions
+{
+	margin-top: 10%;
+	font-size: 15px;
+}
