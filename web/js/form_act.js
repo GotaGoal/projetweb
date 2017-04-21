@@ -161,4 +161,8 @@ function create_selector_input(el) {
 }
 function send() {
     generate();
+    let div = $('<form></form>');
+    div.append($('#previs').children().clone());
+    console.log(div[0]);
+    console.log(getFormDataAsJSON(div[0]));
 }
