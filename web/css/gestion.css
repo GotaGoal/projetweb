@@ -452,3 +452,172 @@ body {
 {
 	display: flex;
 }
+
+#panier-page{
+    background-color: white;
+    width: 100%;
+    margin: 2% 0;
+    border-radius: 25px;
+    
+    z-index: 1;
+}
+#panier-info {
+    width: 90%;
+    padding: 1% 3%;
+}
+#panier-info > .row{
+    padding-right: 0;
+    margin-left: 0 !important;
+}
+#panier-info >.row > p{
+    font-size: 25px;
+    margin: 10px 0;
+}
+#panier-info >.row > span{
+    font-size: 47px;
+    padding: 4px 0 4px 0;
+}
+#info{
+    box-shadow: 0 2px 20px grey;
+}
+#info > hr{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.item{
+    margin: 2% 5%;
+    width: 90%;
+    height: auto;
+    text-align: center;
+}
+.icon-item{
+    text-align: center;
+    
+}
+.icon-item > img{
+    max-width: 200px;
+}
+.titre{
+    text-align: left;
+    margin-top: 20px;
+}
+.number-panier{
+    margin-top: 20px;
+}
+.number-panier::before{
+    content: 'Unité: ';
+}
+.item-info{
+    margin-top: 20px;
+}
+.taille::before{
+    content: "Taile: ";
+}
+.vr{
+    height: 90%;
+    width: 1px;
+    border: 1px solid black;
+}
+.prix{
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+.prix::after{
+    content: "€";
+}
+.couleur{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.case{
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+}
+.red > .case{
+    background-color: red;
+}
+.blue > .case{
+    background-color: blue;
+}
+.green > .case{
+    background-color: green;
+}
+#buy{
+    bottom: 0;
+    box-shadow: 0 2px 20px grey;
+}
+#buy>p>span{
+    font-size: 2em;
+}
+#buy>button{
+    font-size: 1.2em;
+}
+#total{
+    font-size: 2em;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+#total::before{
+    content: "Total: ";
+}
+#total::after{
+    content: " €";
+}
+#itemzone{
+    overflow: scroll;
+    height: 72%;
+}
+.panier-remove{
+    text-align: center;
+    border-radius: 100px;
+    padding: 0;
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+
+}
+#acheter{
+    width: auto;
+    margin: 10px 0;
+}
+.Image_Caroussel
+{
+	width: 75%;
+	margin: 3% auto;
+	display: flex;
+}
+.cadre_image_caroussel
+{
+	width: 50%;
+}
+.titre_button
+{
+	width: 50%;
+	padding-left: 15%;
+}
+.titre_image_carousel
+{
+	text-align: center;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 35px;
+}
+.button_image_carousel
+{
+	text-align: center;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 15px;
+}
+.separateur
+{
+	border-width: 2px 0 0 0;
+	border-style: solid;
+	border-color: #000000;
+	width: 90%
+}
