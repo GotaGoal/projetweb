@@ -104,14 +104,22 @@
               
             </div>
           </div>
-          <div class="EcrireComment">
-            <input type="text" name="FirstName" value="Un commentaire ?" onclick="javascript:this.value=''" style="width: 80%; height: 80%; margin-top: 1%;">
-            <input type="submit" onclick="location.reload();" value="Envoyer" style="width: 16%; height: 80%; margin-top: 1%;">
-          </div>
+
+
+// a voir plus en profondeur
+
+          <form method="post" action="{{ path('Galery', {'id' : Galery.id}) }}">
+
+            <div class="EcrireComment">
+              <input type="text" name="FirstName" value="Un commentaire ?" onclick="javascript:this.value=''" style="width: 80%; height: 80%; margin-top: 1%;">
+              <input type="submit" onclick="location.reload();" value="Envoyer" style="width: 16%; height: 80%; margin-top: 1%;">
+            </div>
+          </form>
         </div>
       </div>
     </div>
   </div>
-</div>
-</body>
-</html>
+
+
+
+{% endblock all %}
