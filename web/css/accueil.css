@@ -138,22 +138,11 @@ p{
     text-align: justify;
     text-justify: inter-word;
 }
-#myCarousel, .carousel-inner{
-    height: 450px;
+#myCarousel, .carousel-inner {
 }
-
-@media screen and (max-width: 730px){
-    #myCarousel{
-        height: 300px;
-    }
-}
-@media screen and (max-width: 500px){
-    #myCarousel{
-        height: 200px;
-    }
-}
-@media screen and (max-width: 350px){
-    #myCarousel{
-        height: 100px;
-    }
+.background{
+    height: inherit;
+    width: inherit;
+    background: no-repeat center;
+    background-size: contain;
 }
