@@ -621,3 +621,54 @@ body {
 	border-color: #000000;
 	width: 90%
 }
+.prix::before{
+    content: "Prix: ";
+}
+.prix::after{
+    content: '€';
+}
+.prix{
+    float: right;
+    font-size: medium;
+}
+.no-prix{
+    display: none;
+}
+.choix{
+    display: flex;
+    justify-content: space-between;
+}
+.choix1,.choix2{
+    color: #C2242A !important;
+}
+.card-max{
+    height: 600px;
+}
+.activity-descr{
+    height: 160px;
+    overflow: scroll;
+    overflow-x: hidden;
+    text-align: justify;
+    justify-content: center;
+}
+.date{
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+::-webkit-scrollbar
+{
+    width: 7px;  /* for vertical scrollbars */
+    height: 10px; /* for horizontal scrollbars */
+
+}
+
+::-webkit-scrollbar-track
+{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
+}
