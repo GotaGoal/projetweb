@@ -1,0 +1,117 @@
+{% extends "layout.html.twig" %}
+{% block stylesheets %}
+  {{ parent() }}
+  <link href="{{ asset('css/Galery.css') }}" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+  <script class="cssdeck" src="../js/jquery-3.2.1.min.js"></script>
+{% endblock stylesheets %}
+{% block all %}
+  <div id="contenu" style="margin-top:150px;">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 gallery" >
+        
+        <figure>
+          <div id="okjj">
+            <img src="{{ asset('' IMAGE  '') }}" class="timage">
+          </div>
+          <div id="testpading">
+            <figcaption>
+            <a  href="#overlay3">
+              <h6>
+              {{ TITRE IMAGE }}
+              </h6>
+            </a>
+            <div class="poucebleu" align="center" >
+              <div class="pouce" >
+                <a><span class="glyphicon glyphicon-thumbs-up"></span></a>
+              </div>
+              <div class="comment" >
+                <a href="#overlay3"><span class="glyphicon glyphicon-comment"></span></a>
+              </div>
+            </div>
+            </figcaption>
+          </div>
+        </figure>
+        
+      </div>
+
+
+          <div class="col-xs-12 col-sm-6 col-md-4 gallery" >
+            
+            <figure>
+              <div id="okjj">
+                <img src="{{ asset('' IMAGE  '') }}" alt="Trolltunga Norway"  width="300" height="200">
+              </div>
+              
+                <div id="testpading">
+                  <figcaption>
+                  <a  href="#overlay3">
+                  <h6>
+                  {{ TITRE IMAGE }}
+                  </h6>
+                </a>
+                <div class="poucebleu" align="center" >
+                  <div class="compteurlike">
+                    <p>
+                    {{ NOMBRE DE LIKE }}
+                    </p></div>
+                    <div class="pouce">
+                      <a><span class="glyphicon glyphicon-thumbs-up"></span></a>
+                    </div>
+                    <div class="comment" >
+                      <a href="#overlay3"><span class="glyphicon glyphicon-comment"></span></a>
+                    </div>
+                  </div>
+                  </figcaption>
+                </div>
+              </figure>      
+            
+          </div>
+
+
+    </div>
+    <div class="all">
+      <div id="overlay3">
+        <a class="close" href="#accueil" ">
+          <span class="glyphicon glyphicon-remove-circle" style="color:black; font-size: 100px; opacity:1 "></span>
+        </a>
+        <div class="overandover" align="center">
+          <img src="img/image1.png"   style="width: auto; height: auto; margin: 0 auto; ">
+          <div class="commenter style-3">
+            <div class="AfficherComment" style="height: 80px; width: 100%;">
+              <div class="User" style=" height: 80px;width: 100%;">
+                
+                <div class="DateComment" style="height: 25%;width:100%;">
+                  <p> 
+                  Poster par
+                   {{ Prenom }} {{ NOM}}
+                    le 
+                   {{ DATE }}
+                  </p>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%; height: 80%; ">
+                  <div class="avatarUser" style="height: 100%;width: 20%; float: right;">
+                    <img src="{{ asset('' IMAGE  '') }}"   style="width: auto; height: 40px; ">
+                  </div>
+                  <div class="CommentaireUser" style="height: 100%;width: 80%; text-align: right;">
+                    <p style="color: black;"> 
+                       {{ COMMENTAIRE }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="EcrireComment">
+            <input type="text" name="FirstName" value="Un commentaire ?" onclick="javascript:this.value=''" style="width: 80%; height: 80%; margin-top: 1%;">
+            <input type="submit" onclick="location.reload();" value="Envoyer" style="width: 16%; height: 80%; margin-top: 1%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
