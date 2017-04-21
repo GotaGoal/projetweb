@@ -21,6 +21,7 @@ use BDE\PlatformBundle\Repository\AssociationRoleRepository;
 use BDE\PlatformBundle\Repository\RoleRepository;
 use BDE\PlatformBundle\Repository\ProduitRepository;
 use BDE\PlatformBundle\Entity\Association;
+use BDE\PlatformBundle\Entity\LikeActivite;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
@@ -73,6 +74,27 @@ class BdeController extends Controller
 
 
         return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
+    }
+
+    public function likeactiviteAction($id,Request $req)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $evenement = $em->getRepository('BDEPlatformBundle:Evenement')->find($id);
+
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserBy(array('nom'=>$this->getUser()->getNom()));
+
+        $like = new LikeActivite();
+        
+        $like->setUser($user);
+
+        $evenement->addLike($like);
+
+        $em->persist($like);
+        $em->persist($evenement);
+        $em->flush();
+
+        return $this->redirectToRoute('bde_evenement_view',array('id'=>$id));
     }
 
     public function commentactiviteAction($id, Request $req)
@@ -131,7 +153,11 @@ class BdeController extends Controller
         $evenement = $em->getRepository('BDEPlatformBundle:Evenement')->find($id); 
         $listCommentaire = $evenement->getCommentaires();  
 
-        return $this->render('BDEPlatformBundle:Evenement:full.html.twig',array('evenement'=>$evenement,'listCommentaire'=>$listCommentaire)); 
+        $listCandidat = $evenement->getInscriptions();
+
+        $listLike = $evenement->getLikes();
+
+        return $this->render('BDEPlatformBundle:Evenement:full.html.twig',array('evenement'=>$evenement,'listCommentaire'=>$listCommentaire,'listCandidat'=>$listCandidat,'listLike'=>$listLike)); 
     }
     public function viewpanierAction(Request $req)
     {

@@ -76,14 +76,45 @@
 
     </div>
     {% if app.user != null %}
+        {% set tmp = 0 %}
+        {% for candidat in listCandidat %}
+            {% if candidat.user.id == app.user.id %}
+                {% set tmp = 1 %}
+            {% endif %}
+        {% endfor %}
+
+        {% set cnt = 0 %}
+        {% for like in listLike %}
+            {% if like.user.id == app.user.id %}
+                {% set cnt = 1 %}
+            {% endif %}
+        {% endfor %}
+        {% if tmp == 0  %}
     <div class="row"><!--normal activity-->
         <div id="subscribe" class="col-xs-6 col-md-10 col-sm-8 col-sm-push-1"><button class="btn-red button-rounded button-outline" onClick="document.location.href='{{ path('bde_inscription_activite', {'id' : evenement.id}) }}'">S'inscrire à l'activité</button></div>
+        {% if cnt == 0  %}
         <div id="likebar" class="col-xs-6 col-md-2 col-sm-4">
-            <div id="like"><a class="material-icons">thumb_up</a></div>
-            <div id="dislike"><a class="material-icons">thumb_down</a></div>
-            
+            <div id="like"><a class="material-icons" href="{{ path('bde_like_activite', {'id' : evenement.id}) }}">thumb_up</a></div> 
         </div>
+        {% else %}
+            <p style="text-align:center;">Déjàdd   Aimé !</p>
+        {% endif %}
     </div>
+    {% else %}
+        <div class="row"><!--normal activity-->
+            <p style="text-align:center;">Vous êtes déjà inscrit à cette activité, actuellement il y'a {{ listCandidat|length }} inscrit(s).</p>
+            
+        
+        {% if cnt == 0  %}
+        <div id="likebar" class="col-xs-6 col-md-2 col-sm-4">
+            <div id="like"><a class="material-icons" href="{{ path('bde_like_activite', {'id' : evenement.id}) }}">thumb_up</a></div>    
+        </div>
+        {% else %}
+            <p style="text-align:center;">Vous avez déjà aimé cette activité, actuellement il y'a {{ listLike|length }} j'aime.</p>
+        {% endif %}
+    </div>
+
+{% endif %}
     <hr width="90%" color="#000000">
     <div id="comment">
         <div id="comment-zone">

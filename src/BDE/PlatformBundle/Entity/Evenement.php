@@ -13,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Evenement
 {
     /**
+   * @ORM\ManyToMany(targetEntity="BDE\PlatformBundle\Entity\LikeActivite", cascade={"persist"})
+   */
+  private $likes;
+
+    /**
    * @ORM\ManyToMany(targetEntity="BDE\PlatformBundle\Entity\InscriptionActivite", cascade={"persist"})
    */
   private $inscriptions;
@@ -300,5 +305,39 @@ class Evenement
     public function getInscriptions()
     {
         return $this->inscriptions;
+    }
+
+    /**
+     * Add like
+     *
+     * @param \BDE\PlatformBundle\Entity\LikeActivite $like
+     *
+     * @return Evenement
+     */
+    public function addLike(\BDE\PlatformBundle\Entity\LikeActivite $like)
+    {
+        $this->likes[] = $like;
+
+        return $this;
+    }
+
+    /**
+     * Remove like
+     *
+     * @param \BDE\PlatformBundle\Entity\LikeActivite $like
+     */
+    public function removeLike(\BDE\PlatformBundle\Entity\LikeActivite $like)
+    {
+        $this->likes->removeElement($like);
+    }
+
+    /**
+     * Get likes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLikes()
+    {
+        return $this->likes;
     }
 }

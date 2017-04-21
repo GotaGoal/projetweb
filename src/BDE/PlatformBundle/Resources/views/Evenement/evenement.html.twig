@@ -28,29 +28,7 @@
 
         <div class="row" id="past">
             {% for evenement in listEvenement %}
-
-                <div class="col l4 m6 s12 card-max">
-                    <div class="card" style="overflow: hidden;">
-                        <div class="card-image">
-                            <img style="max-width: 100%; height: auto" src="../img/not_found.png">
-                        </div>
-                        <div class="card-content large">
-                            <span class="card-title activator grey-text text-darken-4"></span>
-                            <p class="activity-descr"></p>
-                            <p class="date"></p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">S'inscrire</a>
-                            <p class="prix"></p>
-                        </div>
-                    </div>
-                </div>
-
-            {% endfor %}
-        </div>
-        <div class="row" id="today" style="height:100%;">
-            {% for evenement in listEvenement %}
-
+                {% if evenement.date < date('-1days') %}
                 <div class="col l4 m6 s12 card-max">
                     <div class="card" style="overflow: hidden;">
                         <div class="card-image">
@@ -67,29 +45,52 @@
                         </div>
                     </div>
                 </div>
-
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row" id="today" style="height:100%;">
+            {% for evenement in listEvenement %}
+                {% if evenement.date < date('+1days') and evenement.date > date('-1days') %}
+                <div class="col l4 m6 s12 card-max">
+                    <div class="card" style="overflow: hidden;">
+                        <div class="card-image">
+                            <img style="max-width: 100%; height: auto" src="{{ asset(''~ evenement.photo ~'') }}">
+                        </div>
+                        <div class="card-content large">
+                            <span class="card-title activator grey-text text-darken-4">{{ evenement.nom }}</span>
+                            <p class="activity-descr">{{ evenement.description }}</p>
+                            <p class="date">{{ evenement.date|date("d/m/Y") }}</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="{{ path('bde_evenement_view', {'id' : evenement.id}) }}">S'inscrire</a>
+                            <p class="prix">{{ evenement.prix }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
             {% endfor %}
         </div>
         <div class="row" id="futur">
             {% for evenement in listEvenement %}
 
+                {% if evenement.date > date() %}
                 <div class="col l4 m6 s12 card-max">
                     <div class="card" style="overflow: hidden;">
                         <div class="card-image">
-                            <img style="max-width: 100%; height: auto" src="../img/not_found.png">
+                            <img style="max-width: 100%; height: auto" src="{{ asset(''~ evenement.photo ~'') }}">
                         </div>
                         <div class="card-content large">
-                            <span class="card-title activator grey-text text-darken-4"></span>
-                            <p class="activity-descr"></p>
-                            <p class="date"></p>
+                            <span class="card-title activator grey-text text-darken-4">{{ evenement.nom }}</span>
+                            <p class="activity-descr">{{ evenement.description }}</p>
+                            <p class="date">{{ evenement.date|date("d/m/Y") }}</p>
                         </div>
                         <div class="card-action">
-                            <a href="#">S'inscrire</a>
-                            <p class="prix"></p>
+                            <a href="{{ path('bde_evenement_view', {'id' : evenement.id}) }}">S'inscrire</a>
+                            <p class="prix">{{ evenement.prix }}</p>
                         </div>
                     </div>
                 </div>
-
+                {% endif %}
             {% endfor %}
         </div>
         <div class="row" id="propose">

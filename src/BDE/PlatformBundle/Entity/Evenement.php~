@@ -13,6 +13,11 @@ use Doctrine\ORM\Mapping as ORM;
 class Evenement
 {
     /**
+   * @ORM\ManyToMany(targetEntity="BDE\PlatformBundle\Entity\LikeActivite", cascade={"persist"})
+   */
+  private $likes;
+
+    /**
    * @ORM\ManyToMany(targetEntity="BDE\PlatformBundle\Entity\InscriptionActivite", cascade={"persist"})
    */
   private $inscriptions;
@@ -266,5 +271,39 @@ class Evenement
     public function getCommentaires()
     {
         return $this->commentaires;
+    }
+
+    /**
+     * Add inscription
+     *
+     * @param \BDE\PlatformBundle\Entity\InscriptionActivite $inscription
+     *
+     * @return Evenement
+     */
+    public function addInscription(\BDE\PlatformBundle\Entity\InscriptionActivite $inscription)
+    {
+        $this->inscriptions[] = $inscription;
+
+        return $this;
+    }
+
+    /**
+     * Remove inscription
+     *
+     * @param \BDE\PlatformBundle\Entity\InscriptionActivite $inscription
+     */
+    public function removeInscription(\BDE\PlatformBundle\Entity\InscriptionActivite $inscription)
+    {
+        $this->inscriptions->removeElement($inscription);
+    }
+
+    /**
+     * Get inscriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInscriptions()
+    {
+        return $this->inscriptions;
     }
 }
