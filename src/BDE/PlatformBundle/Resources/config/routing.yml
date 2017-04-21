@@ -66,3 +66,7 @@ bde_remote_panier:
     path: /boutique/remote/panier
     defaults: { _controller: BDEPlatformBundle:Bde:remoteitem }
 
+bde_addcommande:
+    path: /boutique/add/commande
+    defaults: { _controller: BDEPlatformBundle:Bde:commande }
+

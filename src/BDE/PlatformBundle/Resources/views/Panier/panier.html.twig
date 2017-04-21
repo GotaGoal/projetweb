@@ -82,7 +82,9 @@ function ajaxCall(fk_id)
         <div id="buy">
             <div class="row">
                 <p id="total" class="col-xs-6"></p>
-                <button id="acheter" class="button-outline button-rounded btn-green col-xs-6 col-sm-push-4 col-xs-push-0">Acheter</button>
+                {% if app.session.get('panier')|length != 0 %}
+                <button id="acheter" class="button-outline button-rounded btn-green col-xs-6 col-sm-push-4 col-xs-push-0" onClick="document.location.href='{{ path('bde_addcommande') }}'">Acheter</button>
+            {% endif %}
             </div>
         </div>
     </div>

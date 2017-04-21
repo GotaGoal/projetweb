@@ -12,6 +12,7 @@ use BDE\PlatformBundle\Entity\AssociationRole;
 use BDE\PlatformBundle\Entity\Role;
 use BDE\UserBundle\Entity\User;
 use BDE\PlatformBundle\Entity\Couleur;
+use BDE\PlatformBundle\Entity\Commande;
 use BDE\PlatformBundle\Entity\Produit;
 use BDE\PlatformBundle\Entity\Categorie;
 use BDE\PlatformBundle\Repository\AssociationRoleRepository;
@@ -83,14 +84,59 @@ class BdeController extends Controller
 
         $em = $this->getDoctrine()->getManager();
         $listProduit = new \Doctrine\Common\Collections\ArrayCollection();
-
-        foreach ($panier as $value) {
+        if (!empty($panier)) {
+            foreach ($panier as $value) {
             //echo $value;
             $listProduit[] = $em->getRepository('BDEPlatformBundle:Produit')->find($value);
         }
+        }
+        
         //print_r($panier);
         return $this->render('BDEPlatformBundle:Panier:panier.html.twig',array('listProduit'=>$listProduit));
 
+    }
+
+    public function commandeAction(Request $req)
+    {
+        $session = $req->getSession();
+        $panier = $session->get('panier');
+
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserBy(array('nom'=>$this->getUser()));
+
+        //unset($panier[10]);
+
+        //$panier = array_values($panier);
+
+        $em = $this->getDoctrine()->getManager();
+        $listProduit = new \Doctrine\Common\Collections\ArrayCollection();
+        if (!empty($panier)) {
+            foreach ($panier as $value) {
+            //echo $value;
+            $listProduit[] = $em->getRepository('BDEPlatformBundle:Produit')->find($value);
+        }
+
+        }
+        $commande = new Commande();
+        $commande->setUser($user);
+        $commande->setDate(new \Datetime());
+
+        foreach ($listProduit as $produit) {
+            $commande->addProduit($produit);
+            $stock = $produit->getStock();
+            $stock_actuelle = $stock - 1;
+            $produit->setStock($stock_actuelle);
+
+            
+        }
+        unset($panier);
+        $panier = array();
+        $session->set('panier',$panier);
+        $em->persist($commande);
+        $em->flush();
+        return $this->redirectToRoute('bde_platform_homepage');
+        //print_r($panier);
+        //return $this->render('BDEPlatformBundle:Panier:panier.html.twig',array('listProduit'=>$listProduit));
     }
 
     public function remoteitemAction(Request $req)
