@@ -117,6 +117,11 @@
                         Boutique
                     </a>
                 </li>
+                <li >
+                    <a data-toggle="tab" href="#Caroussel"> 
+                        Caroussel
+                    </a>
+                </li>
             </ul>
             <div class="tab-content">
                 <div id="liste_event" class="tab-pane fade in active">
@@ -435,9 +440,14 @@
                                 En vente
                             </a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a data-toggle="tab" href="#attente"> 
                                 Bloquer
+                            </a>
+                        </li>
+                        <li  class="active">
+                            <a data-toggle="tab" href="#Commande"> 
+                                Commandes
                             </a>
                         </li>
                     </ul>
@@ -473,7 +483,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div id="attente" class="tab-pane fade in active">
+                        <div id="attente" class="tab-pane fade">
                             <div class="col-xs-6 col-md-3 image1">
                                 <a class="thumbnail article" style="text-decoration:none">
                                 <img src="../img/image1.jpg">
@@ -497,6 +507,127 @@
                                     <button onclick="change_text('description1')" class="site">Modifier</button>
                                     <button class="site">Supprimer</button>
                                 </a>
+                            </div>
+                        </div>
+                        <div id="Commande" class="tab-pane fade in active">
+                            <div id="panier">
+                                <div id="info">
+                                    <div id="panier-info">
+                                        <div class="row">
+                                            <p class="col-xs-9 col-sm-11 col-md-11">Commande n°#id_commande</p>
+                                        </div>
+                                    </div>
+                                    <hr width="100%">
+                                </div>
+                                <div id="itemzone">
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="icon-item col-xs-12 col-sm-6 col-md-3">
+                                                <img src="../img/test.png">
+                                            </div>
+                                            <div class="titre col-xs-12 col-sm-6 col-md-5">Objet rare de grande valeur</div>
+                                            <div class="number col-xs-6 col-md-1">42</div>
+                                            <div class="item-info col-xs-6 col-md-2">
+                                                <div class="taille">XXL</div>
+                                                <div class="couleur green">
+                                                    <div class="case">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="prix col-xs-12 col-md-1">500</div>
+                                        </div>
+                                        <hr width="80%">
+                                    </div>
+                                </div>
+                                <div id="buy">
+                                    <div class="row" style="height: 100%">
+                                        <p id="total" class="col-xs-6"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="panier">
+                                <div id="info">
+                                    <div id="panier-info">
+                                        <div class="row">
+                                            <p class="col-xs-9 col-sm-11 col-md-11">Commande n°#id_commande</p>
+                                        </div>
+                                    </div>
+                                    <hr width="100%">
+                                </div>
+                                <div id="itemzone">
+                                    <div class="item">
+                                        <div class="row">
+                                            <div class="icon-item col-xs-12 col-sm-6 col-md-3">
+                                                <img src="../img/test.png">
+                                            </div>
+                                            <div class="titre col-xs-12 col-sm-6 col-md-5">Objet rare de grande valeur</div>
+                                            <div class="number col-xs-6 col-md-1">42</div>
+                                            <div class="item-info col-xs-6 col-md-2">
+                                                <div class="taille">XXL</div>
+                                                <div class="couleur green">
+                                                    <div class="case">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="prix col-xs-12 col-md-1">500</div>
+                                        </div>
+                                        <hr width="80%">
+                                    </div>
+                                </div>
+                                <div id="buy">
+                                    <div class="row" style="height: 100%">
+                                        <p id="total" class="col-xs-6"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="Caroussel" class="tab-pane fade">
+                    <div class="Image_Caroussel">
+                        <div class="cadre_image_caroussel">
+                            <img class="img-responsive" src="../img/image2.jpg">
+                        </div>
+                        <div class="titre_button">
+                            <div class="titre_image_carousel">
+                                Titre de l'image
+                            </div>
+                            <div class="button_image_carousel">
+                                <button onclick="">
+                                    Changer l'image
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="separateur">
+                    <div class="Image_Caroussel">
+                        <div class="cadre_image_caroussel">
+                            <img class="img-responsive" src="../img/image3.png">
+                        </div>
+                        <div class="titre_button">
+                            <div class="titre_image_carousel">
+                                Titre de l'image
+                            </div>
+                            <div class="button_image_carousel">
+                                <button onclick="">
+                                    Changer l'image
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                     <hr class="separateur">
+                    <div class="Image_Caroussel">
+                        <div class="cadre_image_caroussel">
+                            <img class="img-responsive" src="../img/image10.png">
+                        </div>
+                        <div class="titre_button">
+                            <div class="titre_image_carousel">
+                                Titre de l'image
+                            </div>
+                            <div class="button_image_carousel">
+                                <button onclick="">
+                                    Changer l'image
+                                </button>
                             </div>
                         </div>
                     </div>
