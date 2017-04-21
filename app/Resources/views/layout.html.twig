@@ -229,10 +229,10 @@
             <div class="col-sm-2 col-sm-push-1 col-xs-4" style="height: 100%">
                 <h5 class="list-title">Accès rapide</h5>
                 <ul class="lien_footer">
-                    <li><a href="" class="lien">Boutique</a></li>
-                    <li><a href="" class="lien">Association</a></li>
-                    <li><a href="" class="lien">Activité</a></li>
-                    <li><a href="" class="lien">Galerie</a></li>
+                    <li><a href="{{ path('bde_boutique') }}" class="lien">Boutique</a></li>
+                    <li><a href="{{ path('bde_view_association') }}" class="lien">Association</a></li>
+                    <li><a href="{{ path('bde_evenement') }}" class="lien">Activité</a></li>
+                    <li><a href="{{ path('bde_galerie') }}" class="lien">Galerie</a></li>
                 </ul>
             </div>
             <div class="col-sm-2 col-sm-push-3 col-xs-4">
@@ -241,7 +241,7 @@
                     <li><a href="https://www.facebook.com/EXiaNancyBde/?fref=ts" class="lien">Facebook</a></li>
                     <li><a href="https://twitter.com/bdeexianancy" class="lien">Twitter</a></li>
                     <li><a class="lien">exianancy.bde@gmail.com</a></li>
-                    <li><a href="" class="lien">Membre BDE</a></li>
+                    <li><a href="#" class="lien">Membre BDE</a></li>
                 </ul>
             </div>
             <div class="col-sm-2 col-sm-push-5 col-xs-4">
@@ -251,7 +251,7 @@
                     <li><a href="http://www.cesi.fr/" class="lien">Cesi</a></li>
                     <li><a href="https://www.eicesi.fr/" class="lien">Ei.Cesi</a></li>
                     <li><a href="https://www.cesi-alternance.fr/" class="lien">Cesi.Alternance</a></li>
-                    <li><a href="" class="lien">Mentions Légales</a></li>
+                    <li><a href="{{ path('bde_mention_legale') }}" class="lien">Mentions Légales</a></li>
                 </ul>
             </div>
         </div>

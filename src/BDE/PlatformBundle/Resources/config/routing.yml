@@ -86,3 +86,7 @@ bde_inscription_activite:
 bde_like_activite:
     path: /evenement/like/{id}
     defaults: { _controller: BDEPlatformBundle:Bde:likeactivite }
+
+bde_mention_legale:
+    path: /mentions
+    defaults: { _controller: BDEPlatformBundle:Bde:mentions }

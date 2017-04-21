@@ -76,6 +76,11 @@ class BdeController extends Controller
         return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
     }
 
+    public function mentionsAction()
+    {
+        return $this->render('BDEPlatformBundle:Mentions:mentions.html.twig');
+    }
+
     public function likeactiviteAction($id,Request $req)
     {
         $em = $this->getDoctrine()->getManager();
