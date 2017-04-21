@@ -11,7 +11,7 @@ body{
     font-size: 5em;
 }
 #description{
-    padding: 2% 5%;
+    padding: 2% 15%;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -50,7 +50,7 @@ body{
     font-size: 1.5em;
 }
 #image{
-    margin: 5% 15%;
+    margin: 5% auto;
     max-width: 70%;
 }
 #subscribe{
@@ -101,4 +101,16 @@ body{
 #user{
     font-family: Roboto, serif;
     font-weight: 600;
+}
+#date-choix{
+margin: 0 45%;
+}
+#formulaire{
+    margin: 2% 10%;
+}
+#heure::after{
+    content: 'h';
+}
+#minute::before{
+    content: ':';
 }

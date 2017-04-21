@@ -134,7 +134,7 @@
     justify-content: space-between;
 }
 .choix1,.choix2{
-    color: #C2242A;
+    color: #C2242A !important;
 }
 .card-max{
     height: 600px;

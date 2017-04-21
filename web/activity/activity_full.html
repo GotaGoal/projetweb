@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Activity</title>
+    <script rel="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
     <script rel="text/javascript" src="../js/bootstrap.min.js"></script>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -16,25 +17,34 @@
         <p>Nom de l'activité</p>
     </div>
     <div class="row">
-        <div class="col-xs-12 col-md-3 col-xs-push-4 col-md-push-0" id="date">
+        <div class="col-xs-12 col-xs-push-3 col-sm-push-5" id="date">
             <div id="month">
-                <p>Month</p>
+                <p></p>
             </div>
             <div id="day">
-                <p>32</p>
+                <p></p>
             </div>
             <div id="hour">
-                <p>00h:00</p>
+                <p><span id="heure"></span><span id="minute"></span></p>
             </div>
         </div>
-        <div class="col-xs-12 col-md-9" id="description">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id lectus ut dui interdum accumsan. Aliquam lobortis, ligula vitae lobortis mollis, leo odio condimentum mi, nec accumsan augue massa imperdiet felis. Mauris ut sem molestie, dapibus leo non, faucibus turpis. Mauris nisi elit, elementum at egestas non, lacinia quis justo. Donec mattis mollis dui, id viverra eros varius nec. Praesent volutpat sodales finibus. Morbi eu erat ante. Maecenas et nulla et dui semper venenatis.
-                Nullam risus eros, vehicula vel scelerisque cursus, tincidunt non arcu. Nulla et neque odio. Proin malesuada dignissim semper. In ut dictum ligula. Morbi commodo vel arcu sit amet laoreet. Proin feugiat massa ut sapien pharetra, sed auctor diam suscipit. Vivamus ut tempus orci, non vestibulum purus. Nam non fermentum urna, dictum aliquam nulla. </p>
+        <div class="col-xs-12 col-md-12" id="description">
+            <p></p>
         </div>
     </div>
-    <img id="image" src="../img/test.png">
-    <div class="row">
+    <div style="text-align: center"><img id="image" src="../img/not_found.png"></div>
+    <div id="date-choix">
+        <form action="" method="post">
+            <input type="radio" name="choix" value="1">
+            <span> OU </span>
+            <input type="radio" name="choix" value="2">
+        </form>
+        <button>Soumettre</button>
+    </div>
+    <div id="formulaire">
+
+    </div>
+    <div class="row"><!--normal activity-->
         <div id="subscribe" class="col-xs-6 col-md-10 col-sm-8 col-sm-push-1"><button class="btn-red button-rounded button-outline">S'inscrire à l'activité</button></div>
         <div id="likebar" class="col-xs-6 col-md-2 col-sm-4">
             <div id="like"><a class="material-icons">thumb_up</a></div>
@@ -44,14 +54,6 @@
     <hr width="90%" color="#000000">
     <div id="comment">
         <div id="comment-zone">
-            <div class="comment-user">
-                <div class="user">
-                    <p>Nom de l'utilisateur</p>
-                </div>
-                <div class="user-comment">
-                    <p>Ceci est un commentaire</p>
-                </div>
-            </div>
         </div>
         <form>
             <div id="comment-add" class="form-group">
@@ -61,7 +63,16 @@
                 <input type="submit" value="Commenter">
             </div>
         </form>
-
+    </div>
+    <div class="comment-template" style="display: none">
+        <div class="comment-user">
+            <div class="user">
+                <p>Nom de l'utilisateur</p>
+            </div>
+            <div class="user-comment">
+                <p>Ceci est un commentaire</p>
+            </div>
+        </div>
     </div>
 </div>
 </body>
