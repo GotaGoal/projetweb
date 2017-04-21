@@ -42,9 +42,7 @@ bde_ecole:
     path: /ecole
     defaults: { _controller: BDEPlatformBundle:Bde:ecole }
 
-bde_activite:
-    path: /activite
-    defaults: { _controller: BDEPlatformBundle:Bde:activite }
+
 
 bde_galerie:
     path: /galerie
@@ -73,4 +71,7 @@ bde_addcommande:
 bde_evenement:
     path: /evenement
     defaults: { _controller: BDEPlatformBundle:Bde:evenement }
+bde_evenement_view:
+    path: /evenement/view/{id}
+    defaults: { _controller: BDEPlatformBundle:Bde:evenementview }
 

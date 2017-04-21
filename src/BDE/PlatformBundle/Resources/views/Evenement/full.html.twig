@@ -1,0 +1,113 @@
+{% extends "layout.html.twig" %}
+{% block stylesheets %}
+  {{ parent() }}
+
+  <link rel="stylesheet" href="{{ asset('css/activity_full.css') }}"/>
+
+{% endblock stylesheets %}
+{% block tittle %}<title>Evenement</title>{% endblock tittle %}
+
+
+{% block all %}
+
+
+<div id="contenu">
+
+
+<div id="titre">
+        <p>{{ evenement.nom }}</p>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-xs-push-3 col-sm-push-5" id="date">
+            <div id="month">
+                <p>
+                    {% set mois = evenement.date|date("m")%}
+                    {% if mois == "04" %}
+                        Avril
+                    {% elseif mois == "05" %}
+                        Mai
+                    {% elseif mois == "06" %}
+                        Juin
+                    {% elseif mois == "07" %}
+                        Juillet
+                    {% elseif mois == "08" %}
+                        Aout
+                    {% elseif mois == "09" %}
+                        Septembre
+                    {% elseif mois == "10" %}
+                        Octobre
+                    {% elseif mois == "11" %}
+                        Novembre
+                    {% elseif mois == "12" %}
+                        Decembre
+                    {% elseif mois == "01" %}
+                        Janvier
+                    {% elseif mois == "02" %}
+                        Fevrier
+                    {% elseif mois == "03" %}
+                        Mars
+                    {% endif %}
+                </p>
+            </div>
+            <div id="day">
+                <p>{{ evenement.date|date("d") }}</p>
+            </div>
+            <div id="hour">
+                <p><span id="heure">{{ evenement.date|date("h") }}</span></p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-12" id="description">
+            <p>{{ evenement.description }}</p>
+        </div>
+    </div>
+    <div style="text-align: center"><img id="image" src="{{ asset(''~ evenement.photo ~'') }}"></div>
+    {% if evenement.visibilite == 0 %}
+    <div id="date-choix">
+        <form action="" method="post">
+            <input type="radio" name="choix" value="1">
+            <span> OU </span>
+            <input type="radio" name="choix" value="2">
+        </form>
+        <button>Soumettre</button>
+    </div>
+{% endif %}
+    
+    <div id="formulaire">
+
+    </div>
+    {% if app.user != null %}
+    <div class="row"><!--normal activity-->
+        <div id="subscribe" class="col-xs-6 col-md-10 col-sm-8 col-sm-push-1"><button class="btn-red button-rounded button-outline">S'inscrire à l'activité</button></div>
+        <div id="likebar" class="col-xs-6 col-md-2 col-sm-4">
+            <div id="like"><a class="material-icons">thumb_up</a></div>
+            <div id="dislike"><a class="material-icons">thumb_down</a></div>
+        </div>
+    </div>
+    <hr width="90%" color="#000000">
+    <div id="comment">
+        <div id="comment-zone">
+            <div class="comment-user">
+            <div class="user">
+                <p>Nom de l'utilisateur</p>
+            </div>
+            <div class="user-comment">
+                <p>Ceci est un commentaire</p>
+            </div>
+        </div>
+        </div>
+        <form>
+            <div id="comment-add" class="form-group">
+                <label for="txtcomment">Commenter:</label>
+                <textarea class="form-control" rows="5" id="txtcomment"></textarea>
+                <br/>
+                <input type="submit" value="Commenter">
+            </div>
+        </form>
+    </div>
+{% else %}
+    <p style="text-align:center;">Merci de vous inscrire ou vous connectez avant d'utiliser l'inscription aux activités</p>
+{% endif %}
+
+</div>
+
+{% endblock all %}

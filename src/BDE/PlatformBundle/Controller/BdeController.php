@@ -75,7 +75,18 @@ class BdeController extends Controller
 
     public function evenementAction(Request $req)
     {
-        return $this->render('BDEPlatformBundle:Evenement:evenement.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $listEvenement = $em->getRepository('BDEPlatformBundle:Evenement')->findAll();
+        
+        return $this->render('BDEPlatformBundle:Evenement:evenement.html.twig',array('listEvenement'=>$listEvenement));
+    }
+
+    public function evenementviewAction($id, Request $req)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $evenement = $em->getRepository('BDEPlatformBundle:Evenement')->find($id);  
+
+        return $this->render('BDEPlatformBundle:Evenement:full.html.twig',array('evenement'=>$evenement)); 
     }
     public function viewpanierAction(Request $req)
     {
