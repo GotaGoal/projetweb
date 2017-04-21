@@ -75,3 +75,10 @@ bde_evenement_view:
     path: /evenement/view/{id}
     defaults: { _controller: BDEPlatformBundle:Bde:evenementview }
 
+bde_commentaire_activite:
+    path: /evenement/comment/{id}
+    defaults: { _controller: BDEPlatformBundle:Bde:commentactivite }
+
+bde_inscription_activite:
+    path: /evenement/inscription/{id}
+    defaults: { _controller: BDEPlatformBundle:Bde:inscriptionactivite }

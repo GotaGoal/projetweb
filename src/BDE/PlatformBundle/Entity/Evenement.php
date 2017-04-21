@@ -13,6 +13,15 @@ use Doctrine\ORM\Mapping as ORM;
 class Evenement
 {
     /**
+   * @ORM\ManyToMany(targetEntity="BDE\PlatformBundle\Entity\InscriptionActivite", cascade={"persist"})
+   */
+  private $inscriptions;
+
+    /**
+   * @ORM\ManyToMany(targetEntity="BDE\PlatformBundle\Entity\CommentaireActivite", cascade={"persist"})
+   */
+  private $commentaires;
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -216,5 +225,80 @@ class Evenement
     public function getDate()
     {
         return $this->date;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->commentaires = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add commentaire
+     *
+     * @param \BDE\PlatformBundle\Entity\CommentaireActivite $commentaire
+     *
+     * @return Evenement
+     */
+    public function addCommentaire(\BDE\PlatformBundle\Entity\CommentaireActivite $commentaire)
+    {
+        $this->commentaires[] = $commentaire;
+
+        return $this;
+    }
+
+    /**
+     * Remove commentaire
+     *
+     * @param \BDE\PlatformBundle\Entity\CommentaireActivite $commentaire
+     */
+    public function removeCommentaire(\BDE\PlatformBundle\Entity\CommentaireActivite $commentaire)
+    {
+        $this->commentaires->removeElement($commentaire);
+    }
+
+    /**
+     * Get commentaires
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommentaires()
+    {
+        return $this->commentaires;
+    }
+
+    /**
+     * Add inscription
+     *
+     * @param \BDE\PlatformBundle\Entity\InscriptionActivite $inscription
+     *
+     * @return Evenement
+     */
+    public function addInscription(\BDE\PlatformBundle\Entity\InscriptionActivite $inscription)
+    {
+        $this->inscriptions[] = $inscription;
+
+        return $this;
+    }
+
+    /**
+     * Remove inscription
+     *
+     * @param \BDE\PlatformBundle\Entity\InscriptionActivite $inscription
+     */
+    public function removeInscription(\BDE\PlatformBundle\Entity\InscriptionActivite $inscription)
+    {
+        $this->inscriptions->removeElement($inscription);
+    }
+
+    /**
+     * Get inscriptions
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInscriptions()
+    {
+        return $this->inscriptions;
     }
 }

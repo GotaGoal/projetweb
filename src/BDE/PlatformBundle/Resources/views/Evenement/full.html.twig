@@ -77,28 +77,32 @@
     </div>
     {% if app.user != null %}
     <div class="row"><!--normal activity-->
-        <div id="subscribe" class="col-xs-6 col-md-10 col-sm-8 col-sm-push-1"><button class="btn-red button-rounded button-outline">S'inscrire à l'activité</button></div>
+        <div id="subscribe" class="col-xs-6 col-md-10 col-sm-8 col-sm-push-1"><button class="btn-red button-rounded button-outline" onClick="document.location.href='{{ path('bde_inscription_activite', {'id' : evenement.id}) }}'">S'inscrire à l'activité</button></div>
         <div id="likebar" class="col-xs-6 col-md-2 col-sm-4">
             <div id="like"><a class="material-icons">thumb_up</a></div>
             <div id="dislike"><a class="material-icons">thumb_down</a></div>
+            
         </div>
     </div>
     <hr width="90%" color="#000000">
     <div id="comment">
         <div id="comment-zone">
+            {% for commentaire in listCommentaire %}
             <div class="comment-user">
             <div class="user">
-                <p>Nom de l'utilisateur</p>
+                <p>{{commentaire.user.username}}</p>
             </div>
             <div class="user-comment">
-                <p>Ceci est un commentaire</p>
+                <p>{{commentaire.description}}</p>
             </div>
         </div>
+    {% endfor %}
         </div>
-        <form>
+        <form method="post" action="{{ path('bde_commentaire_activite', {'id' : evenement.id}) }}">
             <div id="comment-add" class="form-group">
                 <label for="txtcomment">Commenter:</label>
-                <textarea class="form-control" rows="5" id="txtcomment"></textarea>
+                <input type="text" name="textcomment" rows="5" id="txtcomment" class="form-control">
+                
                 <br/>
                 <input type="submit" value="Commenter">
             </div>

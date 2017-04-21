@@ -15,6 +15,8 @@ use BDE\PlatformBundle\Entity\Couleur;
 use BDE\PlatformBundle\Entity\Commande;
 use BDE\PlatformBundle\Entity\Produit;
 use BDE\PlatformBundle\Entity\Categorie;
+use BDE\PlatformBundle\Entity\CommentaireActivite;
+use BDE\PlatformBundle\Entity\InscriptionActivite;
 use BDE\PlatformBundle\Repository\AssociationRoleRepository;
 use BDE\PlatformBundle\Repository\RoleRepository;
 use BDE\PlatformBundle\Repository\ProduitRepository;
@@ -73,6 +75,28 @@ class BdeController extends Controller
         return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
     }
 
+    public function commentactiviteAction($id, Request $req)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $evenement = $em->getRepository('BDEPlatformBundle:Evenement')->find($id);
+
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserBy(array('nom'=>$this->getUser()->getNom()));
+
+        $commentaire = new CommentaireActivite();
+        $commentaire->setDescription($req->get('textcomment'));
+        $commentaire->setUser($user);
+
+        $evenement->addCommentaire($commentaire);
+
+        $em->persist($commentaire);
+        $em->persist($evenement);
+        $em->flush();
+
+        return $this->redirectToRoute('bde_evenement_view',array('id'=>$id));
+        
+
+    }
     public function evenementAction(Request $req)
     {
         $em = $this->getDoctrine()->getManager();
@@ -81,12 +105,33 @@ class BdeController extends Controller
         return $this->render('BDEPlatformBundle:Evenement:evenement.html.twig',array('listEvenement'=>$listEvenement));
     }
 
+    public function inscriptionactiviteAction($id, Request $req)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $evenement = $em->getRepository('BDEPlatformBundle:Evenement')->find($id);
+
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserBy(array('nom'=>$this->getUser()->getNom()));
+
+        $inscription = new InscriptionActivite();
+        $inscription->setUser($user);
+
+        $evenement->addInscription($inscription);
+
+        $em->persist($inscription);
+        $em->persist($evenement);
+        $em->flush();
+
+        return $this->redirectToRoute('bde_evenement_view',array('id'=>$id));
+    }
+
     public function evenementviewAction($id, Request $req)
     {
         $em = $this->getDoctrine()->getManager();
-        $evenement = $em->getRepository('BDEPlatformBundle:Evenement')->find($id);  
+        $evenement = $em->getRepository('BDEPlatformBundle:Evenement')->find($id); 
+        $listCommentaire = $evenement->getCommentaires();  
 
-        return $this->render('BDEPlatformBundle:Evenement:full.html.twig',array('evenement'=>$evenement)); 
+        return $this->render('BDEPlatformBundle:Evenement:full.html.twig',array('evenement'=>$evenement,'listCommentaire'=>$listCommentaire)); 
     }
     public function viewpanierAction(Request $req)
     {
@@ -117,7 +162,7 @@ class BdeController extends Controller
         $panier = $session->get('panier');
 
         $userManager = $this->get('fos_user.user_manager');
-        $user = $userManager->findUserBy(array('nom'=>$this->getUser()));
+        $user = $userManager->findUserBy(array('nom'=>$this->getUser()->getNom()));
 
         //unset($panier[10]);
 
