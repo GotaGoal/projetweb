@@ -75,6 +75,15 @@
     <div id="formulaire">
 
     </div>
+    {% if evenement.date < date('-1days') and evenement.visibilite == 1 %}
+    <div id="add-photo">
+        <form method="post" action="">
+            <label>Ajouter une image pour cette activité:</label>
+            <input type="file" name="image" accept="image/*" style="margin: 15px 0">
+            <input type="submit">
+        </form>
+    </div>
+        {% endif %}
     {% if app.user != null %}
         {% set tmp = 0 %}
         {% for candidat in listCandidat %}
