@@ -73,6 +73,10 @@ class BdeController extends Controller
         return $this->render('BDEPlatformBundle:Accueil:index.html.twig');
     }
 
+    public function evenementAction(Request $req)
+    {
+        return $this->render('BDEPlatformBundle:Evenement:evenement.html.twig');
+    }
     public function viewpanierAction(Request $req)
     {
         $session = $req->getSession();

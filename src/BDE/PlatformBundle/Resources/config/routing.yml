@@ -70,3 +70,7 @@ bde_addcommande:
     path: /boutique/add/commande
     defaults: { _controller: BDEPlatformBundle:Bde:commande }
 
+bde_evenement:
+    path: /evenement
+    defaults: { _controller: BDEPlatformBundle:Bde:evenement }
+
